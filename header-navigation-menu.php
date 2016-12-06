@@ -42,7 +42,7 @@
 		                </div>
 				</div>
 		
-				<!-- Header navigation right -->
+				<!-- Header menu right -->
 
 				<nav class="header__menu">
 	                <ul>
@@ -51,6 +51,7 @@
 	                    <li><a href="dashboard/index.php">Dashboard</a></li>
 	                </ul>
 		        </nav> <!-- .header-menu -->
+
 			</div> <!-- .header-menu__container -->
 
 		</nav> <!-- .header__nav -->
