@@ -1,10 +1,11 @@
+<?php include "head.php"; ?>
+
 <div class="header__container--post">
 
-<?php include "head.php"; ?>
 <?php include "header-navigation-menu.php"; ?>
 
 </div>
-	
+
 	<!-- Header -->
 	
 
