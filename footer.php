@@ -1,6 +1,6 @@
 <!-- Footer -->
 
-	<div class="footer-container">
+	<footer class="footer-container">
 		<div class="nav">
 			<ul class="ul-nav">
 				<li><a href="#">About</a></li>
@@ -18,7 +18,7 @@
 			</ul>
 		</div>
 		<div class="volvo-logo"><img class="volvo-icon" src="img/volvo-logo.svg" alt="Volvo logo"></div>
-	</div>
+	</footer>
 
 
 
