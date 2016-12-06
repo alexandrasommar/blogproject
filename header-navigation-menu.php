@@ -13,26 +13,23 @@
 					<ul>
 						<li><a href="#">Bilen</a></li>
 						<li><a href="#">Kampanjen</a></li>
-						<ul>
-						    <li>
-						        <a href="">Kategorier</a>
-						        <ul>
-						        <?php 
-						        $query = "SELECT * FROM categories";
-							    $select_categories = mysqli_query($conn,$query);   
+						<div class="header__menu--dropdown">
+							<li><a href="">Kategorier</a>
+								<div class="dropdown-content">
+								    <?php 
+							        $query = "SELECT * FROM categories";
+								    $select_categories = mysqli_query($conn,$query);   
 
-							    while ($row = mysqli_fetch_assoc($select_categories)) {        
-							    $cat_id = $row['cat_id'];
-							    $cat_name = $row['cat_name'];
+								    while ($row = mysqli_fetch_assoc($select_categories)) {        
+								    $cat_id = $row['cat_id'];
+								    $cat_name = $row['cat_name'];
 
-							    echo "<li><a href='category.php?cat=$cat_id'>$cat_name</a></li><br>";
-								}
-						        ?>   
-						        </ul>
-						    </li>
-						    
-						    <!-- etc. -->
-						</ul>
+								    echo "<a href='category.php?cat=$cat_id'>$cat_name</a>";
+									}
+							        ?>   
+								</div>
+							</li>
+						</div>
 					</ul>
 				</nav> <!-- .header-menu -->
 
