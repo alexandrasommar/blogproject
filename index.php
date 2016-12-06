@@ -20,7 +20,7 @@
 	<!-- Posts -->
 	<div class="post-container">
 		<div class="post">
-			<div class="post__img"><a href="post.html"><img class="post__img--picture" src="img/volvo_bg_1.jpg" alt="Bil"></a></div>
+			<div class="post__img"><a href="post.php"><img class="post__img--picture" src="img/volvo_bg_1.jpg" alt="Bil"></a></div>
 			<div class="post-text">
 				<h2><a href="post.html">Lorem ipsum</a></h2>
 				<span>Av: <span class="author"><a href="author.html">Johan Walberg</a></span>, 14 nov 2016</span>
@@ -29,7 +29,7 @@
 		</div>
 
 		<div class="post">
-			<div class="post__img"><a href="post.html"><img class="post__img--picture" src="img/volvo_bg_1.jpg" alt="Bil"></a></div>
+			<div class="post__img"><a href="post.php"><img class="post__img--picture" src="img/volvo_bg_1.jpg" alt="Bil"></a></div>
 			<div class="post-text">
 				<h2><a href="post.html">Lorem ipsum</a></h2>
 				<span>Av: <span class="author"><a href="author.html">Johan Walberg</a></span>, 14 nov 2016</span>
@@ -38,7 +38,7 @@
 		</div>
 
 		<div class="post">
-			<div class="post__img"><a href="post.html"><img class="post__img--picture" src="img/volvo_bg_1.jpg" alt="Bil"></a></div>
+			<div class="post__img"><a href="post.php"><img class="post__img--picture" src="img/volvo_bg_1.jpg" alt="Bil"></a></div>
 			<div class="post-text">
 				<h2><a href="post.html">Lorem ipsum</a></h2>
 				<span>Av: <span class="author"><a href="author.html">Johan Walberg</a></span>, 14 nov 2016</span>
@@ -76,7 +76,7 @@
 	<!-- Posts -->
 	<div class="post-container">
 		<div class="post">
-			<div class="post__img"><a href="post.html"><img class="post__img--picture" src="img/volvo_bg_1.jpg" alt="Bil"></a></div>
+			<div class="post__img"><a href="post.php"><img class="post__img--picture" src="img/volvo_bg_1.jpg" alt="Bil"></a></div>
 			<div class="post-text">
 				<h2><a href="post.html">Lorem ipsum</a></h2>
 				<span>Av: <span class="author"><a href="author.html">Johan Walberg</a></span>, 14 nov 2016</span>
@@ -85,7 +85,7 @@
 		</div>
 
 		<div class="post">
-			<div class="post__img"><a href="post.html"><img class="post__img--picture" src="img/volvo_bg_1.jpg" alt="Bil"></a></div>
+			<div class="post__img"><a href="post.php"><img class="post__img--picture" src="img/volvo_bg_1.jpg" alt="Bil"></a></div>
 			<div class="post-text">
 				<h2><a href="post.html">Lorem ipsum</a></h2>
 				<span>Av: <span class="author"><a href="author.html">Johan Walberg</a></span>, 14 nov 2016</span>
@@ -94,7 +94,7 @@
 		</div>
 
 		<div class="post">
-			<div class="post__img"><a href="post.html"><img class="post__img--picture" src="img/volvo_bg_1.jpg" alt="Bil"></a></div>
+			<div class="post__img"><a href="post.php"><img class="post__img--picture" src="img/volvo_bg_1.jpg" alt="Bil"></a></div>
 			<div class="post-text">
 				<h2><a href="post.html">Lorem ipsum</a></h2>
 				<span>Av: <span class="author"><a href="author.html">Johan Walberg</a></span>, 14 nov 2016</span>
