@@ -7,7 +7,7 @@
 
 				<!-- Header navigation left -->
 
-				<div class="header-menu header-menu__left">
+				<div class="header__menu header-menu__left">
 					<nav>
 						<ul>
 							<li><a href="#">Bilen</a></li>
@@ -19,13 +19,13 @@
 
 				<!-- Header navigation center -->
 
-				<div class="header-menu header-menu__logo">
+				<div class="header__menu header-menu__logo">
 		                <a href="index.php"><img class="logo-img" src="img/Volvo_Logos_Iron_Mark.png" alt="Volvo"></a>         
 				</div> <!-- .header-menu & header-menu__logo -->
 				
 				<!-- Responsive navigation. Hidden if bigger than 800px -->
 
-				<div class="header-menu toggle-menu">
+				<div class="header__menu toggle-menu">
 					<input type="checkbox" id="menu-toggle">
 						<label for="menu-toggle" class="label-toggle"></label>
 					</input>
@@ -46,7 +46,7 @@
 		
 				<!-- Header navigation right -->
 
-				<div class="header-menu header-menu__right">
+				<div class="header__menu header-menu__right">
 		        	<nav>
 		                <ul>
 		                	<li><a href="#">Arkiv</a></li>
@@ -57,4 +57,4 @@
 		        </div> <!-- .header-menu & header-menu__right -->
 			</div> <!-- .header-menu__container -->
 
-		</nav>
+		</nav> <!-- .header__nav -->

@@ -58,33 +58,33 @@ body {
 	width: 95%;
 }
 
-.header-menu {
+.header__menu {
 	font-family: 'Lato', sans-serif;
 	font-weight: 300;
 }
 
-.header-menu a {
+.header__menu a {
 	color: #9d9d9d;
 	text-decoration: none;
 	vertical-align: top;
 	text-transform: uppercase;
 }
 
-.header-menu li a:hover {
+.header__menu li a:hover {
 	color: #9d9d9d; 
      text-decoration:none; 
      cursor:pointer;
      border-bottom: 1px solid #9d9d9d;
 }
 
-.header-menu ul {
+.header__menu ul {
 	list-style: none;
 	padding: 10px 0;
 	text-align:center;
 	margin: 0;
 }
 
-.header-menu li {
+.header__menu li {
 	text-decoration: none;
 	display: inline;
 	padding: 0 15px;
