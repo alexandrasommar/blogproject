@@ -12,7 +12,7 @@ $conn = mysqli_connect("localhost", "root", "", "volvo");
 $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
 if($mysqli->connect_errno) {
-	echo "fail";
+	echo "Query Failed";
 }
 
 mysqli_set_charset($conn, "utf8");
