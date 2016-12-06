@@ -756,15 +756,7 @@ li:hover ul {
 
 @media screen and (max-width: 1020px) {
 
-	.header-menu__left {
-		display: none;
-	}
-
-	.header-menu__right {
-		display: none;
-	}
-
-	.header-menu__logo {
+	.header__menu--block {
 		display: none;
 	}
 

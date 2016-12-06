@@ -9,7 +9,7 @@
 
 				<!-- Header navigation left -->
 
-				<nav class="header__menu">
+				<nav class="header__menu header__menu--block">
 					<ul>
 						<li><a href="#">Bilen</a></li>
 						<li><a href="#">Kampanjen</a></li>
@@ -38,7 +38,7 @@
 
 				<!-- Header navigation center -->
 
-				<div class="header__menu">
+				<div class="header__menu header__menu--block">
 		                <a href="index.php"><img class="logo-img" src="img/Volvo_Logos_Iron_Mark.png" alt="Volvo"></a>         
 				</div> <!-- .header-menu & header-menu__logo -->
 				
@@ -65,7 +65,7 @@
 		
 				<!-- Header menu right -->
 
-				<nav class="header__menu">
+				<nav class="header__menu header__menu--block">
 	                <ul>
 	                	<li><a href="#">Arkiv</a></li>
 	                    <li><a href="contact.php">Kontakt</a></li>
