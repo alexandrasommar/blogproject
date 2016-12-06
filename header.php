@@ -8,3 +8,4 @@
 					</div>
 				</div> <!-- .header__text -->
 		</header>
+	</div>
