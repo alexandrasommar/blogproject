@@ -25,7 +25,7 @@
 							    $cat_id = $row['cat_id'];
 							    $cat_name = $row['cat_name'];
 
-							    echo "<li><a href=''>$cat_name</a></li><br>";
+							    echo "<li><a href='category.php?cat=$cat_id'>$cat_name</a></li><br>";
 								}
 						        ?>   
 						        </ul>
