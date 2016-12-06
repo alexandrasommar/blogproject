@@ -24,8 +24,12 @@ if($stmt->prepare($query)) {
 		while(mysqli_stmt_fetch($stmt)) {
 
 			?>
+			<div class="category-headline">
+			<h3><?php echo $category;  ?></h3>
+		</div>
+		
 
-			<div class="post-category">
+		<div class="post-category">
 			<div class="post-category-img">
 				<div class="post__img"><a href="post.html"><img class="post__img--picture" src="img/volvo_bg_1.jpg" alt="Bil"></a></div>
 			</div>
@@ -37,11 +41,6 @@ if($stmt->prepare($query)) {
 			</div>
 			</div>
 		</div>
-
-
-
-
-
 			<?php
 
 		}
@@ -55,23 +54,7 @@ if($stmt->prepare($query)) {
 	
 	
 	
-		<div class="category-headline">
-			<h3><?php echo $category;  ?></h3>
-		</div>
 		
-
-		<div class="post-category">
-			<div class="post-category-text">
-				<div class="post-text post-text-category">
-				<h2><a href="post.html">Lorem ipsum</a></h2>
-				<span class="byline-category">Av: <span class="author">Johan Walberg</span>, 14 nov 2016</span>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis eos repellat nihil sed explicabo labore, mollitia provident optio sit eveniet.</p>
-			</div>
-			</div>
-			<div class="post-category-img">
-				<div class="post__img"><a href="post.html"><img class="post__img--picture" src="img/volvo_bg_1.jpg" alt="Bil"></a></div>
-			</div>
-		</div>
 	</div>
 
 	
