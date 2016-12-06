@@ -728,6 +728,30 @@ div.panel.show {
 	box-shadow: -5px 0px 11px 0px rgba(0,0,0,0.75);
 }
 
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    display: inline;
+    position: relative;
+}
+
+ul ul {
+
+	display: inline-block;
+}
+
+ul ul ul {
+    position: absolute;
+    display: none;
+}
+
+li:hover ul {
+	
+    display: block;
+}
 
 
 @media screen and (max-width: 1020px) {

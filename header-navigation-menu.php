@@ -8,7 +8,18 @@
 					<ul>
 						<li><a href="#">Bilen</a></li>
 						<li><a href="#">Kampanjen</a></li>
-						<li><a href="category.php">Kategorier</a></li>
+						<ul>
+						    <li>
+						        <a href="">Birds</a>
+						        <ul>
+						            <li><a href="">Ratites</a></li>
+						            <li><a href="">Fowl</a></li>
+						            <li><a href="">Neoaves</a></li>
+						        </ul>
+						    </li>
+						    
+						    <!-- etc. -->
+						</ul>
 					</ul>
 				</nav> <!-- .header-menu -->
 
