@@ -28,9 +28,10 @@
 							<li><a href="#">Kampanjen</a></li>
 							<li><a href="category.html">Kategorier</a></li>
 						</ul>
+
 					</nav>
 				</div> <!-- .header-menu & header-menu__left -->
-
+					</nav>
 				<!-- Header navigation center -->
 
 				<div class="header-menu header-menu__logo">
