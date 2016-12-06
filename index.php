@@ -22,8 +22,8 @@
 		<div class="post">
 			<div class="post__img"><a href="post.php"><img class="post__img--picture" src="img/volvo_bg_1.jpg" alt="Bil"></a></div>
 			<div class="post-text">
-				<h2><a href="post.html">Lorem ipsum</a></h2>
-				<span>Av: <span class="author"><a href="author.html">Johan Walberg</a></span>, 14 nov 2016</span>
+				<h2><a href="post.php">Lorem ipsum</a></h2>
+				<span>Av: <span class="author"><a href="author.php">Johan Walberg</a></span>, 14 nov 2016</span>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis eos repellat nihil sed explicabo labore, mollitia provident optio sit eveniet.</p>
 			</div>
 		</div>
@@ -31,8 +31,8 @@
 		<div class="post">
 			<div class="post__img"><a href="post.php"><img class="post__img--picture" src="img/volvo_bg_1.jpg" alt="Bil"></a></div>
 			<div class="post-text">
-				<h2><a href="post.html">Lorem ipsum</a></h2>
-				<span>Av: <span class="author"><a href="author.html">Johan Walberg</a></span>, 14 nov 2016</span>
+				<h2><a href="post.php">Lorem ipsum</a></h2>
+				<span>Av: <span class="author"><a href="author.php">Johan Walberg</a></span>, 14 nov 2016</span>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis eos repellat nihil sed explicabo labore, mollitia provident optio sit eveniet.</p>
 			</div>
 		</div>
@@ -40,8 +40,8 @@
 		<div class="post">
 			<div class="post__img"><a href="post.php"><img class="post__img--picture" src="img/volvo_bg_1.jpg" alt="Bil"></a></div>
 			<div class="post-text">
-				<h2><a href="post.html">Lorem ipsum</a></h2>
-				<span>Av: <span class="author"><a href="author.html">Johan Walberg</a></span>, 14 nov 2016</span>
+				<h2><a href="post.php">Lorem ipsum</a></h2>
+				<span>Av: <span class="author"><a href="author.php">Johan Walberg</a></span>, 14 nov 2016</span>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis eos repellat nihil sed explicabo labore, mollitia provident optio sit eveniet.</p>
 			</div>
 		</div>
@@ -78,8 +78,8 @@
 		<div class="post">
 			<div class="post__img"><a href="post.php"><img class="post__img--picture" src="img/volvo_bg_1.jpg" alt="Bil"></a></div>
 			<div class="post-text">
-				<h2><a href="post.html">Lorem ipsum</a></h2>
-				<span>Av: <span class="author"><a href="author.html">Johan Walberg</a></span>, 14 nov 2016</span>
+				<h2><a href="post.php">Lorem ipsum</a></h2>
+				<span>Av: <span class="author"><a href="author.php">Johan Walberg</a></span>, 14 nov 2016</span>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis eos repellat nihil sed explicabo labore, mollitia provident optio sit eveniet.</p>
 			</div>
 		</div>
@@ -87,8 +87,8 @@
 		<div class="post">
 			<div class="post__img"><a href="post.php"><img class="post__img--picture" src="img/volvo_bg_1.jpg" alt="Bil"></a></div>
 			<div class="post-text">
-				<h2><a href="post.html">Lorem ipsum</a></h2>
-				<span>Av: <span class="author"><a href="author.html">Johan Walberg</a></span>, 14 nov 2016</span>
+				<h2><a href="post.php">Lorem ipsum</a></h2>
+				<span>Av: <span class="author"><a href="author.php">Johan Walberg</a></span>, 14 nov 2016</span>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis eos repellat nihil sed explicabo labore, mollitia provident optio sit eveniet.</p>
 			</div>
 		</div>
@@ -96,8 +96,8 @@
 		<div class="post">
 			<div class="post__img"><a href="post.php"><img class="post__img--picture" src="img/volvo_bg_1.jpg" alt="Bil"></a></div>
 			<div class="post-text">
-				<h2><a href="post.html">Lorem ipsum</a></h2>
-				<span>Av: <span class="author"><a href="author.html">Johan Walberg</a></span>, 14 nov 2016</span>
+				<h2><a href="post.php">Lorem ipsum</a></h2>
+				<span>Av: <span class="author"><a href="author.php">Johan Walberg</a></span>, 14 nov 2016</span>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis eos repellat nihil sed explicabo labore, mollitia provident optio sit eveniet.</p>
 			</div>
 		</div>
