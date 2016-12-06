@@ -11,7 +11,6 @@
 
 	<!-- Message -->
 
-
 	<div class="article-container">
 		<div class="post__article-text">
 			<div class="post-date">

@@ -255,7 +255,7 @@ body {
     padding: 5px;
 }
 
-.post-text a {
+.post__text a {
 	text-decoration: none;
 	color: #222;
 }
@@ -279,17 +279,15 @@ body {
 	width: 100%;
 }
 
-.post__img--picture {
+.post__img--styling {
 	width: 100%;
 	padding: 5px;
     border: solid 1px #EFEFEF;
 }
 
-a:hover img.post__img--picture {
+a:hover img.post__img--styling {
     border: solid 1px #CCC;
-    -moz-box-shadow: 1px 1px 5px #999;
-    -webkit-box-shadow: 1px 1px 5px #999;
-        box-shadow: 1px 1px 5px #999;
+    box-shadow: 1px 1px 5px #999;
 }
 
 /* Slider */
@@ -415,7 +413,7 @@ font-size: 25px;
 	width: 50%;
 }
 
-.post__article h2 {
+.post__article-text h2 {
 	font-family: 'Lato', sans-serif;
 	font-weight: 600;
 	font-size: 40px;
@@ -423,7 +421,7 @@ font-size: 25px;
 	margin: 10px 0;
 }
 
-.post__article p {
+.post__article-text p {
 	font-family: 'Lato', sans-serif;
 	font-weight: 100;
 	text-align: left;
