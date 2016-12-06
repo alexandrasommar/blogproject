@@ -1,10 +1,15 @@
+<div class="header__container--post">
+
 <?php include "head.php"; ?>
 <?php include "header-navigation-menu.php"; ?>
+
+</div>
 	
 	<!-- Header -->
 	
 
 	<!-- Message -->
+
 
 	<div class="article-container">
 		<div class="post__article">
