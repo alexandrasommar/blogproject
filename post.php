@@ -13,7 +13,7 @@
 
 
 	<div class="article-container">
-		<div class="post__article">
+		<div class="post__article-text">
 			<div class="post-date">
 				<span>14 nov 2016</span>
 				<span>1+ <i class="fa fa-heart post-heart" aria-hidden="true"></i></span>

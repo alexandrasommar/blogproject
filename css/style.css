@@ -187,8 +187,6 @@ body {
 	color: #fff;
 }
 
-
-
 /* message */
 
 .message__container {
@@ -226,7 +224,7 @@ body {
 
 /* posts */
 
-.post-container {
+.post {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
@@ -234,7 +232,7 @@ body {
 	margin-bottom: 120px;
 }
 
-.post {
+.post__article {
 	display: flex;
 	flex-direction: column;
 	width: 25%;
@@ -242,13 +240,13 @@ body {
 	text-align: center;
 }
 
-.post h2 {
+.post__article h2 {
 	color: #222;
 	margin: 0;
 	padding: 5px;
 }
 
-.post p {
+.post__article p {
 	font-family: 'Lato', sans-serif;
 	font-weight: 300;
     font-size: 14px;
@@ -262,7 +260,7 @@ body {
 	color: #222;
 }
 
-.post span {
+.post__article span {
 	font-family: 'Lato', sans-serif;
 	font-weight: 100;
     font-size: 14px;
@@ -270,7 +268,7 @@ body {
 	font-style: italic;
 }
 
-.post .author {
+.post__article .author {
 	font-style: bold;
 	color: #222;
 	font-family: 'Lato', sans-serif;
@@ -413,7 +411,7 @@ font-size: 25px;
 	margin: 60px 0;
 }
 
-.post__article {
+.post__article-text {
 	width: 50%;
 }
 
@@ -847,7 +845,7 @@ div.panel.show {
 }
 
 @media screen and (max-width: 800px) {
-	.post-container {
+	.post {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -855,7 +853,7 @@ div.panel.show {
 	margin-bottom: 120px;
 }
 
-	.post {
+	.post__article {
 		display: flex;
 		flex-direction: column;
 		width: 75%;
