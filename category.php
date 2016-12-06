@@ -2,11 +2,11 @@
 
 <div class="header__container--post">
 
-
+<?php include "header-navigation-menu.php"; ?>
 	
 </div>
 
-<?php include "header-navigation-menu.php"; ?>
+
 
 <div class="catagory-container">
 
