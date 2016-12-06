@@ -40,6 +40,8 @@ if($stmt->prepare($query)) {
 
 
 
+
+
 			<?php
 
 		}
@@ -50,7 +52,7 @@ if($stmt->prepare($query)) {
 ?>
 
 
-	<!-- Message -->
+	
 	
 	
 		<div class="category-headline">
