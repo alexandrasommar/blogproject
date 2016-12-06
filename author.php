@@ -1,7 +1,7 @@
 <?php include "head.php"; ?>
 
 	<!-- Header -->
-<div class="bg-img">
+<div class="header__container--post">
 <?php include "header-navigation-menu.php"; ?>
 </div>
 	
