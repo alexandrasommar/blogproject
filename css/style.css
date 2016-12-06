@@ -70,13 +70,6 @@ body {
 	text-transform: uppercase;
 }
 
-.header__menu li a:hover {
-	color: #9d9d9d; 
-     text-decoration:none; 
-     cursor:pointer;
-     border-bottom: 1px solid #9d9d9d;
-}
-
 .header__menu ul {
 	list-style: none;
 	padding: 10px 0;
@@ -88,6 +81,13 @@ body {
 	text-decoration: none;
 	display: inline;
 	padding: 0 15px;
+}
+
+.header__menu li a:hover {
+	color: #9d9d9d; 
+     text-decoration:none; 
+     cursor:pointer;
+     border-bottom: 1px solid #9d9d9d;
 }
 
 .logo-img {
