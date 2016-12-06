@@ -1,9 +1,8 @@
 <body>
 	
 	<!-- Header -->
-	<div class="header__container">
 		<header class="header">
-			<div class="header-menu__container">
+			<nav class="header__nav">
 				<div class="header-container">
 
 				<!-- Header navigation left -->
@@ -58,4 +57,4 @@
 		        </div> <!-- .header-menu & header-menu__right -->
 			</div> <!-- .header-menu__container -->
 
-			</div>
+		</nav>
