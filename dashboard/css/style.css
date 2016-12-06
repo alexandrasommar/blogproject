@@ -1,0 +1,319 @@
+@font-face {
+    font-family: 'VolvoBroad';
+    src: url(VolvoBroad.ttf);
+}
+
+@font-face {
+    font-family: 'VolvoBold';
+    src: url(volvosanspro-bold-webfont.ttf);
+}
+
+@font-face {
+    font-family: 'VolvoMedium';
+    src: url(volvosanspro-medium-webfont.ttf);
+}
+
+@font-face {
+    font-family: 'VolvoLight';
+    src: url(volvosanspro-light-webfont.ttf);
+}
+
+body {
+	background-color: #222;
+	color: #9d9d9d;
+	margin: 0;
+	font-family: 'VolvoLight';
+}
+
+.nav {
+	border-bottom: 1px solid #101010;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.content_container {
+	display: flex;
+	flex-direction: row;
+}
+
+aside {
+	width: 20%;
+}
+
+main {
+	background-color: #fff;
+	color: #222;
+	height: 100vh;
+	width: 80%;
+}
+
+.aside__nav--header {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+.aside__nav--header .header {
+	padding: 5px;
+}
+
+.aside__nav--height {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+.aside__nav--height li {
+	height: 60px;
+	width: 100%;
+}
+
+.aside__nav--height .aside {
+	padding: 10px;
+	width: 40px;
+	font-size: 30px;
+	padding-left: 25px;
+}
+
+.aside__nav--header a {
+	text-decoration: none;
+	color: #9d9d9d;
+}
+
+.aside__nav--height a {
+	text-decoration: none;
+	color: #9d9d9d;
+}
+
+.aside__nav--height li:hover {
+	background-color: #000;
+}
+
+.aside__nav--header li {
+	padding: 15px;
+}
+
+.aside__nav--header li:hover {
+	background-color: #000;
+}
+
+.aside__nav {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	width: 100%;
+}
+
+.nav__right {
+	height: 100%;
+}
+
+.user-pic {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 30px 0; 
+}
+
+.user-pic i {
+	padding-bottom: 15px;
+}
+
+.nav__left span {
+	padding-left: 15px;
+}
+
+.accordion {
+    outline: none;
+    transition: 0.4s;
+}
+
+.aside__nav--visible li {
+	height: 40px;
+	padding-left: 30px;
+	width: 100%;
+}
+
+.panel ul {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+div.panel {
+    display: none;
+}
+
+/* The "show" class is added to the accordion panel when the user clicks on one of the buttons. This will show the panel content */
+div.panel.show {
+    display: block;
+}
+
+.fa-caret-down {
+	padding-left: 5px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    max-width: 100%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content li:hover {
+	background-color: #F0F2ED;
+}
+
+.dropdown-content ul {
+	list-style: none;
+}
+
+.dropdown-content li {
+	width: 100%;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-flex {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	width: 100%;
+}
+
+
+
+.toggle-menu {
+	
+  	min-width: 100%;
+  	display: none;
+}
+
+ #menu-toggle {display: none;}
+  
+  .label-toggle {display: none;}
+
+
+@media screen and (max-width: 1020px)   {
+	aside {
+	width: 25%;
+}
+
+	main {
+		width: 75%;
+	}
+}
+
+@media screen and (max-width: 780px)   {
+	aside {
+	width: 30%;
+}
+
+	main {
+		width: 70%;
+	}
+}
+
+@media screen and (max-width: 600px)   {
+	aside {
+		display: none;
+	}
+	main {
+		width: 100%;
+	}
+
+	.nav__right {
+		display: none;
+	}
+
+	.nav__left {
+		display: none;
+	}
+
+	.content_container {
+	display: flex;
+	flex-direction: column;
+	}
+
+	.aside__nav {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+}
+
+.toggle-menu__bar {
+	width: 100%;
+}
+
+.toggle-menu {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.label-toggle {
+      background: linear-gradient(to bottom, #9d9d9d 0%, #9d9d9d 20%, transparent 20%, transparent 40%, #9d9d9d 40%, #9d9d9d 60%, transparent 60%, transparent 80%, #9d9d9d 80%, #9d9d9d 100%); //Gradient Hamburger
+      cursor: pointer;
+      display: block;
+      float: right;
+      height: 35px;
+      width: 35px;
+    }
+
+.hidden {
+      display: flex;
+      flex-direction: column;
+      justify-content: : center;
+      height: 0;
+      opacity: 0;
+      /*text-align: center;*/
+      transition: all 1s ease;
+      width: 100%;
+      visibility: hidden;
+	}
+
+.hidden-flex {
+	width: 100%;
+}
+
+.hidden ul {
+	list-style: none;
+}
+
+.toggle-menu__list li {
+	padding: 10px;
+}
+
+.toggle-menu__list i {
+	padding-right: 10px;
+}
+
+.hidden a {
+	text-decoration: none;
+	color: #9d9d9d;
+	font-size: 30px;
+}
+
+#menu-toggle:checked ~ .hidden {
+  opacity: 1;
+  height: 100vh;
+  visibility: visible;
+    }
+}
