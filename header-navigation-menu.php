@@ -1,3 +1,8 @@
+		
+
+		<?php 
+		include ("include/db.php"); ?>
+
 		<header class="header">
 			<nav class="header__nav">
 				<div class="header-container">
@@ -10,11 +15,19 @@
 						<li><a href="#">Kampanjen</a></li>
 						<ul>
 						    <li>
-						        <a href="">Birds</a>
+						        <a href="">Kategorier</a>
 						        <ul>
-						            <li><a href="">Ratites</a></li>
-						            <li><a href="">Fowl</a></li>
-						            <li><a href="">Neoaves</a></li>
+						        <?php 
+						        $query = "SELECT * FROM categories";
+							    $select_categories = mysqli_query($conn,$query);   
+
+							    while ($row = mysqli_fetch_assoc($select_categories)) {        
+							    $cat_id = $row['cat_id'];
+							    $cat_name = $row['cat_name'];
+
+							    echo "<li><a href=''>$cat_name</a></li><br>";
+								}
+						        ?>   
 						        </ul>
 						    </li>
 						    
