@@ -35,7 +35,7 @@ if($stmt->prepare($query)) {
 			
 			
 			for ($i=0; $i < $row_cnt; $i++) { 
-
+				if($i & 1) {
 
 				?>
 			<div class="post-category">
@@ -50,7 +50,9 @@ if($stmt->prepare($query)) {
 					</div>
 				</div>
 			</div>
-			
+			<?php
+		}elseif(!$i & 1) {
+			?>
 
 			<div class="post-category">
 				<div class="post-category-text">
@@ -69,7 +71,7 @@ if($stmt->prepare($query)) {
 
 			
 			<?php
-			
+			}
 				}
 			
 		
