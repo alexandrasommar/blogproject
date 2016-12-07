@@ -3,7 +3,7 @@
 <div class="header__container--post">
 
 <?php include "header-navigation-menu.php"; ?>
-<?php $post = $_GET["post"]; ?>
+<!-- <?php $post = $_GET["post"]; ?> -->
 </div>
 
 	<!-- Header -->
@@ -14,7 +14,7 @@
 	<section class="article-container">
 		<article class="post__article-text">
 			<div class="post-date">
-				<span><time>14 nov 2016</time></span>
+				<time>14 nov 2016</time>
 				<span>1+ <i class="fa fa-heart post-heart" aria-hidden="true"></i></span>
 			</div>
 			<h2>Det är ett välkänt faktum att läsare</h2>
