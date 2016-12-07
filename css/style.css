@@ -339,7 +339,7 @@ a:hover img.post__img--styling {
 
 /* Footer */
 
-.footer-container {
+.footer__container {
 	width:100%;
 	height:500px;
 	overflow:hidden;
@@ -349,44 +349,26 @@ a:hover img.post__img--styling {
 	text-transform: uppercase;
 }
 
-.nav {
+.footer__nav {
   display: flex;
   justify-content: center;
   padding-top: 40px;
 }
 
-.nav li {
+.footer__nav li {
 display: inline;
 list-style-type: none;
 padding-right: 20px;
 font-size: 25px;
 }
 
-.nav li a {
+.footer__nav li a {
   text-decoration: none;
   color: #e9e9f3;
 }
 
 .social-icon {
   width: 40px;
-}
-
-.nav-social-icon {
-  display: flex;
-  justify-content: center;
-  padding-top: 40px;
-}
-
-.nav-social-icon li {
-	display: inline;
-	list-style-type: none;
-	padding-right: 20px;
-	font-size: 25px;
-}
-
-.nav-social-icon li a {
-	text-decoration: none;
-	color: #e9e9f3;
 }
 
 .volvo-logo {
