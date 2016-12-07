@@ -3,7 +3,7 @@
 <div class="header__container--post">
 
 <?php include "header-navigation-menu.php"; ?>
-
+<?php $post = $_GET["post"]; ?>
 </div>
 
 	<!-- Header -->
