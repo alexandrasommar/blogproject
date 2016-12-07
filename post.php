@@ -1,22 +1,23 @@
 <?php include "head.php"; ?>
 
-<div class="header__container--post">
+	<!-- Header -->
+
+<div class="blog-post__image">
 
 <?php include "header-navigation-menu.php"; ?>
+<!-- Kommenterade bort nedan kod då det gav mig ett felmeddelande. Ska den koden verkligen vara där? -->
 <!-- <?php $post = $_GET["post"]; ?> -->
-</div>
 
-	<!-- Header -->
+</div> <!-- .blog-post__image -->
+
+	<!-- Post -->
 	
-
-	<!-- Message -->
-
-	<section class="article-container">
-		<article class="post__article-text">
-			<div class="post-date">
+	<section class="blog-post">
+		<article class="blog-post__article">
+			<div class="blog-post__date">
 				<time>14 nov 2016</time>
-				<span>1+ <i class="fa fa-heart post-heart" aria-hidden="true"></i></span>
-			</div>
+				<span>1+ <i class="fa fa-heart blog-post__icon" aria-hidden="true"></i></span>
+			</div> <!-- .blog-post__date -->
 			<h2>Det är ett välkänt faktum att läsare</h2>
 			<p>Det är ett välkänt faktum att läsare distraheras av läsbar text på en sida när man skall studera layouten. Poängen med Lorem Ipsum är att det ger ett normalt ordflöde, till skillnad från "Text här, Text här", och ger intryck av att vara läsbar text. Många publiseringprogram och webbutvecklare använder Lorem Ipsum som test-text, och en sökning efter "Lorem Ipsum" avslöjar många webbsidor under uteckling. Olika versioner har dykt upp under åren, ibland av olyckshändelse, ibland med flit (mer eller mindre humoristiska).</p>
 
@@ -59,8 +60,8 @@
 						</ul>
 					</div>
 				</div>
-		</article>
-	</section>
+		</article> <!-- .blog-post__article -->
+	</section> <!-- .blog-post -->
 
 	
 	
