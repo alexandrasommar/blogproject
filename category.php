@@ -14,7 +14,7 @@
 
 $category = $_GET['cat'];
 
-$query = "SELECT * FROM posts WHERE post_category_id = {$category}";
+$query = "SELECT posts.*, categories.cat_name FROM posts LEFT JOIN categories ON posts.post_category_id = categories.cat_id WHERE post_category_id = {$category}";
 if ($result = mysqli_query($conn, $query)) { 
 		$row_cnt = mysqli_num_rows($result);
 	}
@@ -24,7 +24,7 @@ if ($result = mysqli_query($conn, $query)) {
 if($stmt->prepare($query)) {
 
 		$stmt->execute();
-		$stmt->bind_result($post_id, $category_id, $post_title, $post_author, $post_date, $post_image, $post_content, $post_status);
+		$stmt->bind_result($post_id, $category_id, $post_title, $post_author, $post_date, $post_image, $post_content, $post_status, $cat_name);
 
 		
 		
@@ -32,6 +32,7 @@ if($stmt->prepare($query)) {
 
 
 			<?php
+			
 			
 			for ($i=0; $i < $row_cnt; $i++) { 
 
@@ -80,7 +81,7 @@ if($stmt->prepare($query)) {
 		}
 		?>
 	<div class="category-headline">
-			<h3><?php echo $category;  ?></h3>
+			<h3><?php echo $cat_name;  ?></h3>
 			</div>
 		<?php
 }
