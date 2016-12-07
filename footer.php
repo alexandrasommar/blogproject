@@ -9,14 +9,14 @@
 				<li><a href="#">Volvo</a></li>
 			</ul>
 		</nav>
-		<div class="footer__nav">
+		<nav class="footer__nav">
 			<ul>
 				<li><a href="#"><img class="social-icon" src="img/facebook.svg" alt="Facebook icon"></a></li>
 				<li><a href="#"><a href="#"><img class="social-icon" src="img/youtube.svg" alt="Youtube icon"</a></li>
 				<li><a href="#"><a href="#"><img class="social-icon" src="img/instagram.svg" alt="Instagram icon"</a></li>
 				<li><a href="#"><a href="#"><img class="social-icon" src="img/twitter.svg" alt="Twitter icon"</a></li>
 			</ul>
-		</div>
+		</nav>
 		<div class="volvo-logo"><img class="volvo-icon" src="img/volvo-logo.svg" alt="Volvo logo"></div>
 	</footer>
 
