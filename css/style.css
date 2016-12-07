@@ -577,6 +577,10 @@ div.panel.show {
 	font-family: 'Lato', sans-serif;
 }
 
+.post__img--picture {
+	width: 100%;
+}
+
 .post-category-text h2 {
 	margin: 5px;
 	font-weight: 400;
