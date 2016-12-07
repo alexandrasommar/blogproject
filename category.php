@@ -1,6 +1,6 @@
 <?php include "head.php"; ?>
 
-<div class="header__container--post">
+<div class="blog-post__image">
 
 <?php include "header-navigation-menu.php"; ?>
 	
