@@ -36,35 +36,32 @@ if($stmt->prepare($query)) {
 			
 			for ($i=0; $i < $row_cnt; $i++) { 
 
-			if ($i & 1) { 
 
 				?>
 			<div class="post-category">
 				<div class="post-category-img">
-					<div class="post__img"><a href="post.html"><img class="post__img--picture" src="img/volvo_bg_1.jpg" alt="Bil"></a></div>
+					<div class="post__img"><a href="post.php?post=<?php echo $post_id; ?>"><img class="post__img--picture" src="img/volvo_bg_1.jpg" alt="Bil"></a></div>
 				</div>
 				<div class="post-category-text">
 					<div class="post-text">
-						<h2><a href="post.html"><?php echo $post_title;?></a></h2>
+						<h2><a href="post.php?post=<?php echo $post_id; ?>"><?php echo $post_title; ?></a></h2>
 						<span class="byline-category">Av: <span class="author"><?php echo $post_author; ?></span>,<?php echo $post_date; ?></span>
 						<p><?php echo $post_content; ?></p>
 					</div>
 				</div>
 			</div>
-			<?php
 			
-			}elseif(!$i & 1) { ?>
 
 			<div class="post-category">
 				<div class="post-category-text">
 					<div class="post-text post-text-category">
-						<h2><a href="post.html"><?php echo $post_title; ?></a></h2>
+						<h2><a href="post.php?post=<?php echo $post_id; ?>"><?php echo $post_title; ?></a></h2>
 						<span class="byline-category">Av: <span class="author"><?php echo $post_author; ?></span>, <?php echo $post_date; ?></span>
 						<p><?php echo $post_content; ?></p>
 					</div>
 				</div>
 				<div class="post-category-img">
-					<div class="post__img"><a href="post.html"><img class="post__img--picture" src="img/volvo_bg_1.jpg" alt="Bil"></a>
+					<div class="post__img"><a href="post.php?post=<?php echo $post_id; ?>"><img class="post__img--picture" src="img/volvo_bg_1.jpg" alt="Bil"></a>
 					</div>
 				</div>
 			</div>
