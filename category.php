@@ -75,7 +75,7 @@ if($stmt->prepare($query)) {
 		
 		}
 		
-		}
+		
 		?>
 	<div class="category-headline">
 			<h3><?php echo $cat_name;  ?></h3>
