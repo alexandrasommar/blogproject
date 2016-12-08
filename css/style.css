@@ -310,7 +310,6 @@ a:hover img.post__img--styling {
 	align-items: center;
 	background-color: #313340;
 	height: 100vh;
-/*	padding: 120px 0;*/
 }
 
 .slider__article {
@@ -318,7 +317,7 @@ a:hover img.post__img--styling {
 	color: #C1C1C1;
 }
 
-.iconfont {
+.slider__icon-font {
 	display: flex;
 	flex-direction: column;
 	align-items: center;

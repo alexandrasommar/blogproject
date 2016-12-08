@@ -1,23 +1,33 @@
 <section class="slider">
+
 	<section class="slider__article">
-		<div class="iconfont"><i class="fa fa-5x fa-car" aria-hidden="true"></i></div>
-		<div class="text">
+		<div class="slider__icon-font">
+			<i class="fa fa-5x fa-car" aria-hidden="true"></i>
+		</div> <!-- .slider__icon-font -->
+		<div class="slider__text">
 			<h3>Lorem ipsum</h3>
 			<p>Lorem Ipsum är en utfyllnadstext från tryck- och förlagsindustrin. Lorem ipsum har varit standard ända sedan 1500-talet.</p>
-		</div>
-	</section>
+		</div> <!-- .slider__text -->
+	</section> <!-- .slider__article -->
+
 	<section class="slider__article">
-		<div class="iconfont"><i class="fa fa-5x fa-recycle" aria-hidden="true"></i></div>
-		<div class="text">
+		<div class="slider__icon-font">
+			<i class="fa fa-5x fa-recycle" aria-hidden="true"></i>
+		</div> <!-- .slider__icon-font -->
+		<div class="slider__text">
 			<h3>Lorem ipsum</h3>
 			<p>Lorem Ipsum är en utfyllnadstext från tryck- och förlagsindustrin. Lorem ipsum har varit standard ända sedan 1500-talet.</p>
-		</div>
-	</section>
+		</div> <!-- .slider__text -->
+	</section> <!-- .slider__article -->
+
 	<section class="slider__article">
-		<div class="iconfont"><i class="fa fa-5x fa-usd" aria-hidden="true"></i></div>
-		<div class="text">
+		<div class="slider__icon-font">
+			<i class="fa fa-5x fa-usd" aria-hidden="true"></i>
+		</div> <!-- .slider__icon-font -->
+		<div class="slider__text">
 			<h3>Lorem ipsum</h3>
 			<p>Lorem Ipsum är en utfyllnadstext från tryck- och förlagsindustrin. Lorem ipsum har varit standard ända sedan 1500-talet.</p>
-		</div>
-	</section>
+		</div> <!-- .slider__text -->
+	</section> <!-- .slider__article -->
+	
 </section> <!-- .slider -->
