@@ -1,16 +1,23 @@
 <?php include "head.php"; ?>
 	
-	<!-- Header -->
-	<div class="bg-img">
+<!-- Header -->
+
+<div class="bg-img">
 
 <?php include "header-navigation-menu.php"; ?>
 <?php include "header.php"; ?>
+
+</div>
 	
-	</div>
+	<!-- Message -->
 
 	<?php include "message.php"; ?>
 
+	<!-- Posts -->
+
 	<section class="post">
+		<div class="post__container">
+	
 	<?php 
 	$query = "SELECT posts.*, categories.cat_id, categories.cat_name, users.user_id FROM posts LEFT JOIN categories ON posts.post_category_id = categories.cat_id LEFT JOIN users ON posts.post_author_id = users.user_id";
 
@@ -21,9 +28,9 @@
 
 		while(mysqli_stmt_fetch($stmt)) {
 
-			?>
+		?>
 
-			<article class="post__article">
+		<article class="post__article">
 			<div class="post__img"><a href="post.php?post=<?php echo $post_id; ?>"><img class="post__img--styling" src="img/volvo_bg_1.jpg" alt="Bil"></a></div>
 			<div class="post__text">
 				<h2><a href="post.php?post=<?php echo $post_id; ?>"><?php echo $post_title; ?></a></h2>
@@ -56,7 +63,7 @@
 	<!-- Posts -->
 
 	
-		
+		</div>
 	</section>
 
 	<!-- Slider -->

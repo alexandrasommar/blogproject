@@ -222,7 +222,9 @@ body {
 	line-height: 30px;
 }
 
-/* posts */
+/* ----------------------------------------------- */
+/* Posts */
+/* ----------------------------------------------- */
 
 .post {
 	display: flex;
@@ -232,12 +234,20 @@ body {
 	margin-bottom: 120px;
 }
 
+.post__container {
+	display: flex;
+	width: 80%;
+	flex-wrap: wrap;
+}
+
 .post__article {
 	display: flex;
 	flex-direction: column;
-	width: 25%;
+	width: 33%;
 	color: #676767;
 	text-align: center;
+	padding: 10px 25px;
+	box-sizing: border-box;
 }
 
 .post__article h2 {
