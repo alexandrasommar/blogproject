@@ -351,7 +351,7 @@ a:hover img.post__img--styling {
 
 .footer {
 	width:100%;
-	height:500px;
+	height: auto;
 	overflow:hidden;
 	background-color: #313340;
 	font-family: 'Lato', sans-serif;
@@ -930,13 +930,17 @@ div.panel.show {
 		padding: 0;
 	}
 
-	.footer__nav--responsive-icon li {
-		padding: 0;
-		width: 50%;
+	.footer__nav--responsive-icon i {
+		font-size: 60px;
+		padding: 0 3px;
 	}
 
-	.footer__nav--responsive-icon img {
-		width: 60px;
+	.footer__logo {
+	    align-items: flex-start;
+	    display: flex;
+	    justify-content: center;
+	    margin: 50px 0 30px 0;
+	    height: auto;
 	}
 
 }

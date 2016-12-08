@@ -11,10 +11,10 @@
 		</nav> <!-- .footer__nav -->
 		<nav class="footer__nav">
 			<ul class="footer__nav--responsive-icon">
-				<li><a href="#"><img class="social-icon" src="img/facebook.svg" alt="Facebook icon"></a></li>
-				<li><a href="#"><img class="social-icon" src="img/youtube.svg" alt="Youtube icon"</a></li>
-				<li><a href="#"><img class="social-icon" src="img/instagram.svg" alt="Instagram icon"</a></li>
-				<li><a href="#"><img class="social-icon" src="img/twitter.svg" alt="Twitter icon"</a></li>
+				<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+				<li><a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+				<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+				<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
 			</ul>
 		</nav> <!-- .footer__nav -->
 		<div class="footer__logo">
