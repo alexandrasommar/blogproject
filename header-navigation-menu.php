@@ -27,17 +27,17 @@
 								    echo "<a href='category.php?cat=$cat_id'>$cat_name</a>";
 									}
 							        ?>   
-								</div>
+								</div> <!-- .dropdown-content -->
 							</li>
-						</div>
+						</div> <!-- .header__menu--dropdown -->
 					</ul>
-				</nav> <!-- .header-menu -->
+				</nav> <!-- .header__menu & header__menu--block -->
 
 				<!-- Header navigation center -->
 
 				<div class="header__menu header__menu--block">
 		                <a href="index.php"><img class="logo-img" src="img/Volvo_Logos_Iron_Mark.png" alt="Volvo"></a>         
-				</div> <!-- .header-menu & header-menu__logo -->
+				</div> <!-- .header__menu & header-menu__logo -->
 				
 				<!-- Responsive navigation. Hidden if bigger than 800px -->
 

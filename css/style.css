@@ -644,9 +644,11 @@ div.panel.show {
 	width: 100%;
 }
 
-/* LOGIN.HTML */
+/* ----------------------------------------------- */
+/* Login.php */
+/* ----------------------------------------------- */
 
-.login-container {
+.login {
 	width: 100%;
 	height: 100vh;
 	background-color: #222;
@@ -656,7 +658,7 @@ div.panel.show {
 	align-items: center;
 }
 
-.login-box {
+.login__box {
 	width: auto;
 	max-width: 80%;
 	display: flex;
@@ -666,24 +668,24 @@ div.panel.show {
 	box-shadow: 6px 6px 15px 0px rgba(0,0,0,0.75);
 }
 
-.login-form {
+.login__form {
 	z-index: 99;
 	background-color: #1b1e23;
 }
 
-.login-image {
+.login__image {
 	width: 100%;
 	position: relative;
 }
 
-.login-image img {
+.login__image img {
 	width: auto;
 	max-width: 100%;
 	height: auto;
 	max-height: 100%;
 }
 
-.login-input {
+.login__input {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -691,7 +693,7 @@ div.panel.show {
 	padding: 0 70px;
 }
 
-.login-input span {
+.login__input span {
 	font-family: 'Lato', sans-serif;
 	font-weight: 100;
 	font-size: 26px;
@@ -700,7 +702,7 @@ div.panel.show {
 	margin: 25px 0;
 }
 
-.login-input input[type=text] {
+.login__input input[type=text] {
 	margin: 10px 0;
 	padding: 3px 0;
 	background: transparent;
@@ -712,7 +714,7 @@ div.panel.show {
     color: #222;
 }
 
-.login-input button {
+.login__input button {
 	width: 100%;
 	margin: 10px;
 	border-radius: 2px;
@@ -723,12 +725,12 @@ div.panel.show {
   	transition: .2s ease;
 }
 
-.login-input button:hover {
+.login__input button:hover {
 	background-color: #F75633;
 	transition: .2s ease;
 }
 
-.login-form {
+.login__form {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
