@@ -11,14 +11,46 @@
 <?php
 $post = $_GET["post"]; 
 
+
+$nameErr = $emailErr = $webErr = $contentErr = "";
+
+if (isset($_POST['submit'])) {
+		
+	if (empty($_POST['name'])) {
+		$nameErr = "<p>Du måste fylla i ditt namn</p>";
+	}
+
+	if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+		$emailErr = "<p>Du måste fylla i en giltig epostadress</p>";
+	}
+
+	if (empty($_POST['website'])) {
+		$webErr = "<p>Du måste fylla i en hemsideadress</p>";
+	}
+
+	if (empty($_POST['content'])) {
+		$contentErr = "<p>Du måste skriva något i kommentaren</p>";
+	} 
+
+} 
+
+
+
 if(isset($_POST['submit'])) {
+	if(!empty($_POST['name']) 
+		&& !empty($_POST['email']) 
+		&& !empty($_POST['website']) 
+		&& !empty($_POST['content'])) {
 
 	$name = $_POST['name'];
-	$email = $_POST['email'];
+	$email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
 	$website = $_POST['website'];
 	$content = $_POST['content'];
 
-
+	$name = mysqli_real_escape_string($conn, $name);
+	$email = mysqli_real_escape_string($conn, $email);
+	$website = mysqli_real_escape_string($conn, $website);
+	$content = mysqli_real_escape_string($conn, $content);
 
 
 	$query ="INSERT INTO comments(comment_post_id, comment_author, comment_date, comment_email, comment_content, comment_website) VALUES('{$post}', '{$name}', CURDATE(), '{$email}', '{$content}', '{$website}')";
@@ -35,7 +67,7 @@ if(isset($_POST['submit'])) {
 	die("query failed" . mysqli_error($conn));
 }
 
-
+}
 
 
  ?>
@@ -87,19 +119,23 @@ if($stmt->prepare($query)) {
 	
 
 	</section> <!-- .blog-post -->
-		<section class="blog-post">
+		<section class="blog-post" id="comment">
 			<div class="comments">
-				<form method="post" action="">
+				<form method="post" action="post.php?post=<?php echo $post; ?>#comment">
 					<label for="name">Namn</label>
-					<input type="text" name="name" >
+					<?php echo $nameErr; ?>
+					<input type="text" name="name">
 
 					<label for="email">Email</label>
-					<input type="email" name="email" >
+					<?php echo $emailErr; ?>
+					<input type="email" name="email">
 
 					<label for="website">Hemsida</label>
-					<input type="text" name="website" >
+					<?php echo $webErr; ?>
+					<input type="text" name="website">
 
 					<label for="content">Inlägg</label>
+					<?php echo $contentErr; ?>
 					<textarea name="content"></textarea>
 					<input type="submit" name="submit" value="Kommentera">
 				</form>	
