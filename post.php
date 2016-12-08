@@ -5,7 +5,7 @@
 <div class="blog-post__image">
 
 <?php include "header-navigation-menu.php"; ?>
-
+<?php include "include/functions.php"; ?>
 
 </div> <!-- .blog-post__image -->
 <?php
@@ -141,7 +141,7 @@ if($stmt->prepare($query)) {
 				</form>	
 			</div>
 	</section>
-
+	<p>Antal kommentarer (<?php countComments(); ?>)</p>
 
 
 	<section class="blog-post">
