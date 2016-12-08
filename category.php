@@ -2,7 +2,9 @@
 
 <div class="blog-post__image">
 
-<?php include "header-navigation-menu.php"; ?>
+<?php include "header-navigation-menu.php"; 
+$category = $_GET['cat'];
+?>
 	
 </div>
 
@@ -10,7 +12,7 @@
 
 <div class="catagory-container">
 <?php
-$category = $_GET['cat'];
+
 $query = "SELECT * FROM categories WHERE cat_id = {$category}";
 if($stmt->prepare($query)) {
 
@@ -21,13 +23,24 @@ if($stmt->prepare($query)) {
 ?>
 			<div class="category-headline">
 				<h3><?php echo $cat_name; } }?></h3>
+			<a href="category.php?cat=<?php echo $category; ?>&sort=desc">Visa senaste</a>
+			<a href="category.php?cat=<?php echo $category; ?>&sort=asc">Visa äldsta</a>
 			</div>
 
 <?php 
 
 
 
-$query = "SELECT * FROM posts WHERE post_category_id = {$category} AND post_status = 1";
+$query = "SELECT * FROM posts WHERE post_category_id = {$category} AND post_status = 1 ";
+
+if(isset($_GET['sort'])) {
+	$sort = $_GET['sort'];
+	if($sort == "desc") {
+		$query .= " ORDER BY post_date DESC";
+	} else if($sort == "asc") {
+		$query .= " ORDER BY post_date ASC";
+	}
+}
 
 
 
