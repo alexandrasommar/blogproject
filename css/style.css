@@ -1,21 +1,21 @@
 @font-face {
     font-family: 'VolvoBroad';
-    src: url(VolvoBroad.ttf);
+    src: url(../fonts/VolvoBroad.ttf);
 }
 
 @font-face {
     font-family: 'VolvoBold';
-    src: url(volvosanspro-bold-webfont.ttf);
+    src: url(../fonts/volvosanspro-bold-webfont.ttf);
 }
 
 @font-face {
     font-family: 'VolvoMedium';
-    src: url(volvosanspro-medium-webfont.ttf);
+    src: url(../fonts/volvosanspro-medium-webfont.ttf);
 }
 
 @font-face {
     font-family: 'VolvoLight';
-    src: url(volvosanspro-light-webfont.ttf);
+    src: url(../fonts/volvosanspro-light-webfont.ttf);
 }
 
 body {
