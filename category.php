@@ -60,7 +60,7 @@ if($stmt->prepare($query)) {
 					<div class="post-text">
 						<h2><a href="post.php?post=<?php echo $post_id; ?>"><?php echo $post_title; ?></a></h2>
 						<span class="byline-category">Av: <span class="author"><a href="author.php?author=<?php echo $post_author_id; ?>"><?php echo $post_author; ?></span>,<?php echo $post_date; ?></span>
-						<p><?php echo $post_content; ?></p>
+						<p><?php echo substr($post_content, 0, 150); ?></p>
 					</div>
 				</div>
 			</div>

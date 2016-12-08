@@ -52,7 +52,7 @@ if($stmt->prepare($query)) {
 				<div class="post__text">
 					<h2><a href="post.php?post=<?php echo $post_id; ?>"><?php echo $post_title ?></a></h2>
 					<span>Av: <span class="author"><a href="author.php?author=<?php echo $post_author_id; ?>"><?php echo $post_author; ?></a></span>, <?php echo $post_date; ?></span>
-					<p><?php echo $post_content; ?></p>
+					<p><?php echo substr($post_content, 0, 150); ?></p>
 				</div> <!-- .post__text -->
 			</article> <!-- .post__article -->
 			
