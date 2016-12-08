@@ -901,5 +901,43 @@ div.panel.show {
 	.header__text--text {
 		display: none;
 	}
+
+/* ----------------------------------------------- */
+/* 					footer.php;					   */
+/* ----------------------------------------------- */
+
+	.footer__nav--responsive-list {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.footer__nav--responsive-list li {
+		padding: 10px 0;
+	}
+
+	.footer__nav--responsive-list a {
+		font-size: 40px;
+		font-family: 'Lato', sans-serif;
+		font-weight: 400;
+	}
+
+	.footer__nav--responsive-icon {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		flex-wrap: wrap;
+		margin: 0;
+		padding: 0;
+	}
+
+	.footer__nav--responsive-icon li {
+		padding: 0;
+		width: 50%;
+	}
+
+	.footer__nav--responsive-icon img {
+		width: 60px;
+	}
+
 }
 
