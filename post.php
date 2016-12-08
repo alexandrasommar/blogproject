@@ -5,21 +5,28 @@
 <div class="blog-post__image">
 
 <?php include "header-navigation-menu.php"; ?>
-<!-- Kommenterade bort nedan kod då det gav mig ett felmeddelande. Ska den koden verkligen vara där? -->
-<!-- <?php $post = $_GET["post"]; ?> -->
+
 
 </div> <!-- .blog-post__image -->
-
-	<!-- Post -->
+<?php $post = $_GET["post"]; ?>
+<!-- Post -->
 	
-	<section class="blog-post">
+<section class="blog-post">
+<?php
+$query = "SELECT posts.*, categories.cat_id, categories.cat_name, users.* FROM posts LEFT JOIN categories ON posts.post_category_id = categories.cat_id LEFT JOIN users ON posts.post_author_id = users.user_id WHERE posts.post_id = {$post}";
+if($stmt->prepare($query)) {
+
+		$stmt->execute();
+		$stmt->bind_result($post_id, $category_id, $post_title, $post_author, $post_author_id, $post_date, $post_image, $post_content, $post_status, $cat_id, $cat_name, $user_id, $username, $firstname, $lastname, $password, $email, $website, $image, $description, $role );
+
+		while(mysqli_stmt_fetch($stmt)) { ?>
 		<article class="blog-post__article">
 			<div class="blog-post__date">
-				<time>14 nov 2016</time>
+				<time><?php echo $post_date; ?></time>
 				<span>1+ <i class="fa fa-heart blog-post__icon" aria-hidden="true"></i></span>
 			</div> <!-- .blog-post__date -->
-			<h2>Det är ett välkänt faktum att läsare</h2>
-			<p>Det är ett välkänt faktum att läsare distraheras av läsbar text på en sida när man skall studera layouten. Poängen med Lorem Ipsum är att det ger ett normalt ordflöde, till skillnad från "Text här, Text här", och ger intryck av att vara läsbar text. Många publiseringprogram och webbutvecklare använder Lorem Ipsum som test-text, och en sökning efter "Lorem Ipsum" avslöjar många webbsidor under uteckling. Olika versioner har dykt upp under åren, ibland av olyckshändelse, ibland med flit (mer eller mindre humoristiska).</p>
+			<h2><?php echo $post_title; ?></h2>
+			<p><?php echo $post_content; ?></p>
 
 				<!-- Author information box -->
 				
@@ -64,7 +71,20 @@
 						</ul>
 					</div>
 				</div>
-		</article> <!-- .blog-post__article -->
+		</article> <!-- .blog-post__article -->			
+
+
+
+<?php
+		}
+	}
+
+
+
+
+?>
+	
+
 	</section> <!-- .blog-post -->
 
 	
