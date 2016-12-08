@@ -14,12 +14,12 @@
 	<?php 
 
 
-	$query = "SELECT * FROM posts";
+	$query = "SELECT posts.*, categories.* FROM posts LEFT JOIN categories ON posts.post_category_id = categories.cat_id";
 
 	if($stmt->prepare($query)) {
 
 		$stmt->execute();
-		$stmt->bind_result($post_id, $category_id, $post_title, $post_author, $post_date, $post_image, $post_content, $post_status);
+		$stmt->bind_result($post_id, $category_id, $post_title, $post_author, $post_date, $post_image, $post_content, $post_status, $cat_id, $cat_name);
 
 		while(mysqli_stmt_fetch($stmt)) {
 
@@ -30,7 +30,8 @@
 			<div class="post__text">
 				<h2><a href="post.php?post=<?php echo $post_id; ?>"><?php echo $post_title; ?></a></h2>
 				<span>Av: <span class="author"><a href="author.php"><?php echo $post_author ?></a></span>,<?php echo $post_date; ?></span>
-				<p><?php echo $post_content; ?></p>
+				<p>Kategori: <?php echo "<a href='category.php?cat=$cat_id'>$cat_name</a>"; ?></p>
+				<p><?php echo substr($post_content, 0, 150); ?></p>
 			</div>
 		</article>
 
