@@ -87,31 +87,50 @@ if($stmt->prepare($query)) {
 	
 
 	</section> <!-- .blog-post -->
-				<section class="blog-post">
-					<div class="comments">
-						<form method="post" action="">
-						<label for="name">Namn</label>
-						<input type="text" name="name" >
+		<section class="blog-post">
+			<div class="comments">
+				<form method="post" action="">
+					<label for="name">Namn</label>
+					<input type="text" name="name" >
 
-						<label for="email">Email</label>
-						<input type="email" name="email" >
+					<label for="email">Email</label>
+					<input type="email" name="email" >
 
-						<label for="website">Hemsida</label>
-						<input type="text" name="website" >
+					<label for="website">Hemsida</label>
+					<input type="text" name="website" >
 
-						<label for="content">Inlägg</label>
-						<textarea name="content"></textarea>
-						<input type="submit" name="submit" value="Kommentera">
-						</form>	
-
-
-
-					</div>
-</section>
+					<label for="content">Inlägg</label>
+					<textarea name="content"></textarea>
+					<input type="submit" name="submit" value="Kommentera">
+				</form>	
+			</div>
+	</section>
 
 
 
+	<section class="blog-post">
+		<?php
+		$query = "SELECT * FROM comments WHERE comment_post_id = '{$post}'";
+		if($stmt->prepare($query)) {
 
+		$stmt->execute();
+		$stmt->bind_result($comment_id, $comment_post_id, $comment_author, $comment_date, $comment_email, $comment_content, $comment_website);
+
+		while(mysqli_stmt_fetch($stmt)) { ?>
+
+			<div class="comments">
+				<p><?php echo $comment_author; ?></p>
+				<p><?php echo $comment_date; ?></p>
+				<p><?php echo $comment_content; ?></p>
+
+			</div>
+		
+	<?php
+
+		}
+		}	
+		?>
+	</section>
 	
 	
 	
