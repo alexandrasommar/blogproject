@@ -19,7 +19,7 @@
 		<div class="post__container">
 	
 	<?php 
-	$query = "SELECT posts.*, categories.* FROM posts LEFT JOIN categories ON posts.post_category_id = categories.cat_id";
+	$query = "SELECT posts.*, categories.* FROM posts LEFT JOIN categories ON posts.post_category_id = categories.cat_id ORDER BY post_date DESC";
 
 	if($stmt->prepare($query)) {
 
