@@ -34,7 +34,7 @@ $query = "SELECT * FROM posts WHERE post_category_id = {$category} AND post_stat
 if($stmt->prepare($query)) {
 
 		$stmt->execute();
-		$stmt->bind_result($post_id, $category_id, $post_title, $post_author, $post_date, $post_image, $post_content, $post_status);
+		$stmt->bind_result($post_id, $category_id, $post_title, $post_author, $post_author_id, $post_date, $post_image, $post_content, $post_status);
 
 
 		while(mysqli_stmt_fetch($stmt)) { ?>
