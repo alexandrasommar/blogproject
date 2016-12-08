@@ -98,48 +98,47 @@ if($stmt->prepare($query)) {
 				<?php include "author-information-box.php"; ?>
 
 				<!-- Comment information -->
-
-				
-					
-				
+		
 		</article> <!-- .blog-post__article -->			
-
-
 
 <?php
 		}
 	}
-
-
-
-
 ?>
 
+</section> <!-- .blog-post -->
 
-	
-
-	</section> <!-- .blog-post -->
-		<section class="blog-post" id="comment">
-			<div class="comments">
-				<form method="post" action="post.php?post=<?php echo $post; ?>#comment">
-					<label for="name">Namn</label>
-					<?php echo $nameErr; ?>
-					<input type="text" name="name">
-
-					<label for="email">Email</label>
-					<?php echo $emailErr; ?>
-					<input type="email" name="email">
-
-					<label for="website">Hemsida</label>
-					<?php echo $webErr; ?>
-					<input type="text" name="website">
-
-					<label for="content">Inlägg</label>
-					<?php echo $contentErr; ?>
-					<textarea name="content"></textarea>
-					<input type="submit" name="submit" value="Kommentera">
-				</form>	
+	<section class="form">
+		<form method="post" action="post.php?post=<?php echo $post; ?>#comment">
+			<div class="form__input">
+				<label for="name">Namn</label>
+				<?php echo $nameErr; ?>
+				<input type="text" name="name">
 			</div>
+			<div class="form__input">
+				<label for="name">Namn</label>
+				<?php echo $nameErr; ?>
+				<input type="text" name="name">
+			</div>
+			<div class="form__input">
+				<label for="email">Email</label>
+				<?php echo $emailErr; ?>
+				<input type="email" name="email">
+			</div>
+			<div class="form__input">
+				<label for="website">Hemsida</label>
+				<?php echo $webErr; ?>
+				<input type="text" name="website">
+			</div>
+			<div class="form__input">
+				<label for="content">Inlägg</label>
+				<?php echo $contentErr; ?>
+				<textarea name="content"></textarea>
+			</div>
+			<div class="form__input">
+				<input type="submit" name="submit" value="Kommentera">
+			</div>
+		</form>	
 	</section>
 	<?php countComments(); ?>
 

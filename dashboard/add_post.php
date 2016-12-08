@@ -6,7 +6,7 @@
 		<input type="text" class="form-control" name="title">
 	</div>
 	<div class="form__input">
-		<label for="post_content">Post Content</label>
+		<label for="post_content">Text</label>
 		<textarea class="form-control" name="post_content" id="" cols="30" rows="10"></textarea>
 	</div>
 	<div class="form-group">

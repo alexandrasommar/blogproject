@@ -300,6 +300,53 @@ a:hover img.post__img--styling {
 }
 
 /* ----------------------------------------------- */
+/* 					form 						   */
+/* ----------------------------------------------- */
+
+.form {
+  	background-color: #fff;
+  	display: flex;
+  	flex-direction: row;
+  	justify-content: center;
+  	height: 100vh;
+  	padding-top: 40px;
+  }
+
+  form {
+  	width: 80%;
+  }
+
+  .form__input {
+  	display: flex;
+  	flex-direction: column;
+  	font-family: 'Lato', sans-serif;
+	font-weight: 100;
+  }
+
+  input[type=text] {
+  	height: 26px;
+  	font-size: 18px;
+  	margin: 5px 0;
+  	padding: 0;
+  }
+
+  input[type=submit] {
+  	height: 26px;
+  	font-size: 18px;
+  	margin: 5px 0;
+  	border-radius: 2px;
+	border: none;
+	background-color: #F07444;
+  	color: white;
+  	transition: .2s ease;
+  }
+
+  input[type=submit]:hover {
+  	background-color: #F75633;
+	transition: .2s ease;
+  }
+
+/* ----------------------------------------------- */
 /* slider.php */
 /* ----------------------------------------------- */
 
