@@ -62,7 +62,13 @@ function countComments () {
 	if ($result = mysqli_query($conn, $query)) {
 		
 		$row_cnt = mysqli_num_rows($result);
-		echo $row_cnt;
+		if ($row_cnt == 0) {
+			echo "<p>Antal kommentarer ($row_cnt)</p>";
+			echo "<p>Tyvärr finns det inga kommentarer än. Bli den första att kommentera!</p>";
+		} else {
+			echo "<p>Antal kommentarer ($row_cnt)</p>";
+		}
+		
 
 
 		}

@@ -141,7 +141,7 @@ if($stmt->prepare($query)) {
 				</form>	
 			</div>
 	</section>
-	<p>Antal kommentarer (<?php countComments(); ?>)</p>
+	<?php countComments(); ?>
 
 
 	<section class="blog-post">
