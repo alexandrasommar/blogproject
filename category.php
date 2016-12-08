@@ -9,24 +9,34 @@
 
 
 <div class="catagory-container">
-<div class="category-headline">
-			<h3><?php echo $cat_name;  ?></h3>
+<?php
+$category = $_GET['cat'];
+$query = "SELECT * FROM categories WHERE cat_id = {$category}";
+if($stmt->prepare($query)) {
+
+		$stmt->execute();
+		$stmt->bind_result($cat_id, $cat_name);
+		while(mysqli_stmt_fetch($stmt)) {
+
+?>
+			<div class="category-headline">
+				<h3><?php echo $cat_name; } }?></h3>
 			</div>
+
 <?php 
 
-$category = $_GET['cat'];
 
-$query = "SELECT posts.*, categories.cat_name FROM posts LEFT JOIN categories ON posts.post_category_id = categories.cat_id WHERE post_category_id = {$category} AND post_status = 1";
+
+$query = "SELECT * FROM posts WHERE post_category_id = {$category} AND post_status = 1";
 
 
 
 if($stmt->prepare($query)) {
 
 		$stmt->execute();
-		$stmt->bind_result($post_id, $category_id, $post_title, $post_author, $post_date, $post_image, $post_content, $post_status, $cat_name);
+		$stmt->bind_result($post_id, $category_id, $post_title, $post_author, $post_date, $post_image, $post_content, $post_status);
 
-		
-		
+
 		while(mysqli_stmt_fetch($stmt)) { ?>
 
 			<div class="post-category">
