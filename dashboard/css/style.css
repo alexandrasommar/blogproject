@@ -209,6 +209,41 @@ div.panel.show {
   
   .label-toggle {display: none;}
 
+  /* FORM */
+
+  .form {
+  	background-color: #fff;
+  	display: flex;
+  	flex-direction: row;
+  	justify-content: center;
+  	height: 100vh;
+  	padding-top: 40px;
+  	font-family: 'Lato', sans-serif;
+	font-weight: 100;
+  }
+
+  form {
+  	width: 80%;
+  }
+
+  .form__input {
+  	display: flex;
+  	flex-direction: column;
+  }
+
+  input[type=text] {
+  	height: 26px;
+  	font-size: 18px;
+  	margin: 5px 0;
+  	padding: 0;
+  }
+
+  input[type=submit] {
+  	height: 26px;
+  	font-size: 18px;
+  	margin: 5px 0;
+  }
+
 
 @media screen and (max-width: 1020px)   {
 	aside {
