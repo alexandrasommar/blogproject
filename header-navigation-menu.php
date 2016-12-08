@@ -48,7 +48,7 @@
 									<li><a href="#">Bilen</a></li>
 									<li><a href="#">Kampanjen</a></li>
 									<li><a href="category.php">Kategorier</a></li>
-									<li><a href="#">Arkiv</a></li>
+									<li><a href="archive.php">Arkiv</a></li>
 									<li><a href="#">Kontakt</a></li>
 									<li><a href="dashboard/index.php">Dashboard</a></li>
 									<li><a href="#">Logga ut</a></li>
@@ -61,7 +61,7 @@
 
 			<nav class="header__menu header__menu--block">
                 <ul>
-                	<li><a href="#">Arkiv</a></li>
+                	<li><a href="archive.php">Arkiv</a></li>
                     <li><a href="contact.php">Kontakt</a></li>
                     <li><a href="dashboard/index.php">Dashboard</a></li>
                 </ul>
