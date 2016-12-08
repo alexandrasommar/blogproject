@@ -35,7 +35,7 @@
 				<!-- Comment information -->
 
 				<div class="comments-box" id="comments">
-					<div>
+					<div class="comments">
 						<ul>
 							<li class="accordion"><a href="#comments">Kommentera</a></li>
 							<div class="panel">
