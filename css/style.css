@@ -480,6 +480,13 @@ font-size: 25px;
 
 .comments-box li {
 	list-style:none;
+	padding: 20px;
+	border-bottom: solid 1px #EFEFEF;
+}
+
+.comments-box a {
+	text-decoration: none;
+	color: #9d9d9d;
 }
 
 /*.comments {
