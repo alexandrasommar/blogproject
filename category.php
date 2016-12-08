@@ -14,7 +14,7 @@
 
 $category = $_GET['cat'];
 
-$query = "SELECT posts.*, categories.cat_name FROM posts LEFT JOIN categories ON posts.post_category_id = categories.cat_id WHERE post_category_id = {$category}";
+$query = "SELECT posts.*, categories.cat_name FROM posts LEFT JOIN categories ON posts.post_category_id = categories.cat_id WHERE post_category_id = {$category} AND post_status = 1";
 if ($result = mysqli_query($conn, $query)) { 
 		$row_cnt = mysqli_num_rows($result);
 	}
