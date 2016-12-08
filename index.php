@@ -67,7 +67,7 @@
 
 	<!-- Slider -->
 
-	
+	<?php include "slider.php"; ?>
 
 	<!-- Footer -->
 
