@@ -62,7 +62,6 @@
 
 	<!-- Posts -->
 
-	
 		</div>
 	</section>
 

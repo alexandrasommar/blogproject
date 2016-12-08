@@ -21,16 +21,9 @@
 			<h2>Det är ett välkänt faktum att läsare</h2>
 			<p>Det är ett välkänt faktum att läsare distraheras av läsbar text på en sida när man skall studera layouten. Poängen med Lorem Ipsum är att det ger ett normalt ordflöde, till skillnad från "Text här, Text här", och ger intryck av att vara läsbar text. Många publiseringprogram och webbutvecklare använder Lorem Ipsum som test-text, och en sökning efter "Lorem Ipsum" avslöjar många webbsidor under uteckling. Olika versioner har dykt upp under åren, ibland av olyckshändelse, ibland med flit (mer eller mindre humoristiska).</p>
 
-				<!-- User information -->
-				<div class="author-information-box">
-					<div class="author-information-box__image">
-						<img src="img/user-image.jpg" alt="">
-					</div> <!-- .author-information-box__image -->
-					<div class="author-information-box__text">
-						<h3><author>Gunther Beard</author></h3>
-						<p>Det är ett välkänt faktum att läsare distraheras av läsbar text på en sida när man skall studera layouten. Poängen med Lorem Ipsum är att det ger ett normalt ordflöde.</p>
-					</div> <!-- .author-information-box__text -->
-				</div> <!-- .author-information-box -->
+				<!-- Author information box -->
+				
+				<?php include "author-information-box.php"; ?>
 
 				<!-- Comment information -->
 
