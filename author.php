@@ -35,6 +35,7 @@ if($stmt->prepare($query)) {
 ?>
 
 <section class="post">
+	<div class="post__container">
 <?php
 $query = "SELECT posts.*, categories.cat_id, categories.cat_name, users.* FROM posts LEFT JOIN categories ON posts.post_category_id = categories.cat_id LEFT JOIN users ON posts.post_author_id = users.user_id WHERE posts.post_author_id = {$author}";
 if($stmt->prepare($query)) {
@@ -62,9 +63,9 @@ if($stmt->prepare($query)) {
 
 			
 ?>
-			
+			</div> <!-- post__container -->
 		</section> <!-- .post -->
-	</div>
+	</div> <!-- .category__container -->
 
 	<!-- Footer -->
 

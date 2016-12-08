@@ -31,14 +31,16 @@
 		?>
 
 		<article class="post__article">
-			<div class="post__img"><a href="post.php?post=<?php echo $post_id; ?>"><img class="post__img--styling" src="img/volvo_bg_1.jpg" alt="Bil"></a></div>
+			<div class="post__img">
+				<a href="post.php?post=<?php echo $post_id; ?>"><img class="post__img--styling" src="img/volvo_bg_1.jpg" alt="Bil"></a>
+			</div> <!-- .post__img -->
 			<div class="post__text">
 				<h2><a href="post.php?post=<?php echo $post_id; ?>"><?php echo $post_title; ?></a></h2>
 				<span>Av: <span class="author"><a href="author.php?author=<?php echo $post_author_id; ?>"><?php echo $post_author ?></a></span>,<?php echo $post_date; ?></span>
 				<p>Kategori: <?php echo "<a href='category.php?cat=$cat_id'>$cat_name</a>"; ?></p>
 				<p><?php echo substr($post_content, 0, 150); ?></p>
-			</div>
-		</article>
+			</div> <!-- .post__text -->
+		</article> <!-- .post__article -->
 
 		<?php
 
