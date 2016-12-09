@@ -819,6 +819,7 @@ div.panel.show {
 	.toggle-menu {
 		display: block;
 		width: 100%;
+		margin: 10px 5px;
 	}
 
 	.header__nav {
