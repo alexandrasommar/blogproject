@@ -23,7 +23,7 @@
 											<li>Skriv nytt inlägg</li>
 										</ul>
 										</div>
-										<li><a href="#"><i class="fa fa-comments aside" aria-hidden="true"></i>Kommentarer</a></li>
+										<li><a href="user_comments.php"><i class="fa fa-comments aside" aria-hidden="true"></i>Kommentarer</a></li>
 										<li><a href="#"><i class="fa fa-bar-chart aside" aria-hidden="true"></i>Statistik</a></li>
 										<li class="accordion"><a href="#"><i class="fa fa-list aside" aria-hidden="true"></i>Kategorier<i class="fa fa-caret-down" aria-hidden="true"></i></a></li>
 										<div class="panel">
@@ -71,7 +71,7 @@
 									<li><a href="write_post.php"> Skriv nytt inlägg</a></li>
 								</ul>
 							</div>
-							<li><a href="#"><i class="fa fa-comments aside" aria-hidden="true"></i>Kommentarer</a></li>
+							<li><a href="user_comments.php"><i class="fa fa-comments aside" aria-hidden="true"></i>Kommentarer</a></li>
 							<li><a href="#"><i class="fa fa-bar-chart aside" aria-hidden="true"></i>Statistik</a></li>
 							<li class="accordion"><a href="#"><i class="fa fa-list aside" aria-hidden="true"></i>Kategorier<i class="fa fa-caret-down" aria-hidden="true"></i></a></li>
 							<div class="panel">
