@@ -6,10 +6,14 @@ if(isset($_POST['publish'])) {
 
 	$title = $_POST['title'];
 	$content = $_POST['post_content'];
-	//$image = $_POST['image'];
 	$category = $_POST['post_category'];
 
-	$query = "INSERT INTO posts(post_category_id, post_title, post_author, post_author_id, post_date, post_content, post_status) VALUES ('{$category}', '{$title}', '{$_SESSION['firstname']}', {$_SESSION['user_id']}, CURDATE(), '{$content}', 1)";
+	$image = $_FILES['image']['name'];
+	$target_folder = "img/";
+	$target_name = $target_folder . $image;
+	move_uploaded_file($_FILES['image']['tmp_name'], "../img/$image");
+
+	$query = "INSERT INTO posts(post_category_id, post_title, post_author, post_author_id, post_date, post_image, post_content, post_status) VALUES ('{$category}', '{$title}', '{$_SESSION['firstname']}', {$_SESSION['user_id']}, CURDATE(), '{$target_name}', '{$content}', 1)";
 
 	if($stmt->prepare($query)) {
 
