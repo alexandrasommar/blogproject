@@ -22,6 +22,7 @@ if(isset($_POST['loggin'])) {
 		if($password === $dbpass) {
 
 			session_start();
+			$_SESSION['user_id'] = $user_id;
 			$_SESSION['username'] = $dbuser;
 			$_SESSION['firstname'] = $firstname;
 			$_SESSION['lastname'] = $lastname; 
@@ -30,6 +31,7 @@ if(isset($_POST['loggin'])) {
 			$_SESSION['image'] = $image;
 			$_SESSION['desc'] = $description; 
 			$_SESSION['role'] = $role;
+
 
 			header("Location: dashboard/index.php");
 		}

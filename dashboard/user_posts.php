@@ -73,7 +73,7 @@
 							<li class="accordion"><a href="#"><i class="fa fa-newspaper-o aside" aria-hidden="true"></i>Inlägg<i class="fa fa-caret-down" aria-hidden="true"></i></a></li>
 							<div class="panel">
 								<ul class="aside__nav--visible">
-									<li><a href="user_posts.php"> Visa alla inlägg</a></li>
+									<li>Visa alla inlägg</li>
 									<li>Skriv nytt inlägg</li>
 								</ul>
 							</div>
@@ -91,7 +91,32 @@
 					</div>
 				</aside>
 				<main>
-					
+					<?php
+					$query = "SELECT * FROM posts WHERE post_author_id = {$_SESSION['user_id']}";
+
+					if($stmt->prepare($query)) {
+
+					$stmt->execute();
+					$stmt->bind_result($post_id, $cat_id, $title, $author, $author_id, $date, $image, $content, $status);
+
+					while(mysqli_stmt_fetch($stmt)) {
+
+						echo $content;
+					}
+
+
+
+
+				}
+
+
+
+
+					?>
+
+
+
+
 				</main>
 			</div>
 		</div>
