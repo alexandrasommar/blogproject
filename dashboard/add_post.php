@@ -15,8 +15,6 @@ if(isset($_POST['publish'])) {
 
 		$stmt->execute();
 
-
-
 	} else {
 
 		die("quey" . mysqli_error($conn));
@@ -24,6 +22,23 @@ if(isset($_POST['publish'])) {
 
 }
 
+
+if(isset($_POST['save'])) {
+
+	$title = $_POST['title'];
+	$content = $_POST['post_content'];
+	//$image = $_POST['image'];
+	$category = $_POST['post_category'];
+
+	$query = "INSERT INTO posts(post_category_id, post_title, post_author, post_author_id, post_date, post_content, post_status) VALUES ('{$category}', '{$title}', '{$_SESSION['firstname']}', {$_SESSION['user_id']}, CURDATE(), '{$content}', 0)";
+
+	if($stmt->prepare($query)) {
+
+		$stmt->execute(); 
+	}
+
+
+}
 
 
 ?>
