@@ -7,9 +7,9 @@ if(isset($_POST['publish'])) {
 	$title = $_POST['title'];
 	$content = $_POST['post_content'];
 	//$image = $_POST['image'];
-	//$category = $_POST['post_category'];
+	$category = $_POST['post_category'];
 
-	$query = "INSERT INTO posts(post_title, post_author_id, post_date, post_content, post_status) VALUES ('{$title}', {$_SESSION['user_id']}, CURDATE(), '{$content}', 1)";
+	$query = "INSERT INTO posts(post_category_id, post_title, post_author, post_author_id, post_date, post_content, post_status) VALUES ('{$category}', '{$title}', '{$_SESSION['firstname']}', {$_SESSION['user_id']}, CURDATE(), '{$content}', 1)";
 
 	if($stmt->prepare($query)) {
 
@@ -45,7 +45,21 @@ if(isset($_POST['publish'])) {
 		<input type="file" name="image">
 	</div>
 	<div class="form__input">
-		<select name="post_category" id=""></select>
+		<select name="post_category" id="">
+		<option>Välj kategori</option>
+		<?php
+		 $query = "SELECT * FROM categories";
+				    $select_categories = mysqli_query($conn,$query);   
+
+				    while ($row = mysqli_fetch_assoc($select_categories)) {        
+				    $cat_id = $row['cat_id'];
+				    $cat_name = $row['cat_name'];
+
+				    echo "<option value='$cat_id'>$cat_name</option>";
+				 
+					}
+		?>
+		</select>
 	</div>
 	<div class="form__input">
 		<input class="btn" type="submit" name="publish" value="Publisera">
