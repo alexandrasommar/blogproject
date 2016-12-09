@@ -91,6 +91,19 @@
 					</div>
 				</aside>
 				<main>
+				<table>
+					<tr>
+						<th>Post Id</th>
+						<th>Kategori</th>
+						<th>Titel</th>
+						<th>Bloggare</th>
+						<th>Bloggid</th>
+						<th>Datum</th>
+						<th>Bild</th>
+						<th>Text</th>
+						<th>Status</th>
+					</tr>
+					<tr>
 					<?php
 					$query = "SELECT * FROM posts WHERE post_author_id = {$_SESSION['user_id']}";
 
@@ -99,23 +112,32 @@
 					$stmt->execute();
 					$stmt->bind_result($post_id, $cat_id, $title, $author, $author_id, $date, $image, $content, $status);
 
-					while(mysqli_stmt_fetch($stmt)) {
+					while(mysqli_stmt_fetch($stmt)) { ?>
+						
+							<td><?php echo $post_id; ?></td>
+							<td><?php echo $cat_id; ?></td>
+							<td><?php echo $title; ?></td>
+							<td><?php echo $author; ?></td>
+							<td><?php echo $author_id; ?></td>
+							<td><?php echo $date; ?></td>
+							<td><?php echo $image; ?></td>
+							<td><?php echo $content; ?></td>
+							<td><?php echo $status; ?></td>
+							</tr>
 
-						echo $content;
-					}
+						<?php
+							
+							}
+
+						}
 
 
 
 
-				}
-
-
-
-
-					?>
-
-
-
+							?>
+				
+						
+					</table>
 
 				</main>
 			</div>
