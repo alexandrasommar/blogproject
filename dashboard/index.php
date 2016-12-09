@@ -65,8 +65,9 @@
 				<aside>
 					<div class="aside__nav">
 					<div class="user-pic">
-						<i class="fa fa-user-circle-o fa-5x" aria-hidden="true"></i>
-						<span>John Doe</span>
+						<img src="../<?php echo $_SESSION['image'];?>" width="100" 
+						alt="Bild på <?php echo $_SESSION['firstname'] ; ?>">
+						<span><?php echo $_SESSION['firstname']; ?></span>
 					</div>
 						<ul class="aside__nav--height">
 							<li class="accordion"><a href="#"><i class="fa fa-newspaper-o aside" aria-hidden="true"></i>Inlägg<i class="fa fa-caret-down" aria-hidden="true"></i></a></li>
