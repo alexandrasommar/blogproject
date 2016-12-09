@@ -1,4 +1,35 @@
 <?php include "../head.php"; ?>
+
+<?php  
+
+if(isset($_POST['publish'])) {
+
+	$title = $_POST['title'];
+	$content = $_POST['post_content'];
+	//$image = $_POST['image'];
+	//$category = $_POST['post_category'];
+
+	$query = "INSERT INTO posts(post_title, post_author_id, post_date, post_content, post_status) VALUES ('{$title}', {$_SESSION['user_id']}, CURDATE(), '{$content}', 1)";
+
+	if($stmt->prepare($query)) {
+
+		$stmt->execute();
+
+
+
+	} else {
+
+		die("quey" . mysqli_error($conn));
+	}
+
+}
+
+
+
+?>
+
+
+
 <section class="form">
 <form action="" method="post" enctype="multipart/form-data">
 	<div class="form__input">
@@ -17,8 +48,8 @@
 		<select name="post_category" id=""></select>
 	</div>
 	<div class="form__input">
-		<input class="btn" type="submit" name="create_post" value="Publisera">
-		<input class="btn" type="submit" name="create_post" value="Spara">
+		<input class="btn" type="submit" name="publish" value="Publisera">
+		<input class="btn" type="submit" name="save" value="Spara">
 	</div>
 </form>
 </section>

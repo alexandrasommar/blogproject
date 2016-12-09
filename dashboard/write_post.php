@@ -74,7 +74,7 @@
 							<div class="panel">
 								<ul class="aside__nav--visible">
 									<li><a href="user_posts.php"> Visa alla inlägg</a></li>
-									<li><a href="write_post.php"> Skriv nytt inlägg</a></li>
+									<li>Skriv nytt inlägg</li>
 								</ul>
 							</div>
 							<li><a href="#"><i class="fa fa-comments aside" aria-hidden="true"></i>Kommentarer</a></li>
@@ -91,7 +91,9 @@
 					</div>
 				</aside>
 				<main>
-					
+					<?php
+					include "add_post.php";
+					?>
 				</main>
 			</div>
 		</div>
