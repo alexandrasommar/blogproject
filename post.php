@@ -116,11 +116,6 @@ if($stmt->prepare($query)) {
 				<input type="text" name="name">
 			</div>
 			<div class="form__input">
-				<label for="name">Namn</label>
-				<?php echo $nameErr; ?>
-				<input type="text" name="name">
-			</div>
-			<div class="form__input">
 				<label for="email">Email</label>
 				<?php echo $emailErr; ?>
 				<input type="email" name="email">
