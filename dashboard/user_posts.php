@@ -36,7 +36,7 @@
 							<td><?php echo $author_id; ?></td>
 							<td><?php echo $date; ?></td>
 							<td><?php echo $image; ?></td>
-							<td><?php echo $content; ?></td>
+							<td><?php echo substr($content, 0, 80); ?></td>
 							<td><?php echo $status; ?></td>
 							</tr>
 
