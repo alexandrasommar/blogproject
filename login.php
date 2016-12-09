@@ -21,6 +21,16 @@ if(isset($_POST['loggin'])) {
 
 		if($password === $dbpass) {
 
+			session_start();
+			$_SESSION['username'] = $dbuser;
+			$_SESSION['firstname'] = $firstname;
+			$_SESSION['lastname'] = $lastname; 
+			$_SESSION['email'] = $email;
+			$_SESSION['website'] = $website;
+			$_SESSION['image'] = $image;
+			$_SESSION['desc'] = $description; 
+			$_SESSION['role'] = $role;
+
 			header("Location: dashboard/index.php");
 		}
 
@@ -54,7 +64,7 @@ if(isset($_POST['loggin'])) {
 					<form method="post" action="" class="login__input">
 							<span>Logga in</span>
 							<input type="text" name="username" placeholder="Användarnamn">
-							<input type="text" name="password" placeholder="Lösenord">
+							<input type="password" name="password" placeholder="Lösenord">
 							<input type="submit" name="loggin" value="Logga in">
 					</form> <!-- .login__input -->
 				</div> <!-- .login__form -->

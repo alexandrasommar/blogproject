@@ -1,4 +1,7 @@
+<?php session_start(); ?>
+<?php include "../include/db.php"; ?>
 <?php include "../head.php"; ?>
+
 
 	<div class="container">
 			<header>
@@ -47,7 +50,7 @@
 				
 					<div class="nav__right dropdown">
 						<ul class="aside__nav--header">
-							<li><a href="#"><i class="fa fa-user header" aria-hidden="true"></i>John Doe<i class="fa fa-caret-down header" aria-hidden="true"></i></a></li>
+							<li><a href="#"><i class="fa fa-user header" aria-hidden="true"></i><?php echo $_SESSION['username']; ?><i class="fa fa-caret-down header" aria-hidden="true"></i></a></li>
 							<div class="dropdown-content">
     							<ul class="dropdown-flex">
     								<li>Inställningar</li>
