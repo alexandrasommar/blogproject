@@ -9,9 +9,9 @@ if(isset($_POST['publish'])) {
 	$category = $_POST['post_category'];
 
 	$image = $_FILES['image']['name'];
-	$target_folder = "img/";
+	$target_folder = "uploads/";
 	$target_name = $target_folder . $image;
-	move_uploaded_file($_FILES['image']['tmp_name'], "../img/$image");
+	move_uploaded_file($_FILES['image']['tmp_name'], "../uploads/$image");
 
 	$query = "INSERT INTO posts(post_category_id, post_title, post_author, post_author_id, post_date, post_image, post_content, post_status) VALUES ('{$category}', '{$title}', '{$_SESSION['firstname']}', {$_SESSION['user_id']}, CURDATE(), '{$target_name}', '{$content}', 1)";
 
