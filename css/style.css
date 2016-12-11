@@ -64,7 +64,7 @@ body {
 
 .header__menu {
 	font-family: 'Lato', sans-serif;
-	font-weight: 300;¢
+	font-weight: 300;
 }
 
 .header__menu ul {
@@ -84,7 +84,6 @@ body {
 	color: #9d9d9d; 
      text-decoration:none; 
      cursor:pointer;
-     border-bottom: 1px solid #9d9d9d;
 }
 
 .header__menu a {
@@ -92,11 +91,33 @@ body {
 	text-decoration: none;
 	vertical-align: top;
 	text-transform: uppercase;
+	padding: 30px 0;
+}
+
+.header__menu li:hover .header__menu--dropdown {
+	padding:0px;
+}
+
+.header__menu li:hover .header__menu--dropdown {
+	left: 200px;
+	top: 78px;
+	padding:10px;
+	display:flex;
+	flex-direction: column;
+	width:180px;
+	text-indent:15px;
+	background-color:#fff;
+	box-shadow: 0px 0px 0px -1px rgba(0,0,0,0.75);
 }
 
 .header__menu--dropdown {
-	position: relative;
-    display: inline-block;
+	position:absolute;
+	display: none;
+	list-style-type:none;
+}
+
+.header__menu--dropdown li {
+	padding: 10px 0;
 }
 
 .logo-img {
@@ -144,6 +165,7 @@ body {
 /* Show the dropdown menu on hover */
 .header__menu--dropdown:hover .dropdown-content {
     display: block;
+
 }
 
 /* Change the background color of the dropdown button when the dropdown content is shown */

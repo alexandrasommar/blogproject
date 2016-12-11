@@ -7,13 +7,12 @@
 			<!-- Header navigation left -->
 
 			<nav class="header__menu header__menu--block">
-				<ul>
-					<li><a href="#">Bilen</a></li>
-					<li><a href="#">Kampanjen</a></li>
-					<div class="header__menu--dropdown">
-						<li><a href="">Kategorier</a>
-							<div class="dropdown-content">
-							    <?php 
+					<ul>
+						<li><a href='#'>Bilen</a></li>
+						<li><a href='#'>Kampanjen</a></li>
+						<li><a href='#'>Kategorier</a>
+							<ul class="header__menu--dropdown">
+								 <?php 
 						        $query = "SELECT * FROM categories";
 							    $select_categories = mysqli_query($conn,$query);   
 
@@ -21,14 +20,13 @@
 							    $cat_id = $row['cat_id'];
 							    $cat_name = $row['cat_name'];
 
-							    echo "<a href='category.php?cat=$cat_id'>$cat_name</a>";
+							    echo "<li><a href='category.php?cat=$cat_id'>$cat_name</a></li>";
 								}
 						        ?>   
-							</div> <!-- .dropdown-content -->
+							</ul>
 						</li>
-					</div> <!-- .header__menu--dropdown -->
-				</ul>
-			</nav> <!-- .header__menu & header__menu--block -->
+					</ul>
+				</nav>
 
 			<!-- Header navigation center -->
 
