@@ -18,7 +18,7 @@
 					</tr>
 					<tr>
 					<?php
-					$query = "SELECT comments.*, posts.post_title FROM comments LEFT JOIN posts ON posts.post_id = comments.comment_post_id WHERE posts.post_author_id = '{$_SESSION['user_id']}'";
+					$query = "SELECT comments.*, posts.post_title FROM comments LEFT JOIN posts ON posts.post_id = comments.comment_post_id WHERE posts.post_author_id = '{$_SESSION['user_id']}' ORDER BY comment_date DESC";
 
 					if($stmt->prepare($query)) {
 
@@ -26,8 +26,7 @@
 					$stmt->bind_result($com_id, $com_post_id, $com_author, $com_date, $com_email, $content, $website, $post_title);
 
 					while(mysqli_stmt_fetch($stmt)) { ?>
-							
-							<td><?php echo $post_title; ?></td>
+							<td><?php echo "<a href='../post.php?post=$com_post_id'>$post_title</a>"; ?></td>
 							<td><?php echo $com_date; ?></td>
 							<td><?php echo $com_author; ?></td>
 							<td><?php echo $com_email; ?></td>
