@@ -386,6 +386,10 @@ a:hover img.post__img--styling {
 	color: #C1C1C1;
 }
 
+.slider__mobile {
+  display: none;
+}
+
 .slider__icon-font {
 	display: flex;
 	flex-direction: column;
@@ -952,6 +956,15 @@ div.panel.show {
 		text-align: center;
 		font-family: 'Lato', sans-serif;
 	}
+
+	/* Slider */
+
+	.slider-desktop {
+    visibility: hidden;
+  }
+  .slider-tablet {
+    visibility: visible;
+  }
 }
 
 @media screen and (max-width: 600px) {
