@@ -8,35 +8,32 @@
 				<main>
 					<table>
 					<tr>
-						<th>Post Id</th>
-						<th>Kategori</th>
-						<th>Titel</th>
-						<th>Bloggare</th>
-						<th>Bloggid</th>
+						<th>Inlägg</th>
 						<th>Datum</th>
-						<th>Bild</th>
+						<th>Författare</th>
+						<th>Email</th>
+						<th>Hemsida</th>
 						<th>Text</th>
 						
 					</tr>
 					<tr>
 					<?php
-					$query = "SELECT comments.*, posts.post_author_id FROM comments LEFT JOIN comments ON posts.post_id = comments.comment_post_id WHERE posts.post_author_id = '{$_SESSION['user_id']}'";
+					$query = "SELECT comments.*, posts.post_title FROM comments LEFT JOIN posts ON posts.post_id = comments.comment_post_id WHERE posts.post_author_id = '{$_SESSION['user_id']}'";
 
 					if($stmt->prepare($query)) {
 
 					$stmt->execute();
-					$stmt->bind_result($com_id, $com_post_id, $com_author, $com_date, $com_email, $content, $website, $post_author);
+					$stmt->bind_result($com_id, $com_post_id, $com_author, $com_date, $com_email, $content, $website, $post_title);
 
 					while(mysqli_stmt_fetch($stmt)) { ?>
-						
-							<td><?php echo $com_id; ?></td>
-							<td><?php echo $com_post_id; ?></td>
-							<td><?php echo $com_author; ?></td>
+							
+							<td><?php echo $post_title; ?></td>
 							<td><?php echo $com_date; ?></td>
+							<td><?php echo $com_author; ?></td>
 							<td><?php echo $com_email; ?></td>
-							<td><?php echo $content; ?></td>
 							<td><?php echo $website; ?></td>
-							<td><?php echo $post_author; ?></td>
+							<td><?php echo $content; ?></td>
+							
 							</tr>
 
 						<?php
