@@ -2,10 +2,30 @@
 <?php include "../include/db.php"; ?>
 <?php include "../head.php"; ?>
 
+<?php
+if(isset($_GET['delete'])) {
+	$delete = $_GET['delete'];
+	$query = "DELETE FROM comments WHERE comment_id = {$delete}";
+	if($stmt->prepare($query)) {
+		$stmt->execute();
+		$message = "Kommentaren är raderad";
+	} else {
+		echo "query failed";
+	}
+}
+
+
+?>
 
 	<div class="container">
 			<?php include "user_navigation.php"; ?>
 				<main>
+					<?php 
+					if(isset($message)) {
+						echo $message;
+					}
+
+					 ?>
 					<table>
 					<tr>
 						<th>Inlägg</th>
@@ -14,7 +34,7 @@
 						<th>Email</th>
 						<th>Hemsida</th>
 						<th>Text</th>
-						
+						<th>Radera</th>
 					</tr>
 					<tr>
 					<?php
@@ -32,6 +52,7 @@
 							<td><?php echo $com_email; ?></td>
 							<td><?php echo $website; ?></td>
 							<td><?php echo $content; ?></td>
+							<td><?php echo "<a href='user_comments.php?delete=$com_id'>Radera</a>"?></td>
 							
 							</tr>
 
