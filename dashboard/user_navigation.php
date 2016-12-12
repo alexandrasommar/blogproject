@@ -48,7 +48,7 @@
 							<div class="dropdown-content">
     							<ul class="dropdown-flex">
     								<li>Inställningar</li>
-    								<li>Logga ut</li>
+    								<li><a href="logout.php">Logga ut</a></li>
     							</ul>
   							</div>
 						</ul>
