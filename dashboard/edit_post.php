@@ -26,6 +26,25 @@ if(isset($_POST['update'])) {
 	}
 }
 
+if(isset($_POST['publish'])) {
+	$title = $_POST['title'];
+	$content = $_POST['post_content'];
+	$category = $_POST['post_category'];
+
+	$image = $_FILES['image']['name'];
+	$target_folder = "uploads/";
+	$target_name = $target_folder . $image;
+	move_uploaded_file($_FILES['image']['tmp_name'], "../uploads/$image");
+
+	$query = "UPDATE posts SET post_title = '{$title}', post_content = '{$content}', post_category_id = '{$category}', post_image = '{$target_name}', post_status = 1 WHERE post_id = {$postid}";
+	if($stmt->prepare($query)) {
+		$stmt->execute();
+		$message = "Inlägget uppdaterades <a href='../post.php?post={$postid}'>Titta på inlägget</a>";
+	} else {
+		echo "query failed" . mysqli_error($conn);
+	}
+}
+
 
 ?>
 
