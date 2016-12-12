@@ -35,6 +35,8 @@ if(isset($_POST['publish']) || isset($_POST['save'])) {
 
 		die("quey" . mysqli_error($conn));
 	}
+	} else {
+		$message = "Du måste fylla i alla fält";
 	}
 }
 
