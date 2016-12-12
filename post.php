@@ -34,8 +34,6 @@ if (isset($_POST['submit'])) {
 
 } 
 
-
-
 if(isset($_POST['submit'])) {
 	if(!empty($_POST['name']) 
 		&& !empty($_POST['email']) 
@@ -59,9 +57,6 @@ if(isset($_POST['submit'])) {
 
 		$stmt->execute(); 
 
-		
-
-
 	} else
 
 	die("query failed" . mysqli_error($conn));
@@ -69,10 +64,7 @@ if(isset($_POST['submit'])) {
 
 }
 
-
  ?>
-
-
 
 <!-- Post -->
 	
@@ -135,8 +127,11 @@ if($stmt->prepare($query)) {
 			</div>
 		</form>	
 	</section>
-	<?php countComments(); ?>
-
+	<section class="blog-post"></section>
+		<div class="comments">
+			<?php countComments(); ?>
+		</div>
+	</section>
 
 	<section class="blog-post">
 		<?php
