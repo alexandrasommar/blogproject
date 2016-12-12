@@ -6,9 +6,38 @@
 $postid = $_GET['edit'];
 ?>
 
+<?php
+if(isset($_POST['update'])) {
+	$title = $_POST['title'];
+	$content = $_POST['post_content'];
+	$category = $_POST['post_category'];
+
+	$image = $_FILES['image']['name'];
+	$target_folder = "uploads/";
+	$target_name = $target_folder . $image;
+	move_uploaded_file($_FILES['image']['tmp_name'], "../uploads/$image");
+
+	$query = "UPDATE posts SET post_title = '{$title}', post_content = '{$content}', post_category_id = '{$category}', post_image = '{$target_name}' WHERE post_id = {$postid}";
+	if($stmt->prepare($query)) {
+		$stmt->execute();
+		$message = "Inlägget uppdaterades <a href='../post.php?post={$postid}'>Titta på inlägget</a>";
+	} else {
+		echo "query failed" . mysqli_error($conn);
+	}
+}
+
+
+?>
+
+
+
 	<div class="container">
 		<?php include "user_navigation.php"; ?>
 		<main>
+		<?php if(isset($message)) {
+			echo $message;
+			}
+			?>
 			<?php
 			$query = "SELECT * FROM posts WHERE post_id = {$postid}";
 			if($stmt->prepare($query)) {
@@ -37,16 +66,26 @@ $postid = $_GET['edit'];
 						<option>Välj kategori</option>
 						<?php
 						 $cat_query = "SELECT * FROM categories";
-								    $select_categories = mysqli_query($conn,$cat_query);   
-								    while ($row = mysqli_fetch_assoc($select_categories)) {        
-								    $cat_id = $row['cat_id'];
-								    $cat_name = $row['cat_name'];
-
-								    echo "<option value='$cat_id'>$cat_name</option>";
-								 
-									} 
+						 if($stmt->prepare($cat_query)) {
+							$stmt->execute();
+							$stmt->bind_result($cat_id, $cat_name);
+							
+							while(mysqli_stmt_fetch($stmt)) {
+								echo "<option value='$cat_id'>$cat_name</option>";
+								    	}
+								    } else {
+								    	echo "query failed" . mysqli_error($conn);
+								  }
 						?>
 						</select>
+					</div>
+					<div class="form__input">
+					<?php
+					if($post_status == 0) {
+						echo "<input class='btn' type='submit' name='publish' value='Publicera'>";
+					}
+					?>
+						
 					</div>
 					<div class="form__input">
 						<input class="btn" type="submit" name="update" value="Uppdatera">
