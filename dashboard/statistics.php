@@ -1,45 +1,34 @@
 <?php session_start(); ?>
 <?php include "../include/db.php"; ?>
 <?php include "../head.php"; ?>
-<?php include "../include/functions.php"; ?>
 
 	<div class="container">
 			<?php include "user_navigation.php"; ?>
 				<main>
-				<?php
-				$query = "SELECT * FROM posts WHERE post_author_id = '{$_SESSION['user_id']}'";
-				if($result = mysqli_query($conn, $query)) {
-					$post_cnt = mysqli_num_rows($result);
-				}
-				$query = "SELECT comments.*, posts.post_author_id FROM comments LEFT JOIN posts ON posts.post_id = comments.comment_post_id WHERE post_author_id = '{$_SESSION['user_id']}'";
-				if($result = mysqli_query($conn, $query)) {
-					$comm_cnt = mysqli_num_rows($result);
-					$average = $comm_cnt / $post_cnt;
-				}
+					<?php
+					$query = "SELECT * FROM posts WHERE post_author_id = '{$_SESSION['user_id']}'";
+					if($result = mysqli_query($conn, $query)) {
+						$post_cnt = mysqli_num_rows($result);
+					}
+					$query = "SELECT comments.*, posts.post_author_id FROM comments LEFT JOIN posts ON posts.post_id = comments.comment_post_id WHERE post_author_id = '{$_SESSION['user_id']}'";
+					if($result = mysqli_query($conn, $query)) {
+						$comm_cnt = mysqli_num_rows($result);
+						$average = $comm_cnt / $post_cnt;
+					}
 
-				?>
-				<table>
-					<tr>
-						<th>Antal inlägg</th>
-						<th>Antal kommentarer totalt</th>
-						<th>Antal kommentarer i snitt per inlägg</th>
-					</tr>
-					<tr>
-						<td><?php echo $post_cnt; ?></td>
-						<td><?php echo $comm_cnt; ?></td>
-						<td><?php echo $average; ?></td>
-					</tr>
-				</table>
-
-
-
-
-
-
-
-
-
-
+					?>
+					<table>
+						<tr>
+							<th>Antal inlägg</th>
+							<th>Antal kommentarer totalt</th>
+							<th>Antal kommentarer i snitt per inlägg</th>
+						</tr>
+						<tr>
+							<td><?php echo $post_cnt; ?></td>
+							<td><?php echo $comm_cnt; ?></td>
+							<td><?php echo $average; ?></td>
+						</tr>
+					</table>
 				</main>
 			</div>
 		</div>
