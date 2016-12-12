@@ -12,32 +12,34 @@
 						<th>Kategori</th>
 						<th>Titel</th>
 						<th>Bloggare</th>
-						<th>Bloggid</th>
 						<th>Datum</th>
 						<th>Bild</th>
 						<th>Text</th>
 						<th>Status</th>
+						<th>Redigera</th>
+						<th>Radera</th>
 					</tr>
 					<tr>
 					<?php
-					$query = "SELECT * FROM posts WHERE post_author_id = {$_SESSION['user_id']}";
+					$query = "SELECT posts.*, categories.cat_name FROM posts LEFT JOIN categories ON posts.post_category_id = categories.cat_id WHERE post_author_id = {$_SESSION['user_id']}";
 
 					if($stmt->prepare($query)) {
 
 					$stmt->execute();
-					$stmt->bind_result($post_id, $cat_id, $title, $author, $author_id, $date, $image, $content, $status);
+					$stmt->bind_result($post_id, $cat_id, $title, $author, $author_id, $date, $image, $content, $status, $cat_name);
 
 					while(mysqli_stmt_fetch($stmt)) { ?>
 						
 							<td><?php echo $post_id; ?></td>
-							<td><?php echo $cat_id; ?></td>
+							<td><?php echo $cat_name; ?></td>
 							<td><?php echo $title; ?></td>
 							<td><?php echo $author; ?></td>
-							<td><?php echo $author_id; ?></td>
 							<td><?php echo $date; ?></td>
 							<td><?php echo $image; ?></td>
 							<td><?php echo substr($content, 0, 80); ?></td>
 							<td><?php echo $status; ?></td>
+							<td><?php echo "<a href='edit_post.php?edit=$post_id'>Redigera</a>"; ?></td>
+							<td>Radera</td>
 							</tr>
 
 						<?php
