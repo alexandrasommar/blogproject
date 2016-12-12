@@ -330,8 +330,8 @@ a:hover img.post__img--styling {
   	display: flex;
   	flex-direction: row;
   	justify-content: center;
-  	height: 100vh;
-  	padding-top: 40px;
+  	height: auto;
+  	padding: 20px 0;
   }
 
   form {
