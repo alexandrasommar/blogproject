@@ -26,11 +26,13 @@ if(isset($_GET['delete'])) {
 				?>
 				<table>
 					<tr>
-						<th>Post Id</th>
-						<th>Kategori</th>
-						<th>Titel</th>
-						<th>Bloggare</th>
 						<th>Datum</th>
+						<th>Titel</th>
+						
+						<th>Kategori</th>
+						
+						<th>Bloggare</th>
+						
 						<th>Bild</th>
 						<th>Text</th>
 						<th>Status</th>
@@ -39,7 +41,7 @@ if(isset($_GET['delete'])) {
 					</tr>
 					<tr>
 					<?php
-					$query = "SELECT posts.*, categories.cat_name FROM posts LEFT JOIN categories ON posts.post_category_id = categories.cat_id WHERE post_author_id = {$_SESSION['user_id']}";
+					$query = "SELECT posts.*, categories.cat_name FROM posts LEFT JOIN categories ON posts.post_category_id = categories.cat_id WHERE post_author_id = {$_SESSION['user_id']} ORDER BY post_date DESC";
 
 					if($stmt->prepare($query)) {
 
@@ -47,15 +49,19 @@ if(isset($_GET['delete'])) {
 					$stmt->bind_result($post_id, $cat_id, $title, $author, $author_id, $date, $image, $content, $status, $cat_name);
 
 					while(mysqli_stmt_fetch($stmt)) { ?>
-						
-							<td><?php echo $post_id; ?></td>
-							<td><?php echo $cat_name; ?></td>
-							<td><?php echo $title; ?></td>
-							<td><?php echo $author; ?></td>
+							
 							<td><?php echo $date; ?></td>
-							<td><?php echo $image; ?></td>
-							<td><?php echo substr($content, 0, 80); ?></td>
-							<td><?php echo $status; ?></td>
+							<td><?php echo $title; ?></td>
+							<td><?php echo $cat_name; ?></td>
+							<td><?php echo $author; ?></td>
+							<td><?php echo "<img src='../$image' width='20'>"; ?></td>
+							<td><?php echo substr($content, 0, 60); ?></td>
+							<td><?php
+							if($status == 1) {
+								echo "Publicerad";
+							} else {
+								echo "Utkast";
+							}?></td>
 							<td><?php echo "<a href='edit_post.php?edit=$post_id'>Redigera</a>"; ?></td>
 							<td><?php echo "<a href='user_posts.php?delete=$post_id'>Radera</a>"; ?></td>
 							</tr>
