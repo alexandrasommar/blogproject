@@ -2,10 +2,28 @@
 <?php include "../include/db.php"; ?>
 <?php include "../head.php"; ?>
 
+<?php
+if(isset($_GET['delete'])) {
+	$postdel = $_GET['delete'];
+	$query = "DELETE FROM posts WHERE post_id = {$postdel}";
+	if($stmt->prepare($query)) {
+		$stmt->execute();
+		$message = "Inlägget raderades";
+	}
+}
+
+
+?>
 
 	<div class="container">
 			<?php include "user_navigation.php"; ?>
 				<main>
+				<?php
+				if(isset($message)) {
+					echo $message;
+				}
+
+				?>
 				<table>
 					<tr>
 						<th>Post Id</th>
@@ -39,7 +57,7 @@
 							<td><?php echo substr($content, 0, 80); ?></td>
 							<td><?php echo $status; ?></td>
 							<td><?php echo "<a href='edit_post.php?edit=$post_id'>Redigera</a>"; ?></td>
-							<td>Radera</td>
+							<td><?php echo "<a href='user_posts.php?delete=$post_id'>Radera</a>"; ?></td>
 							</tr>
 
 						<?php
