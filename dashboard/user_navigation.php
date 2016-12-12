@@ -72,7 +72,7 @@
 								</ul>
 							</div>
 							<li><a href="user_comments.php"><i class="fa fa-comments aside" aria-hidden="true"></i>Kommentarer</a></li>
-							<li><a href="#"><i class="fa fa-bar-chart aside" aria-hidden="true"></i>Statistik</a></li>
+							<li><a href="statistics.php"><i class="fa fa-bar-chart aside" aria-hidden="true"></i>Statistik</a></li>
 							<li class="accordion"><a href="#"><i class="fa fa-list aside" aria-hidden="true"></i>Kategorier<i class="fa fa-caret-down" aria-hidden="true"></i></a></li>
 							<div class="panel">
 								<ul class="aside__nav--visible">

@@ -1,5 +1,3 @@
-<?php include "../head.php"; ?>
-
 <?php  
 
 if(isset($_POST['publish']) || isset($_POST['save'])) {
