@@ -11,10 +11,10 @@
 				if($result = mysqli_query($conn, $query)) {
 					$post_cnt = mysqli_num_rows($result);
 				}
-				//välja comments baserat på comment post id och att det överrensstämmer med de post id som användaren gjort?!
-				$query = "SELECT * FROM comments";
+				$query = "SELECT comments.*, posts.post_author_id FROM comments LEFT JOIN posts ON posts.post_id = comments.comment_post_id WHERE post_author_id = '{$_SESSION['user_id']}'";
 				if($result = mysqli_query($conn, $query)) {
 					$comm_cnt = mysqli_num_rows($result);
+					$average = $comm_cnt / $post_cnt;
 				}
 
 				?>
@@ -27,7 +27,7 @@
 					<tr>
 						<td><?php echo $post_cnt; ?></td>
 						<td><?php echo $comm_cnt; ?></td>
-						<td></td>
+						<td><?php echo $average; ?></td>
 					</tr>
 				</table>
 
