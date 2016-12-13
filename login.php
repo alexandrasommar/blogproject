@@ -34,21 +34,19 @@ if(isset($_POST['loggin'])) {
 
 
 			header("Location: dashboard/index.php");
-		}
+		} else {
+			$message = "Du har fyllt i fel användarnamn eller lösenord";
+		} 
+
+	} 
+
+	} else {
+		$message = "Du måste fylla i användarnamn och lösenord";
+	} 
 
 
 
-
-
-
-
-	}
-
-	}
-
-
-
-}
+} 
 
 
 
@@ -65,6 +63,12 @@ if(isset($_POST['loggin'])) {
 				<div class="login__form">
 					<form method="post" action="" class="login__input">
 							<span>Logga in</span>
+							<?php 
+							if(isset($message)) {
+								echo $message;
+							}
+
+							 ?>
 							<input type="text" name="username" placeholder="Användarnamn">
 							<input type="password" name="password" placeholder="Lösenord">
 							<input type="submit" name="loggin" value="Logga in">
