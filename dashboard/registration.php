@@ -2,6 +2,7 @@
 <?php include "../include/db.php"; ?>
 <?php include "../head.php"; ?>
 <?php
+if($_SESSION['role'] == 'admin') {
 if(isset($_POST['register'])) {
 	if(!empty($_POST['firstname'])
 		&& !empty($_POST['lastname'])
@@ -99,3 +100,6 @@ if(isset($_POST['register'])) {
 		<script src="script.js"></script>
 </body>
 </html>
+<?php } else {
+	header("Location: index.php"); 
+	}?>
