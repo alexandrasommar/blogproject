@@ -1,4 +1,5 @@
-.header__text {
+.header {
+	&__text {
 		width: 100%;
 		text-align: center;
 		display: flex;
@@ -7,55 +8,54 @@
 		justify-content: center;
 	}
 
-	.header__text--title span {
-		font-size: 120px;
-	}
-
-	.header__text {
-		margin-left: 0;
-	}
-
-	.header__text--text {
+	&__text--text {
 		display: none;
 	}
+
+	&_text--title span {
+		font-size: 120px;
+	}
+}
 
 /* ----------------------------------------------- */
 /* 					footer.php;					   */
 /* ----------------------------------------------- */
 
-	.footer__nav--responsive-list {
+	.footer {
+		&__nav--responsive-list {
 		display: flex;
 		flex-direction: column;
+
+		li {
+			padding: 10px 0;
+		}
+
+		a {
+			font-size: 40px;
+			font-family: 'Lato', sans-serif;
+			font-weight: 400;
+		}
 	}
 
-	.footer__nav--responsive-list li {
-		padding: 10px 0;
-	}
-
-	.footer__nav--responsive-list a {
-		font-size: 40px;
-		font-family: 'Lato', sans-serif;
-		font-weight: 400;
-	}
-
-	.footer__nav--responsive-icon {
+	&__nav--responsive-icon {
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
 		flex-wrap: wrap;
 		margin: 0;
 		padding: 0;
+
+		i {
+			font-size: 60px;
+			padding: 0 3px;
+		}
 	}
 
-	.footer__nav--responsive-icon i {
-		font-size: 60px;
-		padding: 0 3px;
-	}
-
-	.footer__logo {
-	    align-items: flex-start;
+	&__logo {
+		align-items: flex-start;
 	    display: flex;
 	    justify-content: center;
 	    margin: 50px 0 30px 0;
 	    height: auto;
 	}
+}
