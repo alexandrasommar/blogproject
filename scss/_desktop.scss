@@ -1,0 +1,73 @@
+.header__menu--block {
+		display: none;
+	}
+
+	.toggle-menu {
+		display: block;
+		width: 100%;
+		margin: 10px 5px;
+	}
+
+	.header__nav {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-end;
+		width: 100%;
+	}
+
+.label-toggle {
+      background: linear-gradient(to bottom, #222 0%, #222 20%, transparent 20%, transparent 40%, #222 40%, #222 60%, transparent 60%, transparent 80%, #222 80%, #222 100%); //Gradient Hamburger
+      cursor: pointer;
+      display: block;
+      float: right;
+      height: 30px;
+      width: 30px;
+      margin-right: 10px;
+    }
+
+.hidden {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 0;
+      opacity: 0;
+      /*text-align: center;*/
+      transition: all 1s ease;
+      width: 100%;
+      visibility: hidden;
+	}
+
+.hidden-flex {
+	width: 100%;
+}
+
+.hidden ul {
+	list-style: none;
+}
+
+.toggle-menu__list li {
+	padding: 10px;
+}
+
+.toggle-menu__list i {
+	padding-right: 10px;
+}
+
+.hidden a {
+	text-decoration: none;
+	color: #9d9d9d;
+	font-size: 30px;
+}
+
+#menu-toggle:checked ~ .hidden {
+  opacity: 1;
+  height: 100vh;
+  visibility: visible;
+}
+
+.toggle-menu__flex-center {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 100%;
+}
