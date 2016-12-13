@@ -11,11 +11,9 @@ if(isset($_GET['delete'])) {
 		$message = "Inlägget raderades";
 	}
 }
-
-
 ?>
 
-	<div class="container">
+<div class="container">
 			<?php include "user_navigation.php"; ?>
 				<main>
 				<?php
@@ -62,7 +60,7 @@ if(isset($_GET['delete'])) {
 							} else {
 								echo "Utkast";
 							}?></td>
-							<td><?php echo "<a href='edit_post.php?edit=$post_id'>Redigera</a>"; ?></td>
+							<td><?php echo "<a href='user_posts.php?source=edit&post=$post_id'>Redigera</a>"; ?></td>
 							<td><?php echo "<a href='user_posts.php?delete=$post_id'>Radera</a>"; ?></td>
 							</tr>
 
@@ -79,6 +77,25 @@ if(isset($_GET['delete'])) {
 				
 						
 					</table>
+
+<?php
+if(isset($_GET['source'])) {
+	    $source = $_GET['source'];
+	} else {
+	    $source = '';
+	}
+
+	switch ($source) {
+	    case 'edit':
+	        include "edit_post.php";
+	        break;
+	    
+	    
+	}
+
+?>
+
+	
 
 				</main>
 			</div>

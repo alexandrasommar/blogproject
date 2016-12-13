@@ -1,9 +1,5 @@
-<?php session_start(); ?>
-<?php include "../include/db.php"; ?>
-<?php include "../head.php"; ?>
-
 <?php  
-$postid = $_GET['edit'];
+$postid = $_GET['post'];
 ?>
 
 <?php
@@ -40,10 +36,6 @@ if(isset($_POST['update']) || isset($_POST['publish'])) {
 ?>
 
 
-
-	<div class="container">
-		<?php include "user_navigation.php"; ?>
-		<main>
 		<?php if(isset($message)) {
 			echo $message;
 			}
@@ -107,14 +99,3 @@ if(isset($_POST['update']) || isset($_POST['publish'])) {
 				</form>
 			</section>
 
-
-
-		
-		</main>
-	</div>
-	<!-- FontAwesom -->
-		<script src="https://use.fontawesome.com/78a857f410.js"></script>
-		<!-- JavaScript -->
-		<script src="script.js"></script>
-</body>
-</html>
