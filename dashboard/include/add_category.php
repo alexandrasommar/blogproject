@@ -1,0 +1,33 @@
+<?php
+if(isset($_POST['create_cat'])) {
+	if(!empty($_POST['name'])) {
+		$catname = $_POST['name'];
+		$query = "INSERT INTO categories VALUES('', '{$catname}')";
+		if($stmt->prepare($query)) {
+			$stmt->execute();
+			$message = "Kategorin lades till";
+		}
+
+	} else {
+		$message = "Du måste fylla i namn på kategorin";
+	}
+}
+
+?>
+<?php 
+if(isset($message)) {
+	echo $message;
+}
+
+?>
+<section class="form">
+	<form action="" method="post">
+		<div class="form__input">
+			<label for="name">Lägg till ny kategori</label>
+			<input type="text" class="form-control" name="name">
+		</div>
+		<div class="form__input">
+			<input class="btn btn-primary" type="submit" name="create_cat" value="Lägg till">
+		</div>
+	</form>
+</section>

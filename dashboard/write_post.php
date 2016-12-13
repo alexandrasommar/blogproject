@@ -7,7 +7,7 @@
 			<?php include "user_navigation.php"; ?>
 				<main>
 					<?php
-					include "add_post.php";
+					include "include/add_post.php";
 					?>
 				</main>
 			</div>

@@ -19,10 +19,10 @@
 
 	switch ($source) {
 	    case 'edit':
-	        include "edit_user.php";
+	        include "include/edit_user.php";
 	        break;
 	    case 'register':
-	        include "registration.php";
+	        include "include/registration.php";
 	        break;
 	    
 	}
