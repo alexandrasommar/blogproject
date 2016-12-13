@@ -9,8 +9,34 @@ if(isset($_POST['register'])) {
 		&& !empty($_POST['website'])
 		&& !empty($_POST['username'])
 		&& !empty($_POST['password'])
-		&& !empty($_FILES[''])) {
-		
+		&& !empty($_FILES['profilepic'])
+		&& !empty($_POST['description'])) {
+
+		$first = mysqli_real_escape_string($conn, $_POST['firstname']);
+		$last = mysqli_real_escape_string($conn, $_POST['lastname']);
+		$email = mysqli_real_escape_string($conn, $_POST['email']);
+		$website = mysqli_real_escape_string($conn, $_POST['website']);
+		$description = mysqli_real_escape_string($conn, $_POST['description']);
+		$user = mysqli_real_escape_string($conn, $_POST['username']);
+		$pass = mysqli_real_escape_string($conn, $_POST['password']);
+
+		$profilepic = $_FILES['profilepic']['name'];
+		$target_folder = "uploads/";
+		$target_name = $target_folder . $profilepic;
+		move_uploaded_file($_FILES['profilepic']['tmp_name'], "../uploads/$profilepic");
+
+
+		$pass = password_hash($pass, PASSWORD_DEFAULT);
+
+		$query = "INSERT INTO users VALUES('', '{$user}', '{$first}', '{$last}', '{$pass}', '{$email}', '{$website}', '{$target_name}', '{$description}', 'editor')";
+
+		if($stmt->prepare($query)) {
+			$stmt->execute();
+			$message = "Användaren är registrerad och kan nu logga in";
+		} else {
+			die("Query failed" . mysqli_error($conn));
+		}
+ 
 	}
 }
 
@@ -20,6 +46,12 @@ if(isset($_POST['register'])) {
 	<div class="container">
 		<?php include "user_navigation.php"; ?>
 		<main>
+			<?php
+			if(isset($message)) {
+				echo $message;
+			}
+
+			?>
 			<section class="form">
 				<form action="registration.php" method="post" enctype="multipart/form-data">
 					<div class="form__input">
