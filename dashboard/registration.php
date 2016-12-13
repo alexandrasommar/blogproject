@@ -1,6 +1,3 @@
-<?php session_start(); ?>
-<?php include "../include/db.php"; ?>
-<?php include "../head.php"; ?>
 <?php
 if($_SESSION['role'] == 'admin') {
 if(isset($_POST['register'])) {
@@ -44,9 +41,6 @@ if(isset($_POST['register'])) {
 
 
 ?>
-	<div class="container">
-		<?php include "user_navigation.php"; ?>
-		<main>
 			<?php
 			if(isset($message)) {
 				echo $message;
@@ -54,7 +48,7 @@ if(isset($_POST['register'])) {
 
 			?>
 			<section class="form">
-				<form action="registration.php" method="post" enctype="multipart/form-data">
+				<form action="" method="post" enctype="multipart/form-data">
 					<div class="form__input">
 						<label for="firstname">Förnamn</label>
 						<input type="text" class="form-control" name="firstname">
@@ -92,14 +86,7 @@ if(isset($_POST['register'])) {
 					</div>
 				</form>
 			</section>
-		</main>
-	</div>
-		<!-- FontAwesom -->
-		<script src="https://use.fontawesome.com/78a857f410.js"></script>
-		<!-- JavaScript -->
-		<script src="script.js"></script>
-</body>
-</html>
+		
 <?php } else {
 	header("Location: index.php"); 
 	}?>

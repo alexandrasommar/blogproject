@@ -1,8 +1,5 @@
-<?php session_start(); ?>
-<?php include "../include/db.php"; ?>
-<?php include "../head.php"; ?>
 <?php
-$userid = $_GET['edit'];
+$userid = $_GET['user'];
 if(isset($_POST['update'])) {
 		$first = mysqli_real_escape_string($conn, $_POST['firstname']);
 		$last = mysqli_real_escape_string($conn, $_POST['lastname']);
@@ -11,20 +8,23 @@ if(isset($_POST['update'])) {
 		$description = mysqli_real_escape_string($conn, $_POST['description']);
 		$user = mysqli_real_escape_string($conn, $_POST['username']);
 		$pass = mysqli_real_escape_string($conn, $_POST['password']);
+		$profilepic = $_FILES['profilepic']['name'];
 
-		// $profilepic = $_FILES['profilepic']['name'];
-		// $target_folder = "uploads/";
-		// $target_name = $target_folder . $profilepic;
-		// move_uploaded_file($_FILES['profilepic']['tmp_name'], "../uploads/$profilepic");
+		//$pass = password_hash($pass, PASSWORD_DEFAULT);
 
+		$query = "UPDATE users SET username = '{$user}', user_firstname = '{$first}', user_lastname = '{$last}', user_password = '{$pass}', user_website = '{$website}', user_description = '{$description}' ";
 
-		$pass = password_hash($pass, PASSWORD_DEFAULT);
-
-		$query = "UPDATE users SET username = '{$user}', user_firstname = '{$first}', user_lastname = '{$last}', user_password = '{$pass}', user_website = '{$website}', user_description = '{$description}' WHERE user_id = {$userid}";
+		if(!empty($profilepic)) {
+			$target_folder = "uploads/";
+			$target_name = $target_folder . $profilepic;
+			move_uploaded_file($_FILES['profilepic']['tmp_name'], "../uploads/$profilepic");
+			$query .= ", user_image = '{$target_name}' ";
+		}
+			$query .=  "WHERE user_id = {$userid}";
 
 		if($stmt->prepare($query)) {
 			$stmt->execute();
-			$message = "Användaren är uppdaterad";
+			$message = "Användaren är uppdaterad.";
 		} else {
 			die("Query failed" . mysqli_error($conn));
 		}
@@ -33,14 +33,11 @@ if(isset($_POST['update'])) {
 
 ?>
 
-<div class="container">
-	<?php include "user_navigation.php"; ?>
-	<main>
+
 <?php
 if (isset($message)) {
 	echo $message;
 }
-
 
 $query = "SELECT * FROM users WHERE user_id = {$userid}";
 
@@ -98,11 +95,4 @@ if($stmt->prepare($query)) {
 
 
 ?>
-	</main>
-</div>
-<!-- FontAwesom -->
-		<script src="https://use.fontawesome.com/78a857f410.js"></script>
-		<!-- JavaScript -->
-		<script src="script.js"></script>
-</body>
-</html>
+	

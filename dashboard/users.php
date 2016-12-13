@@ -8,13 +8,29 @@
 	<?php
 
 	if($_SESSION['role'] == 'admin') {
-		echo "<a href='registration.php'>Registrera ny användare</a>";
 		include "all_users.php";
+		echo "<a href='users.php?source=register'>Registrera ny användare</a>";
+
+	if(isset($_GET['source'])) {
+	    $source = $_GET['source'];
+	} else {
+	    $source = '';
+	}
+
+	switch ($source) {
+	    case 'edit':
+	        include "edit_user.php";
+	        break;
+	    case 'register':
+	        include "registration.php";
+	        break;
+	    
+	}
+
 	} else {
 		header("Location: index.php");
 
 	}
-
 	?>
 	</main>
 </div>
