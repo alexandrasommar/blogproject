@@ -25,17 +25,17 @@
 										</div>
 										<li><a href="user_comments.php"><i class="fa fa-comments aside" aria-hidden="true"></i>Kommentarer</a></li>
 										<li><a href="#"><i class="fa fa-bar-chart aside" aria-hidden="true"></i>Statistik</a></li>
-										<li class="accordion"><a href="#"><i class="fa fa-list aside" aria-hidden="true"></i>Kategorier<i class="fa fa-caret-down" aria-hidden="true"></i></a></li>
-										<div class="panel">
-											<ul class="aside__nav--visible">
-												<li>Visa kategorier</li>
-												<li>Lägg till kategori</li>
-											</ul>
-										</div>
-										<?php 
-										if($_SESSION['role'] == 'admin') {
-											echo "<li><a href='users.php'><i class='fa fa-user-circle-o aside' aria-hidden='true'></i>Användare</a></li>";
-											} ?>
+										<?php
+										if($_SESSION['role'] == 'admin') { ?>
+											<li class="accordion"><a href="categories.php"><i class="fa fa-list aside" aria-hidden="true"></i>Kategorier<i class="fa fa-caret-down" aria-hidden="true"></i></a></li>
+											<div class="panel">
+												<ul class="aside__nav--visible">
+													<li>Visa kategorier</li>
+													<li>Lägg till kategori</li>
+												</ul>
+											</div>
+											<li><a href="users.php"><i class="fa fa-user-circle-o aside" aria-hidden="true"></i>Användare</a></li>
+										<?php } ?>
 										<li><a href="#"><i class="fa fa-cog" aria-hidden="true"></i>Inställningar</a></li>
 										<li><a href="#"><i class="fa fa-sign-out" aria-hidden="true"></i>Logga ut</a></li>
 									</ul>
@@ -76,17 +76,17 @@
 							</div>
 							<li><a href="user_comments.php"><i class="fa fa-comments aside" aria-hidden="true"></i>Kommentarer</a></li>
 							<li><a href="statistics.php"><i class="fa fa-bar-chart aside" aria-hidden="true"></i>Statistik</a></li>
-							<li class="accordion"><a href="#"><i class="fa fa-list aside" aria-hidden="true"></i>Kategorier<i class="fa fa-caret-down" aria-hidden="true"></i></a></li>
+							<?php
+							if($_SESSION['role'] == 'admin') { ?>
+							<li class="accordion"><a href="categories.php"><i class="fa fa-list aside" aria-hidden="true"></i>Kategorier<i class="fa fa-caret-down" aria-hidden="true"></i></a></li>
 							<div class="panel">
 								<ul class="aside__nav--visible">
 									<li>Visa kategorier</li>
 									<li>Lägg till kategori</li>
 								</ul>
 							</div>
-							<?php 
-							if($_SESSION['role'] == 'admin') {
-								echo "<li><a href='users.php'><i class='fa fa-user-circle-o aside' aria-hidden='true'></i>Användare</a></li>";
-								} ?>
+							<li><a href="users.php"><i class="fa fa-user-circle-o aside" aria-hidden="true"></i>Användare</a></li>
+							<?php } ?>
 						</ul>
 					</div>
 				</aside>
