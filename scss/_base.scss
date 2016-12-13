@@ -280,12 +280,12 @@ input[type=submit] {
   	margin: 5px 0;
   	border-radius: 2px;
 	border: none;
-	background-color: #F07444;
+	background-color: $btn-color;
   	color: white;
   	transition: .2s ease;
 
   	&:hover {
-  		background-color: #F75633;
+  		background-color: $btn-color--hover;
 		transition: .2s ease;
   	}
 }
@@ -631,7 +631,7 @@ input[type=submit] {
 .login {
 	width: 100%;
 	height: 100vh;
-	background-color: #222;
+	background-color: $color--dark;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
@@ -689,7 +689,7 @@ input[type=submit] {
 		span {
 			font: $font-thin;
 			font-size: 26px;
-			color: #222;
+			color: $color--dark;
 			text-align: center;
 			margin: 25px 0;
 		}
@@ -699,10 +699,10 @@ input[type=submit] {
 			padding: 3px 0;
 			background: transparent;
 		    border: none;
-		    border-bottom: 1px dashed #222;
+		    border-bottom: 1px dashed $color--dark;
 		    outline: none;
 		    font: $font-thin;
-		    color: #222;
+		    color: $color--dark;
 		}
 
 		input[type=password] {
@@ -710,10 +710,10 @@ input[type=submit] {
 			padding: 3px 0;
 			background: transparent;
 		    border: none;
-		    border-bottom: 1px dashed #222;
+		    border-bottom: 1px dashed $color--dark;
 		    outline: none;
 		    font: $font-thin;
-		    color: #222;
+		    color: $color--dark;
 		}
 
 		button {
