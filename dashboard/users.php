@@ -6,10 +6,6 @@
 	<?php include "user_navigation.php"; ?>
 	<main>
 	<?php
-	// om användaren är superadmin/admin så kan en lägga till nya användare och se ALLA användare
-	// annars kan en bara se info om sig själv
-
-	
 
 	if($_SESSION['role'] == 'admin') {
 		echo "<a href='registration.php'>Registrera ny användare</a>";
@@ -17,10 +13,7 @@
 	} else {
 		header("Location: index.php");
 
-
-		}
-	
-
+	}
 
 	?>
 	</main>

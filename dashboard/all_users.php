@@ -1,3 +1,24 @@
+	<?php
+	if(isset($_GET['delete'])) {
+		$userdel = $_GET['delete'];
+		$query = "DELETE FROM users WHERE user_id = {$userdel}";
+		if($stmt->prepare($query)) {
+			$stmt->execute();
+			$message = "Användaren raderades";
+
+		} else {
+			echo mysqli_error($conn);
+		}
+	}
+
+
+	?>
+	<?php
+	if(isset($message)) {
+		echo $message;
+	}
+
+	?>
 	<table>
 		<tr>
 			<th>Förnamn</th>
@@ -25,7 +46,7 @@
 							<td><?php echo "<img src='../$image' width='20'>"; ?></td>
 							<td><?php echo substr($description, 0, 60); ?></td>
 							<td>Redigera</td>
-							<td>Radera</td>
+							<td><?php echo "<a href='users.php?delete=$user_id'>Radera</a>"; ?></td>
 		</tr>
 					<?php
 
