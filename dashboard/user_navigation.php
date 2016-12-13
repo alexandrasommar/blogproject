@@ -32,7 +32,7 @@
 												<li>Lägg till kategori</li>
 											</ul>
 										</div>
-										<li><a href="#"><i class="fa fa-user-circle-o aside" aria-hidden="true"></i>Användare</a></li>
+										<li><a href="users.php"><i class="fa fa-user-circle-o aside" aria-hidden="true"></i>Användare</a></li>
 										<li><a href="#"><i class="fa fa-cog" aria-hidden="true"></i>Inställningar</a></li>
 										<li><a href="#"><i class="fa fa-sign-out" aria-hidden="true"></i>Logga ut</a></li>
 									</ul>
@@ -80,7 +80,7 @@
 									<li>Lägg till kategori</li>
 								</ul>
 							</div>
-							<li><a href="#"><i class="fa fa-user-circle-o aside" aria-hidden="true"></i>Användare</a></li>
+							<li><a href="users.php"><i class="fa fa-user-circle-o aside" aria-hidden="true"></i>Användare</a></li>
 						</ul>
 					</div>
 				</aside>
