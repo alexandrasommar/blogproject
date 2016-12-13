@@ -2,7 +2,7 @@ body {
   height: 100vh;
   margin: 0;
   padding: 0;
-  font: 300 20px/1.5 "Lato", sans-serif; }
+  font: 300 18px/1.5 "Lato", sans-serif; }
 
 /* ----------------------------------------------- */
 /* 					Header 						   */
@@ -35,7 +35,7 @@ body {
     position: fixed;
     width: 100%; }
   .header__menu {
-    font: 300 20px/1.5 "Lato", sans-serif; }
+    font: 300 18px/1.5 "Lato", sans-serif; }
     .header__menu ul {
       list-style: none;
       padding: 10px 0;
@@ -87,9 +87,8 @@ body {
     .header__text--text {
       padding-bottom: 10px; }
       .header__text--text span {
-        font-size: 30px;
         color: #fff;
-        font: 100 20px/1.5 "Lato", sans-serif; }
+        font: 100 18px/1.5 "Lato", sans-serif; }
 
 .logo-img {
   width: 55px; }
@@ -117,17 +116,17 @@ body {
   padding-top: 120px;
   width: 40%; }
   .message h3 {
+    color: #222;
     font: 400 24px/1.5 "Lato", sans-serif;
     font-size: 30px;
-    color: #222;
     margin: 0;
     padding-bottom: 15px; }
   .message p {
-    font: 100 20px/1.5 "Lato", sans-serif;
-    font-size: 25px;
     color: #676767;
-    margin: 0;
-    line-height: 30px; }
+    font: 100 18px/1.5 "Lato", sans-serif;
+    font-size: 25px;
+    line-height: 30px;
+    margin: 0; }
   .message__container {
     display: flex;
     flex-direction: column;
@@ -161,22 +160,20 @@ body {
       margin: 0;
       padding: 5px; }
     .post__article p {
-      font-family: 300 20px/1.5 "Lato", sans-serif;
-      font-size: 14px;
-      line-height: 22px;
+      font-family: 300 16px/1.5 "Lato", sans-serif;
       margin: 0;
       padding: 5px; }
     .post__article a {
       color: #222;
       text-decoration: none; }
     .post__article span {
-      font-family: 100 20px/1.5 "Lato", sans-serif;
+      font-family: 100 18px/1.5 "Lato", sans-serif;
       font-size: 14px;
-      font-style: italic;
-      line-height: 22px; }
+      font-style: italic; }
     .post__article .author {
       color: #222;
-      font: 300 20px/1.5 "Lato", sans-serif; }
+      font: 100 18px/1.5 "Lato", sans-serif;
+      font-size: 14px; }
   .post__img {
     width: 100%; }
     .post__img--styling {
@@ -204,7 +201,7 @@ form {
   .form__input {
     display: flex;
     flex-direction: column;
-    font: 100 20px/1.5 "Lato", sans-serif; }
+    font: 100 18px/1.5 "Lato", sans-serif; }
 
 input[type=text] {
   height: 26px;
@@ -258,7 +255,7 @@ input[type=submit] {
       padding: 0;
       text-align: center;
       font-size: 20px;
-      font: 100 20px/1.5 "Lato", sans-serif;
+      font: 100 18px/1.5 "Lato", sans-serif;
       line-height: 30px; }
 
 /* ----------------------------------------------- */
@@ -269,7 +266,7 @@ input[type=submit] {
   height: auto;
   overflow: hidden;
   background-color: #313340;
-  font: 100 20px/1.5 "Lato", sans-serif;
+  font: 100 18px/1.5 "Lato", sans-serif;
   text-transform: uppercase; }
   .footer__nav {
     display: flex;
@@ -310,7 +307,7 @@ input[type=submit] {
       color: #222;
       margin: 10px 0; }
     .blog-post__article p {
-      font: 100 20px/1.5 "Lato", sans-serif;
+      font: 100 18px/1.5 "Lato", sans-serif;
       text-align: left;
       font-size: 20px;
       line-height: 30px;
@@ -328,18 +325,18 @@ input[type=submit] {
     flex-direction: row;
     justify-content: space-between;
     width: 95%;
-    font: 100 20px/1.5 "Lato", sans-serif; }
+    font: 100 18px/1.5 "Lato", sans-serif; }
   .blog-post__icon {
     color: #E57373; }
 
 .byline {
-  font: 100 20px/1.5 "Lato", sans-serif;
+  font: 100 18px/1.5 "Lato", sans-serif;
   font-size: 18px;
   line-height: 22px;
   font-style: italic; }
 
 .author {
-  font: 300 20px/1.5 "Lato", sans-serif; }
+  font: 300 18px/1.5 "Lato", sans-serif; }
 
 /* User information box */
 .user-information-box {
@@ -358,7 +355,7 @@ input[type=submit] {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font: 100 20px/1.5 "Lato", sans-serif;
+  font: 100 18px/1.5 "Lato", sans-serif;
   font-size: 36px;
   margin-bottom: 100px; }
   .comments-box ul {
@@ -403,7 +400,7 @@ input[type=submit] {
     width: 30%;
     margin: 0 20px;
     text-align: center;
-    font: 300 20px/1.5 "Lato", sans-serif; }
+    font: 300 18px/1.5 "Lato", sans-serif; }
     .post-category-text h2 {
       margin: 5px;
       font-weight: 400; }
@@ -463,7 +460,7 @@ input[type=submit] {
     .author-information-box__text p {
       padding: 0 50px;
       margin: 0;
-      font: 100 20px/1.5 "Lato", sans-serif;
+      font: 100 18px/1.5 "Lato", sans-serif;
       text-align: center; }
     .author-information-box__text h3 {
       font: 400 24px/1.5 "Lato", sans-serif;
@@ -522,7 +519,7 @@ input[type=submit] {
     align-items: center;
     padding: 0 70px; }
     .login__input span {
-      font: 100 20px/1.5 "Lato", sans-serif;
+      font: 100 18px/1.5 "Lato", sans-serif;
       font-size: 26px;
       color: #222;
       text-align: center;
@@ -534,7 +531,16 @@ input[type=submit] {
       border: none;
       border-bottom: 1px dashed #222;
       outline: none;
-      font: 100 20px/1.5 "Lato", sans-serif;
+      font: 100 18px/1.5 "Lato", sans-serif;
+      color: #222; }
+    .login__input input[type=password] {
+      margin: 10px 0;
+      padding: 3px 0;
+      background: transparent;
+      border: none;
+      border-bottom: 1px dashed #222;
+      outline: none;
+      font: 100 18px/1.5 "Lato", sans-serif;
       color: #222; }
     .login__input button {
       width: 100%;
@@ -617,7 +623,7 @@ input[type=submit] {
       width: 80%;
       margin: 0 20px;
       text-align: center;
-      font-family: 300 20px/1.5 "Lato", sans-serif; }
+      font-family: 300 18px/1.5 "Lato", sans-serif; }
   /* Slider */
   .slider-deskop {
     visibility: hidden; }
