@@ -26,11 +26,8 @@ if(isset($_GET['delete'])) {
 					<tr>
 						<th>Datum</th>
 						<th>Titel</th>
-						
 						<th>Kategori</th>
-						
 						<th>Bloggare</th>
-						
 						<th>Bild</th>
 						<th>Text</th>
 						<th>Status</th>
@@ -39,7 +36,13 @@ if(isset($_GET['delete'])) {
 					</tr>
 					<tr>
 					<?php
-					$query = "SELECT posts.*, categories.cat_name FROM posts LEFT JOIN categories ON posts.post_category_id = categories.cat_id WHERE post_author_id = {$_SESSION['user_id']} ORDER BY post_date DESC";
+					$query = "SELECT posts.*, categories.cat_name FROM posts LEFT JOIN categories ON posts.post_category_id = categories.cat_id ";
+
+					if($_SESSION['role'] != 'admin') {
+						$query .= "WHERE post_author_id = {$_SESSION['user_id']} ";
+					}
+
+					$query .= "ORDER BY post_date DESC";
 
 					if($stmt->prepare($query)) {
 
@@ -70,12 +73,7 @@ if(isset($_GET['delete'])) {
 
 						}
 
-
-
-
 							?>
-				
-						
 					</table>
 
 <?php
