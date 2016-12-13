@@ -38,7 +38,13 @@ if(isset($_GET['delete'])) {
 					</tr>
 					<tr>
 					<?php
-					$query = "SELECT comments.*, posts.post_title FROM comments LEFT JOIN posts ON posts.post_id = comments.comment_post_id WHERE posts.post_author_id = '{$_SESSION['user_id']}' ORDER BY comment_date DESC";
+					$query = "SELECT comments.*, posts.post_title FROM comments LEFT JOIN posts ON posts.post_id = comments.comment_post_id ";
+
+					if($_SESSION['role'] != 'admin') {
+						$query .= "WHERE posts.post_author_id = '{$_SESSION['user_id']}' ";
+					}
+
+					$query .= "ORDER BY comment_date DESC";
 
 					if($stmt->prepare($query)) {
 
