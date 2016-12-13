@@ -299,7 +299,7 @@ input[type=submit] {
 	flex-direction: row;
 	justify-content: space-around;
 	align-items: center;
-	background-color: #313340;
+	background-color: $bg-color--dark;
 	height: 100vh;
 
 	&__article {
@@ -348,7 +348,7 @@ input[type=submit] {
 	width:100%;
 	height: auto;
 	overflow:hidden;
-	background-color: #313340;
+	background-color: $bg-color--dark;
 	font: $font-thin;
 	text-transform: uppercase;
 
