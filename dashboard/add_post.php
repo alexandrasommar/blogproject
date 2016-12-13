@@ -59,7 +59,7 @@ if(isset($message)) {
 		<textarea class="form-control" name="post_content" id="" cols="30" rows="10"></textarea>
 	</div>
 	<div class="form-group">
-		<label for="post_image">Post Image</label>
+		<label for="image">Post Image</label>
 		<input type="file" name="image">
 	</div>
 	<div class="form__input">
