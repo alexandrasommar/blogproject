@@ -22,6 +22,7 @@
 						$comm_cnt = mysqli_num_rows($result);
 						if($post_cnt > 0) {
 						$average = $comm_cnt / $post_cnt;
+						$average = round($average, 1);
 						}
 					}
 
