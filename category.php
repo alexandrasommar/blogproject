@@ -54,7 +54,7 @@ if($stmt->prepare($query)) {
 
 			<div class="post-category">
 				<div class="post-category-img">
-					<div class="post__img"><a href="post.php?post=<?php echo $post_id; ?>"><img class="post__img--picture" src="img/volvo_bg_1.jpg" alt="Bil"></a></div>
+					<div class="post__img"><a href="post.php?post=<?php echo $post_id; ?>"><img class="post__img--picture" src="<?php echo $post_image;?>" alt="Bil"></a></div>
 				</div>
 				<div class="post-category-text">
 					<div class="post-text">
