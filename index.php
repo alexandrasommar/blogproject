@@ -99,7 +99,7 @@
 	<!-- Posts -->
 
 		</div>
-	</section>
+		<div class="paginering">
 	<?php
 
 	for ($i = 1; $i <= $count; $i++) {
@@ -109,7 +109,8 @@
 	}
 
 	?>
-
+	</div>
+</section>
 	<!-- Footer -->
 
 <?php include "footer.php"; ?>
