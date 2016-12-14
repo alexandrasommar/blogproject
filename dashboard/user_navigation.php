@@ -47,7 +47,8 @@
 				
 					<div class="nav__right dropdown">
 						<ul class="aside__nav--header">
-							<li><a href="#"><i class="fa fa-user header" aria-hidden="true"></i><?php echo $_SESSION['username']; ?><i class="fa fa-caret-down header" aria-hidden="true"></i></a></li>
+							<li><a href="#"><img src="../<?php echo $_SESSION['image'];?>" width="15px" 
+						alt="Bild på <?php echo $_SESSION['firstname'] ; ?>"><?php echo $_SESSION['username']; ?><i class="fa fa-caret-down header" aria-hidden="true"></i></a></li>
 							<div class="dropdown-content">
     							<ul class="dropdown-flex">
     								<li>Inställningar</li>
@@ -61,11 +62,6 @@
 			<div class="content_container">
 				<aside>
 					<div class="aside__nav">
-					<div class="user-pic">
-						<img src="../<?php echo $_SESSION['image'];?>" width="100" 
-						alt="Bild på <?php echo $_SESSION['firstname'] ; ?>">
-						<span><?php echo $_SESSION['firstname']; ?></span>
-					</div>
 						<ul class="aside__nav--height">
 							<li class="accordion"><a href="#"><i class="fa fa-newspaper-o aside" aria-hidden="true"></i>Inlägg<i class="fa fa-caret-down" aria-hidden="true"></i></a></li>
 							<div class="panel">
