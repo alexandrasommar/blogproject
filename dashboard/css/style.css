@@ -276,11 +276,19 @@ div.panel.show {
   /* DivTable.com */
 .divTable{
 	display: table;
-	width: 100%;
+	width: 95%;
+	margin: 30px 0 0 30px;
+	font-family: "Lato",sans-serif;
 }
 .divTableRow {
 	display: table-row;
+	font-weight: 300;
 }
+
+.divTableRow--header {
+	font-weight: 400;
+}
+
 .divTableHeading {
 	background-color: #EEE;
 	display: table-header-group;
@@ -303,7 +311,23 @@ div.panel.show {
 	display: table-row-group;
 }
 
+.divTableCell a {
+	text-decoration: none;
+}
 
+.divTableCell .fa-trash-o {
+	color: #F57170;
+}
+
+.divTableCell .fa-pencil-square-o {
+	color: #10DDC2;
+}
+
+@media screen and (max-width: 1300px) {
+	.hidden-small-desktop {
+		display: none;
+	}
+}
 
 @media screen and (max-width: 1020px)   {
 	aside {

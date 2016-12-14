@@ -23,12 +23,12 @@ if(isset($_GET['delete'])) {
 			?>
 			<div class="divTable">
 				<div class="divTableBody">
-					<div class="divTableRow">
+					<div class="divTableRow divTableRow--header">
 						<div class="divTableCell hidden-tablet">Datum</div>
 						<div class="divTableCell">Titel</div>
 						<div class="divTableCell hidden-mobile">Kategori</div>
 						<div class="divTableCell hidden-mobile">Bloggare</div>
-						<div class="divTableCell hidden-tablet">Bild</div>
+						<div class="divTableCell hidden-small-desktop hidden-tablet">Bild</div>
 						<div class="divTableCell hidden-tablet">Text</div>
 						<div class="divTableCell">Status</div>
 						<div class="divTableCell">Redigera</div>
@@ -56,7 +56,7 @@ if(isset($_GET['delete'])) {
 						<div class="divTableCell"><?php echo $title; ?></div>
 						<div class="divTableCell hidden-mobile"><?php echo $cat_name; ?></div>
 						<div class="divTableCell hidden-mobile"><?php echo $author; ?></div>
-						<div class="divTableCell hidden-tablet"><?php echo "<img src='../$image' width='20'>"; ?></div>
+						<div class="divTableCell hidden-small-desktop hidden-tablet"><?php echo "<img src='../$image' width='20'>"; ?></div>
 						<div class="divTableCell hidden-tablet"><?php echo substr($content, 0, 60) . "..."; ?></div>
 						<div class="divTableCell"><?php
 						if($status == 1) {
