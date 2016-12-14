@@ -21,7 +21,7 @@ if($stmt->prepare($query)) {
 			?>
 		<div class="author-information-box">
 			<div class="author-information-box__image">
-				<img src="<?php echo $image;?>" alt="">
+				<img src="<?php echo $image;?>" alt="Bild på <?php echo $firstname; ?>">
 			</div> <!-- .author-information-box__image -->
 			<div class="author-information-box__text">
 				<h3><?php echo "$firstname $lastname"; ?></h3>
@@ -47,7 +47,7 @@ if($stmt->prepare($query)) {
 			?>
 			<article class="post__article">
 				<div class="post__img">
-					<a href="post.php?post=<?php echo $post_id; ?>"><img class="post__img--styling" src="<?php echo $post_image; ?>" alt="Bil"></a>
+					<a href="post.php?post=<?php echo $post_id; ?>"><img class="post__img--styling" src="<?php echo $post_image; ?>" alt="<?php echo $post_title; ?>"></a>
 				</div> <!-- .post__img -->
 				<div class="post__text">
 					<h2><a href="post.php?post=<?php echo $post_id; ?>"><?php echo $post_title ?></a></h2>
