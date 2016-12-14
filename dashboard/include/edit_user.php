@@ -7,12 +7,15 @@ if(isset($_POST['update'])) {
 		$website = mysqli_real_escape_string($conn, $_POST['website']);
 		$description = mysqli_real_escape_string($conn, $_POST['description']);
 		$user = mysqli_real_escape_string($conn, $_POST['username']);
-		$pass = mysqli_real_escape_string($conn, $_POST['password']);
 		$profilepic = $_FILES['profilepic']['name'];
 
-		//$pass = password_hash($pass, PASSWORD_DEFAULT);
+		$query = "UPDATE users SET username = '{$user}', user_firstname = '{$first}', user_lastname = '{$last}', user_website = '{$website}', user_description = '{$description}' ";
 
-		$query = "UPDATE users SET username = '{$user}', user_firstname = '{$first}', user_lastname = '{$last}', user_password = '{$pass}', user_website = '{$website}', user_description = '{$description}' ";
+		if(!empty($_POST['password'])) {
+		$pass = mysqli_real_escape_string($conn, $_POST['password']);
+		$pass = password_hash($pass, PASSWORD_DEFAULT);
+		$query .= ", user_password = '{$pass}' ";
+		}
 
 		if(!empty($profilepic)) {
 			$target_folder = "uploads/";
@@ -70,7 +73,7 @@ if($stmt->prepare($query)) {
 			</div>
 			<div class="form__input">
 				<label for="password">Lösenord</label>
-				<input type="password" class="form-control" name="password" value="<?php echo $dbpass; ?>">
+				<input type="password" class="form-control" name="password">
 			</div>
 			<div class="form-group">
 				<label for="profilepic">Profilbild</label>
