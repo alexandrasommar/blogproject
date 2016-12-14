@@ -47,9 +47,11 @@ if(isset($_GET['delete'])) {
 				}
 
 				$query .= "ORDER BY post_date DESC";
+				if($result = mysqli_query($conn, $query)) {
+						$rows = mysqli_num_rows($result);
+					}
 
-				if($stmt->prepare($query)) {
-
+				if($stmt->prepare($query) && $rows > 0) {
 				$stmt->execute();
 				$stmt->bind_result($post_id, $cat_id, $title, $author, $author_id, $date, $image, $content, $status, $cat_name);
 
@@ -80,6 +82,8 @@ if(isset($_GET['delete'])) {
 						
 						}
 
+					} else {
+						echo "Tyvärr har du inte skrivit några inlägg ännu. <a href='write_post.php'>Gör det här</a>";
 					}
 
 						?>

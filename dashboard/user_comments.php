@@ -46,7 +46,11 @@ if(isset($_GET['delete'])) {
 
 					$query .= "ORDER BY comment_date DESC";
 
-					if($stmt->prepare($query)) {
+					if($result = mysqli_query($conn, $query)) {
+						$rows = mysqli_num_rows($result);
+					}
+
+					if($stmt->prepare($query) && $rows > 0) {
 
 					$stmt->execute();
 					$stmt->bind_result($com_id, $com_post_id, $com_author, $com_date, $com_email, $content, $website, $post_title);
@@ -67,7 +71,7 @@ if(isset($_GET['delete'])) {
 							} 
 						}else {
 
-							die("query" . mysqli_error($conn));
+							echo "Tyvärr har du inga kommentarer ännu";
 							}
 
 
