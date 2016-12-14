@@ -32,9 +32,9 @@ if(isset($_GET['delete'])) {
 						<div class="divTableCell hidden-tablet">Inlägg</div>
 						<div class="divTableCell">Datum</div>
 						<div class="divTableCell hidden-mobile">Författare</div>
-						<div class="divTableCell hidden-mobile">Email</div>
-						<div class="divTableCell hidden-small-desktop hidden-tablet">Hemsida</div>
-						<div class="divTableCell hidden-tablet">Text</div>
+						<div class="divTableCell hidden-tablet">Email</div>
+						<div class="divTableCell hidden-small-desktop">Hemsida</div>
+						<div class="divTableCell">Text</div>
 						<div class="divTableCell">Radera</div>
 					</div>
 					<tr>
@@ -57,9 +57,9 @@ if(isset($_GET['delete'])) {
 	<div class="divTableCell hidden-tablet"><?php echo "<a href='../post.php?post=$com_post_id'>$post_title</a>"; ?></div>
 	<div class="divTableCell"><?php echo $com_date; ?></div>
 	<div class="divTableCell hidden-mobile"><?php echo $com_author; ?></div>
-	<div class="divTableCell hidden-mobile"><?php echo $com_email; ?></div>
-	<div class="divTableCell hidden-small-desktop hidden-tablet"><?php echo $website; ?></div>
-	<div class="divTableCell hidden-tablet"><?php echo $content; ?></div>
+	<div class="divTableCell hidden-tablet"><?php echo $com_email; ?></div>
+	<div class="divTableCell hidden-small-desktop"><?php echo $website; ?></div>
+	<div class="divTableCell"><?php echo $content; ?></div>
 	<div class="divTableCell"><?php echo "<a href='user_comments.php?delete=$com_id'><i class='fa fa-trash-o' aria-hidden='true'></i></a>"?></div>
 </div>
 
