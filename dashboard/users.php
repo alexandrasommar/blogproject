@@ -8,7 +8,7 @@
 	<?php
 
 	if($_SESSION['role'] == 'admin') {
-		include "all_users.php";
+		include "include/all_users.php";
 		echo "<a href='users.php?source=register'>Registrera ny användare</a>";
 
 	if(isset($_GET['source'])) {
