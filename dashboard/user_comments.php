@@ -26,16 +26,17 @@ if(isset($_GET['delete'])) {
 					}
 
 					 ?>
-					<table>
-					<tr>
-						<th>Inlägg</th>
-						<th>Datum</th>
-						<th>Författare</th>
-						<th>Email</th>
-						<th>Hemsida</th>
-						<th>Text</th>
-						<th>Radera</th>
-					</tr>
+					 <div class="divTable">
+				<div class="divTableBody">
+					<div class="divTableRow divTableRow--header">
+						<div class="divTableCell hidden-tablet">Inlägg</div>
+						<div class="divTableCell">Datum</div>
+						<div class="divTableCell hidden-mobile">Författare</div>
+						<div class="divTableCell hidden-mobile">Email</div>
+						<div class="divTableCell hidden-small-desktop hidden-tablet">Hemsida</div>
+						<div class="divTableCell hidden-tablet">Text</div>
+						<div class="divTableCell">Radera</div>
+					</div>
 					<tr>
 					<?php
 					$query = "SELECT comments.*, posts.post_title FROM comments LEFT JOIN posts ON posts.post_id = comments.comment_post_id ";
@@ -52,15 +53,15 @@ if(isset($_GET['delete'])) {
 					$stmt->bind_result($com_id, $com_post_id, $com_author, $com_date, $com_email, $content, $website, $post_title);
 
 					while(mysqli_stmt_fetch($stmt)) { ?>
-							<td><?php echo "<a href='../post.php?post=$com_post_id'>$post_title</a>"; ?></td>
-							<td><?php echo $com_date; ?></td>
-							<td><?php echo $com_author; ?></td>
-							<td><?php echo $com_email; ?></td>
-							<td><?php echo $website; ?></td>
-							<td><?php echo $content; ?></td>
-							<td><?php echo "<a href='user_comments.php?delete=$com_id'>Radera</a>"?></td>
-							
-							</tr>
+							<div class="divTableRow">
+	<div class="divTableCell hidden-tablet"><?php echo "<a href='../post.php?post=$com_post_id'>$post_title</a>"; ?></div>
+	<div class="divTableCell"><?php echo $com_date; ?></div>
+	<div class="divTableCell hidden-mobile"><?php echo $com_author; ?></div>
+	<div class="divTableCell hidden-mobile"><?php echo $com_email; ?></div>
+	<div class="divTableCell hidden-small-desktop hidden-tablet"><?php echo $website; ?></div>
+	<div class="divTableCell hidden-tablet"><?php echo $content; ?></div>
+	<div class="divTableCell"><?php echo "<a href='user_comments.php?delete=$com_id'><i class='fa fa-trash-o' aria-hidden='true'></i></a>"?></div>
+</div>
 
 						<?php
 							
@@ -77,7 +78,7 @@ if(isset($_GET['delete'])) {
 							?>
 				
 						
-					</table>
+					</div>
 
 
 					
