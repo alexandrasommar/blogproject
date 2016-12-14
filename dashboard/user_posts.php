@@ -35,7 +35,7 @@ if(isset($_GET['delete'])) {
 						<div class="divTableCell">Radera</div>
 					</div>
 			
-				<div class="divTableRow">
+				
 				<?php
 				$query = "SELECT posts.*, categories.cat_name FROM posts LEFT JOIN categories ON posts.post_category_id = categories.cat_id ";
 
@@ -51,6 +51,8 @@ if(isset($_GET['delete'])) {
 				$stmt->bind_result($post_id, $cat_id, $title, $author, $author_id, $date, $image, $content, $status, $cat_name);
 
 				while(mysqli_stmt_fetch($stmt)) { ?>
+
+				<div class="divTableRow">
 						
 						<div class="divTableCell hidden-tablet"><?php echo $date; ?></div>
 						<div class="divTableCell"><?php echo $title; ?></div>
