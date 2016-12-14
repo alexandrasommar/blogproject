@@ -1,4 +1,18 @@
-<?php  
+<?php
+
+$titleErr = $contentErr = "";
+
+if (isset($_POST['publish']) || isset($_POST['save'])) {
+		
+	if (empty($_POST['title'])) {
+		$titleErr = "<p>Du måste skriva en titel</p>";
+	}
+
+	if (empty($_POST['post_content'])) {
+		$contentErr = "<p>Du måste skriva något i inlägget</p>";
+	}
+
+} 
 
 if(isset($_POST['publish']) || isset($_POST['save'])) {
 	if(!empty($_POST['title'])
@@ -52,11 +66,14 @@ if(isset($message)) {
 <form action="" method="post" enctype="multipart/form-data">
 	<div class="form__input">
 		<label for="title">Titel</label>
-		<input type="text" class="form-control" name="title">
+		<?php echo $titleErr; ?>
+		<input type="text" class="form-control" name="title" value="<?php if(isset($_POST['title'])) {
+			echo $_POST['title']; }?>">
 	</div>
 	<div class="form__input">
 		<label for="post_content">Text</label>
-		<textarea class="form-control" name="post_content" id="" cols="30" rows="10"></textarea>
+		<?php echo $contentErr; ?>
+		<textarea class="form-control" name="post_content" id="" cols="30" rows="10"><?php if(isset($_POST['post_content'])) { echo $_POST['post_content']; } ?></textarea>
 	</div>
 	<div class="form-group">
 		<label for="image">Post Image</label>
