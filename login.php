@@ -15,11 +15,11 @@ if(isset($_POST['loggin'])) {
 		if($stmt->prepare($query)) {
 
 		$stmt->execute();
-		$stmt->bind_result($user_id, $dbuser, $firstname, $lastname, $dbpass, $email, $website, $image, $description, $role );
+		$stmt->bind_result($user_id, $dbuser, $firstname, $lastname, $dbpass, $email, $website, $image, $description, $role);
 
 		$stmt->fetch();
 
-		if($password === $dbpass) {
+		if(password_verify($password, $dbpass)) {
 
 			session_start();
 			$_SESSION['user_id'] = $user_id;
