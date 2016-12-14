@@ -107,6 +107,7 @@ main {
 	flex-direction: column;
 	justify-content: flex-start;
 	width: 100%;
+	padding: 40px 0 0 0;
 }
 
 .nav__right {
