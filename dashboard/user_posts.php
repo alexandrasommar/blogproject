@@ -21,19 +21,21 @@ if(isset($_GET['delete'])) {
 			}
 
 			?>
-			<table>
-				<tr>
-					<th>Datum</th>
-					<th>Titel</th>
-					<th>Kategori</th>
-					<th>Bloggare</th>
-					<th>Bild</th>
-					<th>Text</th>
-					<th>Status</th>
-					<th>Redigera</th>
-					<th>Radera</th>
-				</tr>
-				<tr>
+			<div class="divTable">
+				<div class="divTableBody">
+					<div class="divTableRow">
+						<div class="divTableCell hidden-tablet">Datum</div>
+						<div class="divTableCell">Titel</div>
+						<div class="divTableCell hidden-mobile">Kategori</div>
+						<div class="divTableCell hidden-mobile">Bloggare</div>
+						<div class="divTableCell hidden-tablet">Bild</div>
+						<div class="divTableCell hidden-tablet">Text</div>
+						<div class="divTableCell">Status</div>
+						<div class="divTableCell">Redigera</div>
+						<div class="divTableCell">Radera</div>
+					</div>
+			
+				<div class="divTableRow">
 				<?php
 				$query = "SELECT posts.*, categories.cat_name FROM posts LEFT JOIN categories ON posts.post_category_id = categories.cat_id ";
 
@@ -50,21 +52,21 @@ if(isset($_GET['delete'])) {
 
 				while(mysqli_stmt_fetch($stmt)) { ?>
 						
-						<td><?php echo $date; ?></td>
-						<td><?php echo $title; ?></td>
-						<td><?php echo $cat_name; ?></td>
-						<td><?php echo $author; ?></td>
-						<td><?php echo "<img src='../$image' width='20'>"; ?></td>
-						<td><?php echo substr($content, 0, 60) . "..."; ?></td>
-						<td><?php
+						<div class="divTableCell hidden-tablet"><?php echo $date; ?></div>
+						<div class="divTableCell"><?php echo $title; ?></div>
+						<div class="divTableCell hidden-mobile"><?php echo $cat_name; ?></div>
+						<div class="divTableCell hidden-mobile"><?php echo $author; ?></div>
+						<div class="divTableCell hidden-tablet"><?php echo "<img src='../$image' width='20'>"; ?></div>
+						<div class="divTableCell hidden-tablet"><?php echo substr($content, 0, 60) . "..."; ?></div>
+						<div class="divTableCell"><?php
 						if($status == 1) {
 							echo "Publicerad";
 						} else {
 							echo "Utkast";
-						}?></td>
-						<td><?php echo "<a href='user_posts.php?source=edit&post=$post_id'><i class='fa fa-pencil-square-o' aria-hidden='true'></i></a>"; ?></td>
-						<td><?php echo "<a href='user_posts.php?delete=$post_id'><i class='fa fa-trash-o' aria-hidden='true'></i></a>"; ?></td>
-						</tr>
+						}?></div>
+						<div class="divTableCell"><?php echo "<a href='user_posts.php?source=edit&post=$post_id'><i class='fa fa-pencil-square-o' aria-hidden='true'></i></a>"; ?></div>
+						<div class="divTableCell"><?php echo "<a href='user_posts.php?delete=$post_id'><i class='fa fa-trash-o' aria-hidden='true'></i></a>"; ?></div>
+						</div>
 
 					<?php
 						
@@ -73,7 +75,7 @@ if(isset($_GET['delete'])) {
 					}
 
 						?>
-				</table>
+				</div>
 				<?php
 				if(isset($_GET['source'])) {
 					    $source = $_GET['source'];
