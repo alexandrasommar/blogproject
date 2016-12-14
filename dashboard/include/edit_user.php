@@ -10,7 +10,7 @@ if(isset($_POST['update'])) {
 		$pass = mysqli_real_escape_string($conn, $_POST['password']);
 		$profilepic = $_FILES['profilepic']['name'];
 
-		$pass = password_hash($pass, PASSWORD_DEFAULT);
+		//$pass = password_hash($pass, PASSWORD_DEFAULT);
 
 		$query = "UPDATE users SET username = '{$user}', user_firstname = '{$first}', user_lastname = '{$last}', user_password = '{$pass}', user_website = '{$website}', user_description = '{$description}' ";
 
