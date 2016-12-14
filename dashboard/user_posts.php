@@ -55,7 +55,7 @@ if(isset($_GET['delete'])) {
 						<td><?php echo $cat_name; ?></td>
 						<td><?php echo $author; ?></td>
 						<td><?php echo "<img src='../$image' width='20'>"; ?></td>
-						<td><?php echo substr($content, 0, 60); ?></td>
+						<td><?php echo substr($content, 0, 60) . "..."; ?></td>
 						<td><?php
 						if($status == 1) {
 							echo "Publicerad";
