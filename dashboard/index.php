@@ -1,7 +1,7 @@
 <?php session_start(); ?>
 <?php include "../include/db.php"; ?>
 <?php include "../head.php"; ?>
-
+<?php if(isset($_SESSION['username'])) { ?>
 
 	<div class="container">
 			<?php include "user_navigation.php"; ?>
@@ -17,3 +17,7 @@
 		<script src="script.js"></script>
 </body>
 </html>
+<?php }else {
+		header("Location: ../index.php");
+
+	} ?>
