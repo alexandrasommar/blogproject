@@ -26,7 +26,18 @@
 		$stmt->execute();
 		$stmt->bind_result($post_id, $category_id, $post_title, $post_author, $post_author_id, $post_date, $post_image, $post_content, $post_status, $cat_id, $cat_name);
 
+		$counter = 1;
+
 		while(mysqli_stmt_fetch($stmt)) {
+
+
+			if ($counter == 4) {
+				?></div><?php
+				include "slider.php";
+				?><div class="post__container"><?php
+			}
+
+		$counter++;
 
 		?>
 
@@ -66,10 +77,6 @@
 
 		</div>
 	</section>
-
-	<!-- Slider -->
-
-	<?php include "slider.php"; ?>
 
 	<!-- Footer -->
 
