@@ -9,7 +9,7 @@
 
 	if($_SESSION['role'] == 'admin') {
 		include "include/all_users.php";
-		echo "<a href='users.php?source=register'>Registrera ny användare</a>";
+		echo "<a href='registration.php'>Registrera ny användare</a>";
 
 	if(isset($_GET['source'])) {
 	    $source = $_GET['source'];
@@ -20,9 +20,6 @@
 	switch ($source) {
 	    case 'edit':
 	        include "include/edit_user.php";
-	        break;
-	    case 'register':
-	        include "include/registration.php";
 	        break;
 	    
 	}
