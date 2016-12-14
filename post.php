@@ -100,27 +100,31 @@ if($stmt->prepare($query)) {
 
 </section> <!-- .blog-post -->
 
-	<section class="form">
+	<section class="form" id="comment">
 		<form method="post" action="post.php?post=<?php echo $post; ?>#comment">
 			<div class="form__input">
 				<label for="name">Namn</label>
 				<?php echo $nameErr; ?>
-				<input type="text" name="name">
+				<input type="text" name="name" value="<?php if(isset($_POST['name'])) {
+					echo $_POST['name']; } ?>">
 			</div>
 			<div class="form__input">
 				<label for="email">Email</label>
 				<?php echo $emailErr; ?>
-				<input type="email" name="email">
+				<input type="email" name="email" value="<?php if(isset($_POST['email'])) {
+					echo $_POST['email']; } ?>">
 			</div>
 			<div class="form__input">
 				<label for="website">Hemsida</label>
 				<?php echo $webErr; ?>
-				<input type="text" name="website">
+				<input type="text" name="website" value="<?php if(isset($_POST['website'])) {
+					echo $_POST['website']; } ?>">
 			</div>
 			<div class="form__input">
 				<label for="content">Inlägg</label>
 				<?php echo $contentErr; ?>
-				<textarea name="content"></textarea>
+				<textarea name="content"><?php if(isset($_POST['content'])) {
+					echo $_POST['content']; } ?></textarea>
 			</div>
 			<div class="form__input">
 				<input type="submit" name="submit" value="Kommentera">
