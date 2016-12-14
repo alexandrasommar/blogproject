@@ -37,7 +37,6 @@ if(isset($_GET['delete'])) {
 						<div class="divTableCell">Text</div>
 						<div class="divTableCell">Radera</div>
 					</div>
-					<tr>
 					<?php
 					$query = "SELECT comments.*, posts.post_title FROM comments LEFT JOIN posts ON posts.post_id = comments.comment_post_id ";
 
