@@ -6,11 +6,17 @@
 			<?php include "user_navigation.php"; ?>
 				<main>
 					<?php
-					$query = "SELECT * FROM posts WHERE post_author_id = '{$_SESSION['user_id']}'";
+					$query = "SELECT * FROM posts ";
+					if($_SESSION['role'] != 'admin') {
+						$query .= "WHERE post_author_id = '{$_SESSION['user_id']}'";
+					}
 					if($result = mysqli_query($conn, $query)) {
 						$post_cnt = mysqli_num_rows($result);
 					}
-					$query = "SELECT comments.*, posts.post_author_id FROM comments LEFT JOIN posts ON posts.post_id = comments.comment_post_id WHERE post_author_id = '{$_SESSION['user_id']}'";
+					$query = "SELECT comments.*, posts.post_author_id FROM comments LEFT JOIN posts ON posts.post_id = comments.comment_post_id ";
+					if($_SESSION['role'] != 'admin') {
+						 $query .= "WHERE post_author_id = '{$_SESSION['user_id']}'";
+						}
 					if($result = mysqli_query($conn, $query)) {
 						$comm_cnt = mysqli_num_rows($result);
 						if($post_cnt > 0) {
