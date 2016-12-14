@@ -12,7 +12,7 @@ if(isset($_GET['delete'])) {
 	}
 }
 ?>
-	<div class="container">
+	<div class="user_post_container">
 		<?php include "user_navigation.php"; ?>
 			<main>
 			<?php
@@ -62,8 +62,8 @@ if(isset($_GET['delete'])) {
 						} else {
 							echo "Utkast";
 						}?></td>
-						<td><?php echo "<a href='user_posts.php?source=edit&post=$post_id'>Redigera</a>"; ?></td>
-						<td><?php echo "<a href='user_posts.php?delete=$post_id'>Radera</a>"; ?></td>
+						<td><?php echo "<a href='user_posts.php?source=edit&post=$post_id'><i class='fa fa-pencil-square-o' aria-hidden='true'></i></a>"; ?></td>
+						<td><?php echo "<a href='user_posts.php?delete=$post_id'><i class='fa fa-trash-o' aria-hidden='true'></i></a>"; ?></td>
 						</tr>
 
 					<?php

@@ -31,6 +31,7 @@ body {
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
+	padding: 10px 0;
 }
 
 .content_container {
@@ -51,7 +52,7 @@ main {
 
 .aside__nav--header {
 	list-style: none;
-	margin: 0;
+	margin: 0 50px;
 	padding: 0;
 	width: 100%;
 }
@@ -119,7 +120,7 @@ main {
 	padding: 30px 0; 
 }
 
-.user-pic i {
+.user-pic img {
 	padding-bottom: 15px;
 }
 
@@ -252,6 +253,24 @@ div.panel.show {
   	background-color: #F75633;
 	transition: .2s ease;
   }
+
+  /* User post */
+
+  .user_post_container {
+  	display: flex;
+  	flex-direction: column;
+  	justify-content: center;
+  }
+
+  .user_post_container main {
+  	display: flex;
+  	justify-content: flex-start;
+  }
+
+  .user_post_container table {
+  	padding: 30px 0 0 30px;
+  }
+
 
 
 @media screen and (max-width: 1020px)   {
