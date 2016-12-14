@@ -30,10 +30,7 @@ if(isset($_GET['delete'])) {
 						<?php
 						if($_SESSION['role'] == 'admin') { ?>
 						<div class="divTableCell hidden-mobile">Bloggare</div>
-						<?php
-						}
-
-						?>
+						<?php } ?>
 						<div class="divTableCell hidden-small-desktop hidden-tablet">Bild</div>
 						<div class="divTableCell hidden-tablet">Text</div>
 						<div class="divTableCell">Status</div>
