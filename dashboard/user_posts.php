@@ -66,7 +66,7 @@ if(isset($_GET['delete'])) {
 						if($_SESSION['role'] == 'admin') { ?>
 						<div class="divTableCell hidden-mobile"><?php echo $author; ?></div>
 						<?php } ?>
-						<div class="divTableCell hidden-small-desktop hidden-tablet"><?php echo "<img src='../$image' width='20'>"; ?></div>
+						<div class="divTableCell hidden-small-desktop hidden-tablet"><?php echo "<img src='../$image' width='20' alt='$title'>"; ?></div>
 						<div class="divTableCell hidden-tablet"><?php echo substr($content, 0, 60) . "..."; ?></div>
 						<div class="divTableCell"><?php
 						if($status == 1) {
