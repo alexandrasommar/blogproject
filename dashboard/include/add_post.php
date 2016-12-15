@@ -36,7 +36,7 @@ if(isset($_POST['publish']) || isset($_POST['save'])) {
 	if(move_uploaded_file($_FILES['image']['tmp_name'], "../uploads/$image")) {
 		echo "Filen laddades upp";
 	} else {
-		echo "Något gick fel" . mysqli_error($conn);
+		echo "Filen är för stor, den får vara max 2 MB";
 	}
 
 	$query = "INSERT INTO posts(post_category_id, post_title, post_author, post_author_id, post_date, post_image, post_content, post_status) VALUES ('{$category}', '{$title}', '{$_SESSION['firstname']}', {$_SESSION['user_id']}, CURDATE(), '{$target_name}', '{$content}' ";
@@ -94,8 +94,8 @@ if(isset($message)) {
 		<input type="file" name="image">
 	</div>
 	<div class="form__input">
+		<label for="post_category">Välj kategori</label>
 		<select name="post_category" id="">
-		<option>Välj kategori</option>
 		<?php
 		 $query = "SELECT * FROM categories";
 				    $select_categories = mysqli_query($conn,$query);   
