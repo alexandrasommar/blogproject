@@ -36,8 +36,7 @@
 											</div>
 											<li><a href="users.php"><i class="fa fa-user-circle-o aside" aria-hidden="true"></i>Användare</a></li>
 										<?php } ?>
-										<li><a href="#"><i class="fa fa-cog" aria-hidden="true"></i>Inställningar</a></li>
-										<li><a href="#"><i class="fa fa-sign-out" aria-hidden="true"></i>Logga ut</a></li>
+										<li><a href="logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i>Logga ut</a></li>
 									</ul>
 								</div>
 								</div>
@@ -51,7 +50,6 @@
 						alt="Bild på <?php echo $_SESSION['firstname'] ; ?>"><?php echo $_SESSION['username']; ?><i class="fa fa-caret-down header" aria-hidden="true"></i></a></li>
 							<div class="dropdown-content">
     							<ul class="dropdown-flex">
-    								<li>Inställningar</li>
     								<li><a href="logout.php">Logga ut</a></li>
     							</ul>
   							</div>
