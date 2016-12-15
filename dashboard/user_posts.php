@@ -80,7 +80,7 @@ if(isset($_GET['delete'])) {
 						} else {
 							echo "Utkast";
 						}?></div>
-						<div class="divTableCell"><?php echo "<a href='user_posts.php?source=edit&post=$post_id'><i class='fa fa-pencil-square-o' aria-hidden='true'></i></a>"; ?></div>
+						<div class="divTableCell"><?php echo "<a href='user_posts.php?edit=$post_id'><i class='fa fa-pencil-square-o' aria-hidden='true'></i></a>"; ?></div>
 						<div class="divTableCell"><?php echo "<a href='user_posts.php?delete=$post_id'><i class='fa fa-trash-o' aria-hidden='true'></i></a>"; ?></div>
 						</div>
 
@@ -95,18 +95,9 @@ if(isset($_GET['delete'])) {
 						?>
 				</div>
 				<?php
-				if(isset($_GET['source'])) {
-					    $source = $_GET['source'];
-					} else {
-					    $source = '';
-					}
-
-					switch ($source) {
-					    case 'edit':
-					        include "include/edit_post.php";
-					        break;
-					    
-					}
+				if(isset($_GET['edit'])) {
+					    include "include/edit_post.php";
+					} 
 
 				?>
 				</main>

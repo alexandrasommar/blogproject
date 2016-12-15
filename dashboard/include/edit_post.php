@@ -1,5 +1,5 @@
 <?php  
-$postid = $_GET['post'];
+$postid = $_GET['edit'];
 ?>
 
 <?php
