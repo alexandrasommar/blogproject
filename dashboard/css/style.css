@@ -240,13 +240,24 @@ div.panel.show {
   	padding: 0;
   }
 
-  input[type=submit] {
+  input[type=submit].btn {
   	height: 26px;
   	font-size: 18px;
   	margin: 5px 0;
   	border-radius: 2px;
 	border: none;
 	background-color: #F07444;
+  	color: white;
+  	transition: .2s ease;
+  }
+
+  input[type=submit].btn--blue {
+  	height: 26px;
+  	font-size: 18px;
+  	margin: 5px 0;
+  	border-radius: 2px;
+	border: none;
+	background-color: #2F4172;
   	color: white;
   	transition: .2s ease;
   }

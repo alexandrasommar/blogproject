@@ -98,7 +98,7 @@ if(isset($message)) {
 	</div>
 	<div class="form__input">
 		<input class="btn" type="submit" name="publish" value="Publicera">
-		<input class="btn" type="submit" name="save" value="Spara">
+		<input class="btn--blue" type="submit" name="save" value="Spara">
 	</div>
 </form>
 </section>
