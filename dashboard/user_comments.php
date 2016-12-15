@@ -8,7 +8,7 @@ if(isset($_GET['delete'])) {
 	$query = "DELETE FROM comments WHERE comment_id = {$delete}";
 	if($stmt->prepare($query)) {
 		$stmt->execute();
-		$message = "Kommentaren är raderad";
+		$message = "<p class='red'>Kommentaren är raderad</p>";
 	} else {
 		echo "query failed";
 	}

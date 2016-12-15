@@ -37,14 +37,14 @@
 							<div class="divTable">
 								<div class="divTableBody">
 									<div class="divTableRow divTableRow--header">
-										<div class="divTableCell hidden-tablet">Antal inlägg</div>
+										<div class="divTableCell">Antal inlägg</div>
 										<div class="divTableCell">Antal kommentarer totalt</div>
-										<div class="divTableCell hidden-mobile">Antal kommentarer i snitt per inlägg</div>
+										<div class="divTableCell">Antal kommentarer i snitt per inlägg</div>
 									</div>	
 									<div class="divTableRow">
-										<div class="divTableCell hidden-tablet"><?php echo $post_cnt; ?></div>
+										<div class="divTableCell"><?php echo $post_cnt; ?></div>
 										<div class="divTableCell"><?php echo $comm_cnt; ?></div>
-										<div class="divTableCell hidden-mobile"><?php echo $average; ?></div>
+										<div class="divTableCell"><?php echo $average; ?></div>
 										<?php } ?>
 									</div>
 								</div>
