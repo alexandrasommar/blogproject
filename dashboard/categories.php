@@ -22,12 +22,14 @@ if(isset($_GET['delete'])) {
 		
 
 		<a href="categories.php?source=add">Lägg till kategori</a>
-		<table>
-			<tr>
-				<th>Kategorinamn</th>
-				<th>Redigera</th>
-				<th>Radera</th>
-			</tr>
+
+		<div class="divTable">
+			<div class="divTableBody">
+				<div class="divTableRow divTableRow--header">
+					<div class="divTableCell">Kategorinamn</div>
+					<div class="divTableCell">Redigera</div>
+					<div class="divTableCell">Radera</div>
+				</div>	
 		<?php
 
 		$query = "SELECT * FROM categories";
@@ -35,11 +37,11 @@ if(isset($_GET['delete'])) {
 			$stmt->execute();
 			$stmt->bind_result($cat_id, $cat_name);
 			while(mysqli_stmt_fetch($stmt)) { ?>
-				<tr>
-					<td><?php echo $cat_name; ?></td>
-					<td><?php echo "<a href='categories.php?source=edit&cat=$cat_id'>Redigera</a>"; ?></td>
-					<td><?php echo "<a href='categories.php?delete=$cat_id'>Radera</a>"; ?></td>
-				</tr>
+				<div class="divTableRow">
+					<div class="divTableCell"><?php echo $cat_name; ?></div>
+					<div class="divTableCell"><?php echo "<a href='categories.php?source=edit&cat=$cat_id'><i class='fa fa-pencil-square-o' aria-hidden='true'></i></a>"; ?></div>
+					<div class="divTableCell"><?php echo "<a href='categories.php?delete=$cat_id'><i class='fa fa-trash-o' aria-hidden='true'></i></a>"; ?></div>
+				</div>
 
 		<?php
 			}
@@ -47,7 +49,8 @@ if(isset($_GET['delete'])) {
 
 
 		?>
-		</table>
+		</div>
+		</div>
 		<?php
 		if(isset($message)) {
 			echo $message;

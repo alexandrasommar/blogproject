@@ -35,20 +35,21 @@
 
 
 							?>
-					<table>
-						<tr>
-							<th>Antal inlägg</th>
-							<th>Antal kommentarer totalt</th>
-							<th>Antal kommentarer i snitt per inlägg</th>
-						</tr>
-						<tr>
-							
-							<td><?php echo $post_cnt; ?></td>
-							<td><?php echo $comm_cnt; ?></td>
-							<td><?php echo $average; ?></td>
-							<?php } ?>
-						</tr>
-					</table>
+					<div class="divTable">
+								<div class="divTableBody">
+									<div class="divTableRow divTableRow--header">
+										<div class="divTableCell">Antal inlägg</div>
+										<div class="divTableCell">Antal kommentarer totalt</div>
+										<div class="divTableCell">Antal kommentarer i snitt per inlägg</div>
+									</div>	
+									<div class="divTableRow">
+										<div class="divTableCell"><?php echo $post_cnt; ?></div>
+										<div class="divTableCell"><?php echo $comm_cnt; ?></div>
+										<div class="divTableCell"><?php echo $average; ?></div>
+										<?php } ?>
+									</div>
+								</div>
+							</div>
 					
 				</main>
 			</div>
