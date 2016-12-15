@@ -33,10 +33,10 @@ if(isset($_POST['publish']) || isset($_POST['save'])) {
 	$image = $_FILES['image']['name'];
 	$target_folder = "uploads/";
 	$target_name = $target_folder . $image;
-	if(move_uploaded_file($_FILES['image']['tmp_name'], "../$target_folder")) {
+	if(move_uploaded_file($_FILES['image']['tmp_name'], "../uploads/$image")) {
 		echo "Filen laddades upp";
 	} else {
-		echo "Ett fel uppstod" . mysqli_error($conn);
+		echo "Något gick fel" . mysqli_error($conn);
 	}
 
 	$query = "INSERT INTO posts(post_category_id, post_title, post_author, post_author_id, post_date, post_image, post_content, post_status) VALUES ('{$category}', '{$title}', '{$_SESSION['firstname']}', {$_SESSION['user_id']}, CURDATE(), '{$target_name}', '{$content}' ";
