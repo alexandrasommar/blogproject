@@ -79,8 +79,10 @@ if(isset($message)) {
 			echo $_POST['title']; }?>">
 	</div>
 	<div class="form__input">
+	<div class="form-message">
+	<?php echo $contentErr; ?>
+	</div>
 		<label for="post_content">Text</label>
-		<?php echo $contentErr; ?>
 		<textarea class="form-control" name="post_content" id="" cols="30" rows="10"><?php if(isset($_POST['post_content'])) { echo $_POST['post_content']; } ?></textarea>
 	</div>
 	<div class="form-group">
