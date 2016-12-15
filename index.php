@@ -32,7 +32,7 @@
 		$page_1 = ($page * $per_page) - $per_page;
 	}
 
-	$post_query_count = "SELECT * FROM posts";
+	$post_query_count = "SELECT * FROM posts WHERE post_status = 1";
 	$find_count = mysqli_query($conn, $post_query_count);
 	$count = mysqli_num_rows($find_count);
 
