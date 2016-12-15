@@ -48,7 +48,7 @@ if(isset($_POST['update']) || isset($_POST['publish'])) {
 				while(mysqli_stmt_fetch($stmt)) {
 
 			?>
-			<section class="form">
+			<section class="form" id="edit">
 				<form action="" method="post" enctype="multipart/form-data">
 					<div class="form__input">
 						<label for="title">Titel</label>

@@ -80,7 +80,7 @@ if(isset($_GET['delete'])) {
 						} else {
 							echo "Utkast";
 						}?></div>
-						<div class="divTableCell"><?php echo "<a href='user_posts.php?edit=$post_id'><i class='fa fa-pencil-square-o' aria-hidden='true'></i></a>"; ?></div>
+						<div class="divTableCell"><?php echo "<a href='user_posts.php?edit=$post_id#edit'><i class='fa fa-pencil-square-o' aria-hidden='true'></i></a>"; ?></div>
 						<div class="divTableCell"><?php echo "<a href='user_posts.php?delete=$post_id'><i class='fa fa-trash-o' aria-hidden='true'></i></a>"; ?></div>
 						</div>
 
