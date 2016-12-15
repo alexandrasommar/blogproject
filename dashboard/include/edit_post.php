@@ -27,7 +27,7 @@ if(isset($_POST['update']) || isset($_POST['publish'])) {
 
 	if($stmt->prepare($query)) {
 		$stmt->execute();
-		$message = "Inlägget uppdaterades! <a href='../post.php?post={$postid}'>Titta på inlägget</a> eller <a href='user_posts.php'>redigera fler inlägg</a>";
+		$message = "Inlägget uppdaterades!";
 	} else {
 		echo "query failed" . mysqli_error($conn);
 	}
