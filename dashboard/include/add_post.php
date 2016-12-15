@@ -11,11 +11,11 @@ $titleErr = $contentErr = "";
 if (isset($_POST['publish']) || isset($_POST['save'])) {
 		
 	if (empty($_POST['title'])) {
-		$titleErr = "<p>Du måste skriva en titel</p>";
+		$titleErr = "<p class='red'>Du måste skriva en titel</p>";
 	}
 
 	if (empty($_POST['post_content'])) {
-		$contentErr = "<p>Du måste skriva något i inlägget</p>";
+		$contentErr = "<p class='red'>Du måste skriva något i inlägget</p>";
 	}
 
 } 
@@ -42,10 +42,10 @@ if(isset($_POST['publish']) || isset($_POST['save'])) {
 	$query = "INSERT INTO posts(post_category_id, post_title, post_author, post_author_id, post_date, post_image, post_content, post_status) VALUES ('{$category}', '{$title}', '{$_SESSION['firstname']}', {$_SESSION['user_id']}, CURDATE(), '{$target_name}', '{$content}' ";
 	if(isset($_POST['save'])) {
 		$query .= ", 0)";
-		$message = "Inlägget är sparat";
+		$message = "<p class='saved'>Inlägget är sparat</p>";
 	} else {
 		$query .= ", 1)";
-		$message = "Inlägget är publicerat";
+		$message = "<p class='public'>Inlägget är publicerat</p>";
 	}
 
 	if($stmt->prepare($query)) {
@@ -58,7 +58,7 @@ if(isset($_POST['publish']) || isset($_POST['save'])) {
 		die("quey" . mysqli_error($conn));
 	} 
 	} else {
-		$message = "Du måste fylla i alla fält";
+		$message = "<p class='red'>Du måste fylla i alla fält</p>";
 	}
 }
 
