@@ -262,8 +262,13 @@ div.panel.show {
   	transition: .2s ease;
   }
 
-  input[type=submit]:hover {
+  input[type=submit].btn:hover {
   	background-color: #F75633;
+	transition: .2s ease;
+  }
+
+  input[type=submit].btn--blue:hover {
+  	background-color: #213670;
 	transition: .2s ease;
   }
 
