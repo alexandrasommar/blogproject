@@ -52,7 +52,7 @@ if(isset($_POST['publish']) || isset($_POST['save'])) {
 	} else {
 
 		die("quey" . mysqli_error($conn));
-	}
+	} 
 	} else {
 		$message = "Du måste fylla i alla fält";
 	}
@@ -71,8 +71,10 @@ if(isset($message)) {
 ?>
 </div>
 	<div class="form__input">
+	<div class="form-message">
+	<?php echo $titleErr; ?>
+	</div>
 		<label for="title">Titel</label>
-		<?php echo $titleErr; ?>
 		<input type="text" class="form-control" name="title" value="<?php if(isset($_POST['title'])) {
 			echo $_POST['title']; }?>">
 	</div>
