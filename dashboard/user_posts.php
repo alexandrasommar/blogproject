@@ -60,7 +60,13 @@ if(isset($_GET['delete'])) {
 				<div class="divTableRow">
 						
 						<div class="divTableCell hidden-tablet"><?php echo $date; ?></div>
-						<div class="divTableCell"><?php echo $title; ?></div>
+						<div class="divTableCell">
+						<?php if($status == 1) {
+							echo "<a href='../post.php?post=$post_id'>$title</a>";
+							} else {
+								echo $title;
+							}
+						  ?></div>
 						<div class="divTableCell hidden-mobile"><?php echo $cat_name; ?></div>
 						<?php
 						if($_SESSION['role'] == 'admin') { ?>
