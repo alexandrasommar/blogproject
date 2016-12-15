@@ -24,7 +24,7 @@ if(isset($_POST['publish']) || isset($_POST['save'])) {
 	if(!empty($_POST['title'])
 		&& !empty($_POST['post_content'])
 		&& !empty($_POST['post_category'])
-		&& !empty($_FILES['image'])) {
+		&& !empty($_FILES['image']['name'])) {
 	
 	$title = $_POST['title'];
 	$content = $_POST['post_content'];
