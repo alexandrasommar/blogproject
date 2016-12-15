@@ -3,15 +3,33 @@
 	<!-- Header -->
 
 <div class="blog-post__image">
-
 <?php include "header-navigation-menu.php"; ?>
 <?php include "include/functions.php"; ?>
+<?php
+$post = $_GET["post"];
+
+$query = "SELECT posts.*, categories.cat_id, categories.cat_name, users.* FROM posts LEFT JOIN categories ON posts.post_category_id = categories.cat_id LEFT JOIN users ON posts.post_author_id = users.user_id WHERE posts.post_id = {$post}";
+
+if($result = mysqli_query($conn, $query)) {
+	while ($row = mysqli_fetch_assoc($result)) {
+		
+		$post_title = $row['post_title'];
+		$post_date = $row['post_date'];
+		$post_image = $row['post_image'];
+		$post_content = $row['post_content'];
+		$firstname = $row['user_firstname'];
+		$lastname = $row['user_lastname'];
+		$image = $row['user_image'];
+		$description = $row['user_description'];
+	}
+} 
+echo "<img src='{$post_image}'>";
+?>
+
+
 
 </div> <!-- .blog-post__image -->
 <?php
-$post = $_GET["post"]; 
-
-
 $nameErr = $emailErr = $webErr = $contentErr = "";
 
 if (isset($_POST['submit'])) {
@@ -69,14 +87,6 @@ if(isset($_POST['submit'])) {
 <!-- Post -->
 	
 <section class="blog-post">
-<?php
-$query = "SELECT posts.*, categories.cat_id, categories.cat_name, users.* FROM posts LEFT JOIN categories ON posts.post_category_id = categories.cat_id LEFT JOIN users ON posts.post_author_id = users.user_id WHERE posts.post_id = {$post}";
-if($stmt->prepare($query)) {
-
-		$stmt->execute();
-		$stmt->bind_result($post_id, $category_id, $post_title, $post_author, $post_author_id, $post_date, $post_image, $post_content, $post_status, $cat_id, $cat_name, $user_id, $username, $firstname, $lastname, $password, $email, $website, $image, $description, $role );
-
-		while(mysqli_stmt_fetch($stmt)) { ?>
 		<article class="blog-post__article">
 			<div class="blog-post__date">
 				<time><?php echo $post_date; ?></time>
@@ -94,8 +104,8 @@ if($stmt->prepare($query)) {
 		</article> <!-- .blog-post__article -->			
 
 <?php
-		}
-	}
+		
+	// }
 ?>
 
 </section> <!-- .blog-post -->
