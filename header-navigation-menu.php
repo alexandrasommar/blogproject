@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php include ("include/db.php"); ?>
 
 	<header class="header">
@@ -48,7 +49,10 @@
 									<li><a href="category.php">Kategorier</a></li>
 									<li><a href="archive.php">Arkiv</a></li>
 									<li><a href="#">Kontakt</a></li>
+									<?php if(isset($_SESSION['username'])) { ?>
 									<li><a href="dashboard/index.php">Dashboard</a></li>
+									<?php	} ?>
+									
 									<li><a href="#">Logga ut</a></li>
 								</ul>
 							</div>
@@ -61,7 +65,9 @@
                 <ul>
                 	<li><a href="archive.php">Arkiv</a></li>
                     <li><a href="contact.php">Kontakt</a></li>
+                    <?php if(isset($_SESSION['username'])) { ?>
                     <li><a href="dashboard/index.php">Dashboard</a></li>
+                    <?php	} ?>
                 </ul>
 	        </nav> <!-- .header-menu -->
 
