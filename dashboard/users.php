@@ -9,7 +9,9 @@
 
 	if($_SESSION['role'] == 'admin') {
 		include "include/all_users.php";
+		echo "<div class='ad-category'>";
 		echo "<a href='registration.php'>Registrera ny användare</a>";
+		echo "</div>";
 
 	if(isset($_GET['edit'])) {
 		include "include/edit_user.php";

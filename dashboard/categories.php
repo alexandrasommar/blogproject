@@ -21,7 +21,7 @@ if(isset($_GET['delete'])) {
 	<main>
 		
 
-		<a href="categories.php?source=add">Lägg till kategori</a>
+		
 
 		<div class="divTable">
 			<div class="divTableBody">
@@ -48,9 +48,12 @@ if(isset($_GET['delete'])) {
 		}
 
 
-		?>
+		?>	
+			</div>
 		</div>
-		</div>
+				<div class="ad-category">
+					<a href="categories.php?source=add">Lägg till ny kategori</a>
+				</div>
 		<?php
 		if(isset($message)) {
 			echo $message;
