@@ -45,7 +45,7 @@
 							<td><?php echo $website; ?></td>
 							<td><?php echo "<img src='../$image' width='20'>"; ?></td>
 							<td><?php echo substr($description, 0, 60); ?></td>
-							<td><?php echo "<a href='users.php?source=edit&user=$user_id'>Redigera</a>"; ?></td>
+							<td><?php echo "<a href='users.php?edit&user=$user_id'>Redigera</a>"; ?></td>
 							<td><?php echo "<a href='users.php?delete=$user_id'>Radera</a>"; ?></td>
 		</tr>
 					<?php

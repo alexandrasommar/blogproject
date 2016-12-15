@@ -11,18 +11,10 @@
 		include "include/all_users.php";
 		echo "<a href='registration.php'>Registrera ny användare</a>";
 
-	if(isset($_GET['source'])) {
-	    $source = $_GET['source'];
-	} else {
-	    $source = '';
+	if(isset($_GET['edit'])) {
+		include "include/edit_user.php";
 	}
 
-	switch ($source) {
-	    case 'edit':
-	        include "include/edit_user.php";
-	        break;
-	    
-	}
 
 	} else {
 		header("Location: index.php");
