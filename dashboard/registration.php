@@ -61,8 +61,11 @@ if(isset($_POST['register'])) {
 
 		$pass = password_hash($pass, PASSWORD_DEFAULT);
 
-		$query = "INSERT INTO users VALUES('', '{$user}', '{$first}', '{$last}', '{$pass}', '{$email}', '{$website}', '{$target_name}', '{$description}', 'editor')";
-
+		$query = "INSERT INTO users VALUES('', '{$user}', '{$first}', '{$last}', '{$pass}', '{$email}', '{$website}' ";
+		if(!empty($profilepic)) {
+			$query .= ", '{$target_name}' ";
+		}
+			$query .= ", '{$description}', 'editor')";
 		if($stmt->prepare($query)) {
 			$stmt->execute();
 			$message = "Användaren är registrerad och kan nu logga in. <a href='users.php'>Se alla användare</a>";
