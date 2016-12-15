@@ -272,6 +272,11 @@ div.panel.show {
 	transition: .2s ease;
   }
 
+  .form-message {
+  	color: #E57373;
+  	padding-bottom: 10px;
+  }
+
   /* User post */
 
   .user_post_container {

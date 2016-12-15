@@ -2,6 +2,12 @@
 
 $titleErr = $contentErr = "";
 
+?>
+<section class="form">
+<form action="" method="post" enctype="multipart/form-data">
+
+<?php
+
 if (isset($_POST['publish']) || isset($_POST['save'])) {
 		
 	if (empty($_POST['title'])) {
@@ -56,14 +62,14 @@ if(isset($_POST['publish']) || isset($_POST['save'])) {
 ?>
 
 
+<div class="form-message">
 <?php 
 if(isset($message)) {
 	echo $message;
 }
 
 ?>
-<section class="form">
-<form action="" method="post" enctype="multipart/form-data">
+</div>
 	<div class="form__input">
 		<label for="title">Titel</label>
 		<?php echo $titleErr; ?>
