@@ -25,7 +25,7 @@ function selectMonth () {
 	        echo "<option value='$monthNum'>$monthName ($numposts)</option>";
 	    }
 	   }
-
+	   mysqli_free_result($result);
 	}
 
 function countComments () {
