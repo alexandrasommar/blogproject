@@ -21,6 +21,7 @@ if($result = mysqli_query($conn, $query)) {
 		$lastname = $row['user_lastname'];
 		$image = $row['user_image'];
 		$description = $row['user_description'];
+		$post_author_id = $row['post_author_id'];
 	}
 } 
 echo "<img src='{$post_image}'>";
