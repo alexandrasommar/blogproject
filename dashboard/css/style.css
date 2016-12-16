@@ -58,6 +58,10 @@ main {
 	width: 100%;
 }
 
+.aside__nav--header img {
+	padding: 0 7px;
+}
+
 .aside__nav--header .header {
 	padding: 5px;
 }
@@ -128,6 +132,9 @@ main {
 
 .nav__left span {
 	padding-left: 15px;
+	font-family: "lato", sans-serif;
+	font-weight: 400;
+	font-size: 24px;
 }
 
 .accordion {
