@@ -376,7 +376,7 @@ div.panel.show {
 }
 
 .ad-category a {
-	text-decoration: none;
+	text-decoration: underline;
 	color: #222;
 }
 
