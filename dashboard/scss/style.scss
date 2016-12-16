@@ -1,0 +1,19 @@
+@import "assets/_colors";
+@import "assets/_fonts";
+@import "assets/_mixins";
+@import "_normalize";
+
+@import "_base";
+
+@media screen and (max-width: 480px) {
+	@import "_mobile";
+}
+
+@media screen and (max-width: 1199px) {
+	@import "_tablet";
+}
+
+@media screen and (min-width: 1200px) {
+	@import "_desktop";
+}
+
