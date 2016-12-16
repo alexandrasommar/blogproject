@@ -41,6 +41,18 @@ body {
 
 	&__menu {
 		font: $font-regular;
+		width: 33%;
+		text-align: center;
+
+		&--right {
+			display: flex;
+			justify-content: flex-end;
+		}
+
+		&--left {
+			display: flex;
+			justify-content: flex-start;
+		}
 
 		ul {
 			list-style: none;
