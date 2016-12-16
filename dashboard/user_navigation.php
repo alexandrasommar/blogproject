@@ -27,13 +27,7 @@
 										<li><a href="#"><i class="fa fa-bar-chart aside" aria-hidden="true"></i>Statistik</a></li>
 										<?php
 										if($_SESSION['role'] == 'admin') { ?>
-											<li class="accordion"><a href="categories.php"><i class="fa fa-list aside" aria-hidden="true"></i>Kategorier<i class="fa fa-caret-down" aria-hidden="true"></i></a></li>
-											<div class="panel">
-												<ul class="aside__nav--visible">
-													<li>Visa kategorier</li>
-													<li>Lägg till kategori</li>
-												</ul>
-											</div>
+											<li><a href="categories.php"><i class="fa fa-list aside" aria-hidden="true"></i>Kategorier</a></li>
 											<li><a href="users.php"><i class="fa fa-user-circle-o aside" aria-hidden="true"></i>Användare</a></li>
 										<?php } ?>
 										<li><a href="logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i>Logga ut</a></li>
@@ -72,13 +66,7 @@
 							<li><a href="statistics.php"><i class="fa fa-bar-chart aside" aria-hidden="true"></i>Statistik</a></li>
 							<?php
 							if($_SESSION['role'] == 'admin') { ?>
-							<li class="accordion"><a href="categories.php"><i class="fa fa-list aside" aria-hidden="true"></i>Kategorier<i class="fa fa-caret-down" aria-hidden="true"></i></a></li>
-							<div class="panel">
-								<ul class="aside__nav--visible">
-									<li>Visa kategorier</li>
-									<li>Lägg till kategori</li>
-								</ul>
-							</div>
+							<li><a href="categories.php"><i class="fa fa-list aside" aria-hidden="true"></i>Kategorier</a></li>
 							<li><a href="users.php"><i class="fa fa-user-circle-o aside" aria-hidden="true"></i>Användare</a></li>
 							<?php } ?>
 						</ul>
