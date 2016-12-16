@@ -99,7 +99,7 @@
 	<!-- Posts -->
 
 		</div>
-		<div class="paginering">
+		<div class="pagination">
 	<?php
 
 	for ($i = 1; $i <= $count; $i++) {
