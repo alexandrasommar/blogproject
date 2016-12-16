@@ -5,8 +5,8 @@ if(isset($_POST['register'])) {
 		&& !empty($_POST['lastname'])
 		&& !empty($_POST['email'])
 		&& !empty($_POST['website'])
-		&& !empty($_POST['username'])
-		&& !empty($_POST['password'])
+		&& !empty($_POST['user'])
+		&& !empty($_POST['pass'])
 		&& !empty($_FILES['profilepic'])
 		&& !empty($_POST['description'])) {
 
@@ -15,8 +15,8 @@ if(isset($_POST['register'])) {
 		$email = mysqli_real_escape_string($conn, $_POST['email']);
 		$website = mysqli_real_escape_string($conn, $_POST['website']);
 		$description = mysqli_real_escape_string($conn, $_POST['description']);
-		$user = mysqli_real_escape_string($conn, $_POST['username']);
-		$pass = mysqli_real_escape_string($conn, $_POST['password']);
+		$user = mysqli_real_escape_string($conn, $_POST['user']);
+		$pass = mysqli_real_escape_string($conn, $_POST['pass']);
 
 		$profilepic = $_FILES['profilepic']['name'];
 		$target_folder = "uploads/";
@@ -66,12 +66,12 @@ if(isset($_POST['register'])) {
 						<input type="text" class="form-control" name="website">
 					</div>
 					<div class="form__input">
-						<label for="username">Användarnamn</label>
-						<input type="text" class="form-control" name="username">
+						<label for="user">Användarnamn</label>
+						<input type="text" class="form-control" name="user">
 					</div>
 					<div class="form__input">
-						<label for="password">Lösenord</label>
-						<input type="password" class="form-control" name="password">
+						<label for="pass">Lösenord</label>
+						<input type="pass" class="form-control" name="pass">
 					</div>
 					<div class="form-group">
 						<label for="profilepic">Profilbild</label>
