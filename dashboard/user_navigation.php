@@ -42,11 +42,9 @@
 						<ul class="aside__nav--header">
 							<li><a href="#"><img src="../<?php echo $_SESSION['image'];?>" width="15px" 
 						alt="Bild på <?php echo $_SESSION['firstname'] ; ?>"><?php echo $_SESSION['username']; ?><i class="fa fa-caret-down header" aria-hidden="true"></i></a></li>
-							<div class="dropdown-content">
-    							<ul class="dropdown-flex">
-    								<li><a href="logout.php">Logga ut</a></li>
-    							</ul>
-  							</div>
+							<ul class="dropdown--content">
+								<li><a href="logout.php">Logga ut</a></li>
+							</ul>
 						</ul>
 					</div>
 				</nav>
