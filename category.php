@@ -97,4 +97,4 @@ if($stmt->prepare($query)) {
 
 	<!-- Footer -->
 
-<?php include "footer.php"; ?>
+<?php include "include/footer.php"; ?>

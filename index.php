@@ -90,4 +90,4 @@
 		</div> <!-- .pagination -->
 	</section> <!-- .post -->
 	<!-- Footer -->
-<?php include "footer.php"; ?>
+<?php include "include/footer.php"; ?>
