@@ -2,32 +2,32 @@
 <?php include "../include/db.php"; ?>
 <?php include "../include/head.php"; ?>
 
-<div class="container">
-	<?php include "user_navigation.php"; ?>
-	<main>
-	<?php
+	<div class="container">
+		<?php include "user_navigation.php"; ?>
+		<main>
+		<?php
+		// if the user is admin, display content. else redirect to index
+		if($_SESSION['role'] == 'admin') {
+			include "include/all_users.php";
+			echo "<div class='ad-category'>";
+			echo "<a href='registration.php'>Registrera ny användare</a>";
+			echo "</div>";
 
-	if($_SESSION['role'] == 'admin') {
-		include "include/all_users.php";
-		echo "<div class='ad-category'>";
-		echo "<a href='registration.php'>Registrera ny användare</a>";
-		echo "</div>";
-
-	if(isset($_GET['edit'])) {
-		include "include/edit_user.php";
-	}
+		if(isset($_GET['edit'])) {
+			include "include/edit_user.php";
+		}
 
 
-	} else {
-		header("Location: index.php");
+		} else {
+			header("Location: index.php");
 
-	}
-	?>
-	</main>
-</div>
-<!-- FontAwesom -->
-		<script src="https://use.fontawesome.com/78a857f410.js"></script>
-		<!-- JavaScript -->
-		<script src="script.js"></script>
+		}
+		?>
+		</main>
+	</div> <!-- .container -->
+	<!-- FontAwesom -->
+	<script src="https://use.fontawesome.com/78a857f410.js"></script>
+	<!-- JavaScript -->
+	<script src="script.js"></script>
 </body>
 </html>
