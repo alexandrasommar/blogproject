@@ -1,93 +1,87 @@
-<?php include "head.php"; ?>
+<?php include "include/head.php"; ?>
 
 	<!-- Header -->
 
-<div class="blog-post__image">
-<?php include "header-navigation-menu.php"; ?>
-<?php include "include/functions.php"; ?>
-<?php
-$post = $_GET["post"];
+	<div class="blog-post__image">
+		<?php include "header-navigation-menu.php"; ?>
+		<?php include "include/functions.php"; ?>
+		<?php
+		$post = $_GET["post"];
 
-$query = "SELECT posts.*, categories.cat_id, categories.cat_name, users.* FROM posts LEFT JOIN categories ON posts.post_category_id = categories.cat_id LEFT JOIN users ON posts.post_author_id = users.user_id WHERE posts.post_id = {$post}";
+		$query = "SELECT posts.*, categories.cat_id, categories.cat_name, users.* FROM posts LEFT JOIN categories ON posts.post_category_id = categories.cat_id LEFT JOIN users ON posts.post_author_id = users.user_id WHERE posts.post_id = {$post}";
 
-if($result = mysqli_query($conn, $query)) {
-	while ($row = mysqli_fetch_assoc($result)) {
-		
-		$post_title = $row['post_title'];
-		$post_date = $row['post_date'];
-		$post_image = $row['post_image'];
-		$post_content = $row['post_content'];
-		$firstname = $row['user_firstname'];
-		$lastname = $row['user_lastname'];
-		$image = $row['user_image'];
-		$description = $row['user_description'];
-		$post_author_id = $row['post_author_id'];
-	}
-} 
-echo "<img src='{$post_image}'>";
-?>
+		if($result = mysqli_query($conn, $query)) {
+			while ($row = mysqli_fetch_assoc($result)) {
+				
+				$post_title = $row['post_title'];
+				$post_date = $row['post_date'];
+				$post_image = $row['post_image'];
+				$post_content = $row['post_content'];
+				$firstname = $row['user_firstname'];
+				$lastname = $row['user_lastname'];
+				$image = $row['user_image'];
+				$description = $row['user_description'];
+				$post_author_id = $row['post_author_id'];
+			}
+		} 
+		echo "<img src='{$post_image}'>";
+		?>
+	</div> <!-- .blog-post__image -->
+	<?php
+	// if the visitor did not fill out the fields correctly, display error messages
+	$nameErr = $emailErr = $webErr = $contentErr = "";
 
+	if (isset($_POST['submit'])) {
+			
+		if (empty($_POST['name'])) {
+			$nameErr = "<p>Du måste fylla i ditt namn</p>";
+		}
 
+		if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+			$emailErr = "<p>Du måste fylla i en giltig epostadress</p>";
+		}
 
-</div> <!-- .blog-post__image -->
-<?php
-$nameErr = $emailErr = $webErr = $contentErr = "";
+		if (empty($_POST['website'])) {
+			$webErr = "<p>Du måste fylla i en hemsideadress</p>";
+		}
 
-if (isset($_POST['submit'])) {
-		
-	if (empty($_POST['name'])) {
-		$nameErr = "<p>Du måste fylla i ditt namn</p>";
-	}
+		if (empty($_POST['content'])) {
+			$contentErr = "<p>Du måste skriva något i kommentaren</p>";
+		} 
 
-	if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-		$emailErr = "<p>Du måste fylla i en giltig epostadress</p>";
-	}
-
-	if (empty($_POST['website'])) {
-		$webErr = "<p>Du måste fylla i en hemsideadress</p>";
-	}
-
-	if (empty($_POST['content'])) {
-		$contentErr = "<p>Du måste skriva något i kommentaren</p>";
 	} 
+	// if everything is filled out correctly, the comment is inserted into the database
+	if(isset($_POST['submit'])) {
+		if(!empty($_POST['name']) 
+			&& !empty($_POST['email']) 
+			&& !empty($_POST['website']) 
+			&& !empty($_POST['content'])) {
 
-} 
+		$name = $_POST['name'];
+		$email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
+		$website = $_POST['website'];
+		$content = $_POST['content'];
 
-if(isset($_POST['submit'])) {
-	if(!empty($_POST['name']) 
-		&& !empty($_POST['email']) 
-		&& !empty($_POST['website']) 
-		&& !empty($_POST['content'])) {
-
-	$name = $_POST['name'];
-	$email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
-	$website = $_POST['website'];
-	$content = $_POST['content'];
-
-	$name = mysqli_real_escape_string($conn, $name);
-	$email = mysqli_real_escape_string($conn, $email);
-	$website = mysqli_real_escape_string($conn, $website);
-	$content = mysqli_real_escape_string($conn, $content);
+		$name = mysqli_real_escape_string($conn, $name);
+		$email = mysqli_real_escape_string($conn, $email);
+		$website = mysqli_real_escape_string($conn, $website);
+		$content = mysqli_real_escape_string($conn, $content);
 
 
-	$query ="INSERT INTO comments(comment_post_id, comment_author, comment_date, comment_email, comment_content, comment_website) VALUES('{$post}', '{$name}', CURDATE(), '{$email}', '{$content}', '{$website}')";
+		$query ="INSERT INTO comments(comment_post_id, comment_author, comment_date, comment_email, comment_content, comment_website) VALUES('{$post}', '{$name}', CURDATE(), '{$email}', '{$content}', '{$website}')";
 
-	if($stmt->prepare($query)) {
+		if($stmt->prepare($query)) {
+			$stmt->execute(); 
+		} else {
+		die("query failed" . mysqli_error($conn));
+		}
+	}
 
-		$stmt->execute(); 
+	 ?>
 
-	} else
-
-	die("query failed" . mysqli_error($conn));
-}
-
-}
-
- ?>
-
-<!-- Post -->
-	
-<section class="blog-post">
+	<!-- Post -->
+		
+	<section class="blog-post">
 		<article class="blog-post__article">
 			<div class="blog-post__date">
 				<time><?php echo $post_date; ?></time>
@@ -96,20 +90,13 @@ if(isset($_POST['submit'])) {
 			<h2><?php echo $post_title; ?></h2>
 			<p><?php echo $post_content; ?></p>
 
-				<!-- Author information box -->
-				
-				<?php include "author-information-box.php"; ?>
-
-				<!-- Comment information -->
-		
+			<!-- Author information box -->
+			
+			<?php include "include/author-information-box.php"; ?>
 		</article> <!-- .blog-post__article -->			
-
-<?php
-		
-	// }
-?>
-
-</section> <!-- .blog-post -->
+	</section> <!-- .blog-post -->
+			
+	<!-- Comment form -->
 
 	<section class="form" id="comment">
 		<form method="post" action="post.php?post=<?php echo $post; ?>#comment">
@@ -141,13 +128,14 @@ if(isset($_POST['submit'])) {
 				<input type="submit" name="submit" value="Kommentera">
 			</div>
 		</form>	
-	</section>
+	</section> <!-- .form -->
 	<section class="blog-post">
 		<div class="comments">
 			<?php countComments(); ?>
 		</div>
-	</section>
-
+	</section> <!-- .blog-post -->
+	
+	<!-- Comments -->
 	<section class="blog-post">
 		<?php
 		$query = "SELECT * FROM comments WHERE comment_post_id = '{$post}'";
@@ -157,23 +145,16 @@ if(isset($_POST['submit'])) {
 		$stmt->bind_result($comment_id, $comment_post_id, $comment_author, $comment_date, $comment_email, $comment_content, $comment_website);
 
 		while(mysqli_stmt_fetch($stmt)) { ?>
-
 			<div class="comments">
 				<p><?php echo $comment_author; ?></p>
 				<p><?php echo $comment_date; ?></p>
 				<p><?php echo $comment_content; ?></p>
-
-			</div>
-		
-	<?php
-
-		}
+			</div> <!-- .comments -->
+		<?php
+			}
 		}	
-		?>
-	</section>
-	
-	
-	
+			?>
+	</section> <!-- .blog-post -->
 
 	<!-- Footer -->
 

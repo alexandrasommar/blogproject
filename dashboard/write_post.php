@@ -1,6 +1,6 @@
 <?php session_start(); ?>
 <?php include "../include/db.php"; ?>
-<?php include "../head.php"; ?>
+<?php include "../include/head.php"; ?>
 
 
 	<div class="container">

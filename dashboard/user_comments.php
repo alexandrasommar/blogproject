@@ -1,6 +1,6 @@
 <?php session_start(); ?>
 <?php include "../include/db.php"; ?>
-<?php include "../head.php"; ?>
+<?php include "../include/head.php"; ?>
 
 <?php
 if(isset($_GET['delete'])) {
@@ -56,15 +56,15 @@ if(isset($_GET['delete'])) {
 					$stmt->bind_result($com_id, $com_post_id, $com_author, $com_date, $com_email, $content, $website, $post_title);
 
 					while(mysqli_stmt_fetch($stmt)) { ?>
-							<div class="divTableRow">
-	<div class="divTableCell hidden-tablet"><?php echo "<a href='../post.php?post=$com_post_id'>$post_title</a>"; ?></div>
-	<div class="divTableCell"><?php echo $com_date; ?></div>
-	<div class="divTableCell hidden-mobile"><?php echo $com_author; ?></div>
-	<div class="divTableCell hidden-tablet"><?php echo $com_email; ?></div>
-	<div class="divTableCell hidden-small-desktop"><?php echo $website; ?></div>
-	<div class="divTableCell"><?php echo $content; ?></div>
-	<div class="divTableCell"><?php echo "<a href='user_comments.php?delete=$com_id'><i class='fa fa-trash-o' aria-hidden='true'></i></a>"?></div>
-</div>
+						<div class="divTableRow">
+							<div class="divTableCell hidden-tablet"><?php echo "<a href='../post.php?post=$com_post_id'>$post_title</a>"; ?></div>
+							<div class="divTableCell"><?php echo $com_date; ?></div>
+							<div class="divTableCell hidden-mobile"><?php echo $com_author; ?></div>
+							<div class="divTableCell hidden-tablet"><?php echo $com_email; ?></div>
+							<div class="divTableCell hidden-small-desktop"><?php echo $website; ?></div>
+							<div class="divTableCell"><?php echo $content; ?></div>
+							<div class="divTableCell"><?php echo "<a href='user_comments.php?delete=$com_id'><i class='fa fa-trash-o' aria-hidden='true'></i></a>"?></div>
+						</div>
 
 						<?php
 							

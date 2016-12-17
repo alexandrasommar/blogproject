@@ -1,5 +1,5 @@
 <?php include "include/db.php"; ?>
-<?php include "head.php"; ?>
+<?php include "include/head.php"; ?>
 
 <?php
 
