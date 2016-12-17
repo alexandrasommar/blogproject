@@ -1,60 +1,52 @@
 <?php include "include/db.php"; ?>
 <?php include "include/head.php"; ?>
 
-<?php
+	<?php
 
-if(isset($_POST['loggin'])) {
+	if(isset($_POST['loggin'])) {
 
-	if(!empty($_POST['username']) && !empty ($_POST['password'])) {
+		if(!empty($_POST['username']) && !empty ($_POST['password'])) {
 
-		$username = $_POST['username'];
-		$password = $_POST['password'];
+			$username = $_POST['username'];
+			$password = $_POST['password'];
 
-		$query = "SELECT * FROM users WHERE username = '{$username}'";
+			$query = "SELECT * FROM users WHERE username = '{$username}'";
 
-		if($stmt->prepare($query)) {
+			if($stmt->prepare($query)) {
 
-		$stmt->execute();
-		$stmt->bind_result($user_id, $dbuser, $firstname, $lastname, $dbpass, $email, $website, $image, $description, $role);
+			$stmt->execute();
+			$stmt->bind_result($user_id, $dbuser, $firstname, $lastname, $dbpass, $email, $website, $image, $description, $role);
 
-		$stmt->fetch();
+			$stmt->fetch();
 
-		if(password_verify($password, $dbpass)) {
+			// checks the password against the hashed one. 
+			// if it is correct, the user is redirected to dashboard and a session starts
+			if(password_verify($password, $dbpass)) {
+				session_start();
+				$_SESSION['user_id'] = $user_id;
+				$_SESSION['username'] = $dbuser;
+				$_SESSION['firstname'] = $firstname;
+				$_SESSION['lastname'] = $lastname; 
+				$_SESSION['email'] = $email;
+				$_SESSION['website'] = $website;
+				$_SESSION['image'] = $image;
+				$_SESSION['desc'] = $description; 
+				$_SESSION['role'] = $role;
 
-			session_start();
-			$_SESSION['user_id'] = $user_id;
-			$_SESSION['username'] = $dbuser;
-			$_SESSION['firstname'] = $firstname;
-			$_SESSION['lastname'] = $lastname; 
-			$_SESSION['email'] = $email;
-			$_SESSION['website'] = $website;
-			$_SESSION['image'] = $image;
-			$_SESSION['desc'] = $description; 
-			$_SESSION['role'] = $role;
+				header("Location: dashboard/index.php");
+			} else {
+				$message = "Du har fyllt i fel användarnamn eller lösenord";
+			} 
 
+		} 
 
-			header("Location: dashboard/index.php");
 		} else {
-			$message = "Du har fyllt i fel användarnamn eller lösenord";
+			$message = "Du måste fylla i användarnamn och lösenord";
 		} 
 
 	} 
 
-	} else {
-		$message = "Du måste fylla i användarnamn och lösenord";
-	} 
-
-
-
-} 
-
-
-
-
-
-?>
-
-
+	?>
 
 	<section class="login">
 		<div class="login__box">
@@ -67,7 +59,6 @@ if(isset($_POST['loggin'])) {
 							if(isset($message)) {
 								echo $message;
 							}
-
 							 ?>
 							<input type="text" name="username" placeholder="Användarnamn">
 							<input type="password" name="password" placeholder="Lösenord">
