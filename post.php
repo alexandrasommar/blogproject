@@ -70,12 +70,13 @@
 
 		$query ="INSERT INTO comments(comment_post_id, comment_author, comment_date, comment_email, comment_content, comment_website) VALUES('{$post}', '{$name}', CURDATE(), '{$email}', '{$content}', '{$website}')";
 
-		if($stmt->prepare($query)) {
-			$stmt->execute(); 
-		} else {
-		die("query failed" . mysqli_error($conn));
+			if($stmt->prepare($query)) {
+				$stmt->execute(); 
+			} else {
+			die("query failed" . mysqli_error($conn));
+			}
 		}
-	}
+	 }
 
 	 ?>
 
