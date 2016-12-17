@@ -51,7 +51,7 @@
 					//when three posts have been displayed, show slider.php
 					if ($counter == 4) {
 						?></div><?php
-						include "slider.php";
+						include "include/slider.php";
 						?><div class="post__container"><?php
 					}
 
