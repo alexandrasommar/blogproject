@@ -6,6 +6,11 @@
 		<?php include "user_navigation.php"; ?>
 		<main>
 		<?php
+		if(isset($_SESSION['success'])) {
+			echo $_SESSION['success'];
+			unset($_SESSION['success']);
+		}
+
 		// if the user is admin, display content. else redirect to index
 		if($_SESSION['role'] == 'admin') {
 			include "include/all_users.php";
