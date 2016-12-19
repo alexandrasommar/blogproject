@@ -1,5 +1,5 @@
 <?php
-$titleErr = $contentErr = $imgErr = "";
+$titleErr = $contentErr = $imgErr = $catErr = "";
 if (isset($_POST['publish']) || isset($_POST['save'])) {
 		
 	if (empty($_POST['title'])) {
@@ -40,7 +40,7 @@ if (isset($_POST['publish']) || isset($_POST['save'])) {
 		
 	
 
-	$query = "INSERT INTO posts(post_category_id, post_title, post_author, post_author_id, post_date, post_image, post_content, post_status) VALUES ('{$category}', '{$title}', '{$_SESSION['firstname']}', {$_SESSION['user_id']}, CURDATE(), '{$target_name}', '{$content}' ";
+	$query = "INSERT INTO posts(post_category_id, post_title, post_author, post_author_id, post_date, post_image, post_content, post_status) VALUES ('{$category}', '{$title}', '{$_SESSION['firstname']}', {$_SESSION['user_id']}, NOW(), '{$target_name}', '{$content}' ";
 	if(isset($_POST['save'])) {
 		$query .= ", 0)";
 		$_SESSION['success'] = "<p class='saved'>Inlägget är sparat.</p>";
@@ -52,8 +52,7 @@ if (isset($_POST['publish']) || isset($_POST['save'])) {
 	}
 
 	if($stmt->prepare($query)) {
-		$stmt->execute();
-		
+		$stmt->execute();	
 
 	} else {
 
@@ -75,7 +74,7 @@ if (isset($_POST['publish']) || isset($_POST['save'])) {
 
 				?>
 			</div> <!-- .form__input -->
-			<div class="form-message">
+			<div class="form__input">
 				<?php echo $titleErr; ?>
 				<label for="title">Titel</label>
 				<input type="text" class="form-control" name="title" value="<?php if(isset($_POST['title'])) {
@@ -94,8 +93,9 @@ if (isset($_POST['publish']) || isset($_POST['save'])) {
 			<div class="form__input">
 				<label for="post_category">Välj kategori</label>
 				<select name="post_category" id="">
-				<?php
-				 $query = "SELECT * FROM categories";
+					<option value="none">Välj kategori</option>
+					<?php
+					 $query = "SELECT * FROM categories";
 						    $select_categories = mysqli_query($conn,$query);   
 
 						    while ($row = mysqli_fetch_assoc($select_categories)) {        
@@ -105,7 +105,7 @@ if (isset($_POST['publish']) || isset($_POST['save'])) {
 						    echo "<option value='$cat_id'>$cat_name</option>";
 						 
 							}
-				?>
+					?>
 				</select>
 			</div> <!-- .form__input -->
 			<div class="form__input">

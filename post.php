@@ -85,7 +85,7 @@
 	<section class="blog-post">
 		<article class="blog-post__article">
 			<div class="blog-post__date">
-				<time><?php echo $post_date; ?></time>
+				<time><?php echo substr($post_date, 0, 10); ?></time>
 				<span>1+ <i class="fa fa-heart blog-post__icon" aria-hidden="true"></i></span>
 			</div> <!-- .blog-post__date -->
 			<h2><?php echo $post_title; ?></h2>
