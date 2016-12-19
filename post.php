@@ -68,7 +68,7 @@
 		$content = mysqli_real_escape_string($conn, $content);
 
 
-		$query ="INSERT INTO comments(comment_post_id, comment_author, comment_date, comment_email, comment_content, comment_website) VALUES('{$post}', '{$name}', CURDATE(), '{$email}', '{$content}', '{$website}')";
+		$query ="INSERT INTO comments(comment_post_id, comment_author, comment_date, comment_email, comment_content, comment_website) VALUES('{$post}', '{$name}', CURTIME(), '{$email}', '{$content}', '{$website}')";
 
 			if($stmt->prepare($query)) {
 				$stmt->execute(); 
@@ -148,7 +148,7 @@
 		while(mysqli_stmt_fetch($stmt)) { ?>
 			<div class="comments">
 				<p><?php echo $comment_author; ?></p>
-				<p><?php echo $comment_date; ?></p>
+				<p><?php echo substr($comment_date, 0, 10); ?></p>
 				<p><?php echo $comment_content; ?></p>
 			</div> <!-- .comments -->
 		<?php
