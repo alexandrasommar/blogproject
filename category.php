@@ -65,7 +65,7 @@
 
 
 						?></a></h2>
-						<span class="byline-category">Av: <span class="author"><a href="author.php?author=<?php echo $post_author_id; ?>"><?php echo $post_author; ?></span>,<?php echo $post_date; ?></span>
+						<span class="byline-category">Av: <span class="author"><a href="author.php?author=<?php echo $post_author_id; ?>"><?php echo $post_author; ?></span>, <?php echo substr($post_date, 0, 10); ?></span>
 						<p><?php echo substr($post_content, 0, 150) . "..."; ?></p>
 					</div> <!-- .post-text -->
 				</div> <!-- .post-category-text -->
