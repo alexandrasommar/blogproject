@@ -322,14 +322,28 @@ input[type=submit] {
 /* ----------------------------------------------- */
 
 .slider {
+	text-align: center;
+
+	display: -ms-flexbox;
+	//-ms-box-orient: horizontal;
+	-ms-box-pack: center;
+
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
 	display: flex;
-	flex-direction: row;
+	
+	-webkit-justify-content: space-around;
+	-moz-justify-content: space-around;
+	-ms-justify-content: space-around;
 	justify-content: space-around;
 	align-items: center;
+	width: 100%;
 	background-color: $bg-color--dark;
-	height: 100vh;
+	height: 70vh;
 
 	&__article {
+
 		width: 25%;
 		color: #C1C1C1;
 	}
@@ -339,14 +353,12 @@ input[type=submit] {
 	}
 
 	&__icon-font {
-		display: flex;
-		flex-direction: column;
+		
 		align-items: center;
 	}
 
 	&__text {
-		display: flex;
-		flex-direction: column;
+		
 		align-items: center;
 
 		h3 {
