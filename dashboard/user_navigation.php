@@ -4,7 +4,7 @@
 						<span><a href="index.php">Dashboard</a></span>
 					</div>
 					<div class="toggle-menu">
-						<div class="">
+						<div class="toggle-menu__logo">
 							<span><a href="index.php">Dashboard</a></span>
 						</div>
 						<div class="toggle-menu__bar">
