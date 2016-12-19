@@ -449,11 +449,12 @@ input[type=submit] {
 		}
 
 		p {
-			font: $font-thin;
-			text-align: left;
-			font-size: 20px;
-			line-height: 30px;
-			margin: 0;
+			text-align: center;
+			justify-content: space-around;
+			align-items: center;
+			width: 80%;
+	
+	
 		}
 	}
 
@@ -645,6 +646,7 @@ input[type=submit] {
 		justify-content: center;
 
 		p {
+
 			padding: 0 50px;
 			margin: 0;
 			font: $font-thin;
