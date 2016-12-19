@@ -63,8 +63,8 @@
 
 			<nav class="header__menu header__menu--right header__menu--block">
                 <ul>
-                	<!-- <li><a href="archive.php">Arkiv</a></li>
-                    <li><a href="contact.php">Kontakt</a></li> -->
+                	 <li><a href="archive.php">Arkiv</a></li>
+                    <!--<li><a href="contact.php">Kontakt</a></li> -->
                     <?php if(isset($_SESSION['username'])) { ?>
                     <li><a href="dashboard/index.php">Dashboard</a></li>
                     <?php	} ?>
