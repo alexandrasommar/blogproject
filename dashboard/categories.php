@@ -23,6 +23,9 @@ if(isset($_GET['delete'])) {
 			<a href="categories.php?source=add">Lägg till ny kategori</a>
 		</div>
 		<?php
+		if(isset($message)) {
+			echo $message;
+		}
 		if(isset($_SESSION['success'])) {
 		echo $_SESSION['success'];
 		unset($_SESSION['success']);
