@@ -52,7 +52,19 @@
 				</div> <!-- .post-category-img -->
 				<div class="post-category-text">
 					<div class="post-text">
-						<h2><a href="post.php?post=<?php echo $post_id; ?>"><?php echo $post_title; ?></a></h2>
+						<h2><a href="post.php?post=<?php echo $post_id; ?>"><?php 
+						if (strlen($post_title) >= 31) {
+
+							echo substr($post_title, 0, 31) . "..."; 
+
+						} else {
+
+							echo $post_title;
+						}
+
+
+
+						?></a></h2>
 						<span class="byline-category">Av: <span class="author"><a href="author.php?author=<?php echo $post_author_id; ?>"><?php echo $post_author; ?></span>,<?php echo $post_date; ?></span>
 						<p><?php echo substr($post_content, 0, 150) . "..."; ?></p>
 					</div> <!-- .post-text -->
