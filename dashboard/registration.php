@@ -25,8 +25,8 @@
 							 
 				if(empty($_FILES['profilepic']['tmp_name'])) {
 					$imgErr = "<p class='red'>Du måste ladda upp en profilbild</p>";
-				}
-
+				} 
+				
 				if (empty($_POST['website'])) {
 					$webErr = "<p class='red'>Du måste fylla i hemsida</p>";
 				}
@@ -38,6 +38,12 @@
 				}
 				if (empty($_POST['description'])) {
 					$descErr = "<p class='red'>Du måste fylla i en beskrivning</p>";
+				}
+				if (!empty($_FILES['profilepic']['tmp_name']) && $_FILES['profilepic']['type'] !== 'image/jpeg' && $_FILES['profilepic']['type'] !== 'image/png') { 
+					$imgErr = "<p class='red'>Endast jpg-och png-filer är tillåtna</p>";
+				}
+				if($_FILES['profilepic']['size'] > 1024000) {
+					$imgErr = "<p class='red'>Bilden är för stor, den får vara max 1 MB.</p>";
 				}
 
 			if(!empty($_POST['firstname'])
@@ -69,7 +75,6 @@
 				
 				$pass = mysqli_real_escape_string($conn, $_POST['password']);
 				$pass = password_hash($pass, PASSWORD_DEFAULT);
-
 				
 				$profilepic = $_FILES['profilepic']['name'];	
 				$target_folder = "uploads/";
@@ -93,6 +98,13 @@
 			?>
 
 			<!-- Registration form -->
+
+			<?php
+			if(isset($message)) {
+				echo $message;
+			}	
+
+			?>
 
 			<section class="form">
 				<form action="registration.php" method="post" enctype="multipart/form-data">
