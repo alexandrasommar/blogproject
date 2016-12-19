@@ -7,7 +7,8 @@ if(isset($_POST['update_cat'])) {
 		$query = "UPDATE categories SET cat_name = '{$cat}' WHERE cat_id = {$catid}";
 		if($stmt->prepare($query)) {
 			$stmt->execute();
-			$message = "Kategorin är uppdaterad";
+			$_SESSION['success'] = "Kategorin uppdaterades";
+			header("Location: categories.php");
 		} 
 	}
 } ?>

@@ -5,7 +5,8 @@ if(isset($_POST['create_cat'])) {
 		$query = "INSERT INTO categories VALUES(NULL, '{$catname}')";
 		if($stmt->prepare($query)) {
 			$stmt->execute();
-			$message = "Kategorin lades till";
+			$_SESSION['success'] = "Kategorin lades till.";
+			header("Location: categories.php");
 		}
 
 	} else {
