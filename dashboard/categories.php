@@ -17,6 +17,33 @@ if(isset($_GET['delete'])) {
 	<div class="container">
 		<?php include "user_navigation.php"; ?>
 		<main>
+
+		<!-- Add Category -->
+		<div class="ad-category">
+			<a href="categories.php?source=add">Lägg till ny kategori</a>
+		</div>
+		<?php
+		if(isset($_SESSION['success'])) {
+		echo $_SESSION['success'];
+		unset($_SESSION['success']);
+		}
+
+		if(isset($_GET['source'])) {
+			$source = $_GET['source'];
+			} else {
+			    $source = '';
+			}
+
+			switch ($source) {
+			    case 'edit':
+			        include "include/edit_category.php";
+			        break;
+			    case 'add':
+			        include "include/add_category.php";
+			        break;    
+			    }
+				
+			?>
 			<!-- Display all categories -->
 			<div class="divTable">
 				<div class="divTableBody">
@@ -43,31 +70,6 @@ if(isset($_GET['delete'])) {
 					?>	
 				</div>
 			</div> <!-- .divTable -->
-			<!-- Add Category -->
-			<div class="ad-category">
-				<a href="categories.php?source=add">Lägg till ny kategori</a>
-			</div>
-			<?php
-			if(isset($message)) {
-				echo $message;
-			}	
-
-			if(isset($_GET['source'])) {
-				$source = $_GET['source'];
-				} else {
-				    $source = '';
-				}
-
-				switch ($source) {
-				    case 'edit':
-				        include "include/edit_category.php";
-				        break;
-				    case 'add':
-				        include "include/add_category.php";
-				        break;    
-				    }
-				
-			?>
 		</main>
 	</div> <!-- .container -->
 	<!-- FontAwesom -->
