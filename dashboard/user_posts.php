@@ -16,6 +16,10 @@ if(isset($_GET['delete'])) {
 		<?php include "user_navigation.php"; ?>
 			<main>
 			<?php
+			if(isset($_SESSION['success'])) {
+			echo $_SESSION['success'];
+			unset($_SESSION['success']);
+			}
 			if(isset($message)) {
 				echo $message;
 			}

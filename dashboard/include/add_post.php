@@ -1,17 +1,12 @@
 <?php
-
-$titleErr = $contentErr = "";
-
-?>
-<section class="form">
-<form action="" method="post" enctype="multipart/form-data">
-
-<?php
-
+$titleErr = $contentErr = $imgErr = "";
 if (isset($_POST['publish']) || isset($_POST['save'])) {
 		
 	if (empty($_POST['title'])) {
 		$titleErr = "<p class='red'>Du måste skriva en titel</p>";
+	}
+	if(empty($_FILES['image']['tmp_name'])) {
+		$imgErr = "<p class='red'>Du måste ladda upp en bild till inlägget</p>";
 	}
 
 	if (empty($_POST['post_content'])) {
@@ -20,7 +15,7 @@ if (isset($_POST['publish']) || isset($_POST['save'])) {
 
 } 
 
-if(isset($_POST['publish']) || isset($_POST['save'])) {
+
 	if(!empty($_POST['title'])
 		&& !empty($_POST['post_content'])
 		&& !empty($_POST['post_category'])
@@ -34,7 +29,7 @@ if(isset($_POST['publish']) || isset($_POST['save'])) {
 	$target_folder = "uploads/";
 	$target_name = $target_folder . $image;
 	if(!move_uploaded_file($_FILES['image']['tmp_name'], "../uploads/$image")) {
-		echo "Filen är för stor, den får vara max 2 MB";
+		echo "<p class='error'>Filen är för stor, den får vara max 2 MB</p>";
 	} else {
 		
 	
@@ -42,10 +37,12 @@ if(isset($_POST['publish']) || isset($_POST['save'])) {
 	$query = "INSERT INTO posts(post_category_id, post_title, post_author, post_author_id, post_date, post_image, post_content, post_status) VALUES ('{$category}', '{$title}', '{$_SESSION['firstname']}', {$_SESSION['user_id']}, CURDATE(), '{$target_name}', '{$content}' ";
 	if(isset($_POST['save'])) {
 		$query .= ", 0)";
-		$message = "<p class='saved'>Inlägget är sparat</p>";
+		$_SESSION['success'] = "<p class='saved'>Inlägget är sparat.</p>";
+		header("Location: user_posts.php");
 	} else {
 		$query .= ", 1)";
-		$message = "<p class='public'>Inlägget är publicerat</p>";
+		$_SESSION['success'] = "<p class='public'>Inlägget är publicerat.</p>";
+		header("Location: user_posts.php");
 	}
 
 	if($stmt->prepare($query)) {
@@ -58,15 +55,13 @@ if(isset($_POST['publish']) || isset($_POST['save'])) {
 		die("quey" . mysqli_error($conn));
 	}
 	}
-	} else {
-		$message = "<p class='red'>Du måste fylla i alla fält</p>";
-	}
+	 
 }
 
 
 ?>
-
-
+<section class="form">
+<form action="" method="post" enctype="multipart/form-data">
 <div class="form-message">
 <?php 
 if(isset($message)) {
@@ -92,6 +87,7 @@ if(isset($message)) {
 	</div>
 	<div class="form-group">
 		<label for="image">Post Image</label>
+		<?php echo $imgErr; ?>
 		<input type="file" name="image">
 	</div>
 	<div class="form__input">
