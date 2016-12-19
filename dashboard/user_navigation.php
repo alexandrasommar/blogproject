@@ -1,11 +1,11 @@
 <header>
 				<nav class="nav">
 					<div class="nav__left">
-						<span>Dashboard</span>
+						<span><a href="index.php">Dashboard</a></span>
 					</div>
 					<div class="toggle-menu">
 						<div class="">
-							<span>Dashboard</span>
+							<span><a href="index.php">Dashboard</a></span>
 						</div>
 						<div class="toggle-menu__bar">
 							<input type="checkbox" id="menu-toggle">
