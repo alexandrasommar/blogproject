@@ -1,47 +1,8 @@
 	<?php
 	$postid = $_GET['edit'];
+	$query = "SELECT posts.*, categories.cat_name FROM posts LEFT JOIN categories ON posts.post_category_id = categories.cat_id WHERE post_id = {$postid}";
 
-	if(isset($_POST['update']) || isset($_POST['publish'])) {
-		$title = $_POST['title'];
-		$content = $_POST['post_content'];
-		$category = $_POST['post_category'];
-		$image = $_FILES['image']['name'];
-
-		$query = "UPDATE posts SET post_title = '{$title}', post_content = '{$content}', post_category_id = '{$category}' ";
-
-
-		if(!empty($image)) {
-		$target_folder = "uploads/";
-		$target_name = $target_folder . $image;
-		move_uploaded_file($_FILES['image']['tmp_name'], "../uploads/$image");
-		$query .= ", post_image = '{$target_name}' ";
-		}
-		
-		if(isset($_POST['publish'])) {
-			$query .= ", post_status = 1 ";
-		}
-
-		$query .= "WHERE post_id = {$postid}"; 
-
-		if($stmt->prepare($query)) {
-			$stmt->execute();
-			$message = "Inlägget uppdaterades!";
-		} else {
-			echo "query failed" . mysqli_error($conn);
-		}
-	}
-
-	?>
-
-
-	<?php if(isset($message)) {
-		echo $message;
-		}
-		?>
-		<?php
-		$query = "SELECT posts.*, categories.cat_name FROM posts LEFT JOIN categories ON posts.post_category_id = categories.cat_id WHERE post_id = {$postid}";
-
-		if($result = mysqli_query($conn, $query)) {
+	if($result = mysqli_query($conn, $query)) {
 		while ($row = mysqli_fetch_assoc($result)) {
 			$post_id = $row['post_id'];
 			$category_id = $row['post_category_id'];
@@ -53,11 +14,60 @@
 			$post_content = $row['post_content'];
 			$post_status = $row['post_status'];
 			$current_cat = $row['cat_name'];
-			}
 		}
-		?>
+	}
+
+	if(isset($_POST['update']) || isset($_POST['publish'])) {	
+		$title = $_POST['title'];
+		$content = $_POST['post_content'];
+		$category = $_POST['post_category'];
+
+  		$query = "UPDATE posts SET post_title = '{$title}', post_content = '{$content}', post_category_id = '{$category}' ";
+
+		if(!empty($_FILES['image']['name'])) {
+			$image = $_FILES['image']['name'];
+			$tmp_dir = $_FILES['image']['tmp_name'];
+			$target_folder = "uploads/";
+			$target_name = $target_folder . $image;
+			
+				if($_FILES['image']['size'] > 1024000) {
+					$imgErr = "Bilden är för stor, den får vara max 1 MB.";
+				}
+				if($_FILES['image']['type'] !== 'image/jpeg' && $_FILES['image']['type'] !== 'image/png') {
+						$imgErr = "Endaast jpg- och png-filer är tillåtna.";
+						
+				} 
+
+				if (!isset($imgErr)) {
+					move_uploaded_file($tmp_dir, "../uploads/$image");
+							$query .= ", post_image = '{$target_name}' ";
+				}
+			
+			}
+				
+			if(isset($_POST['publish'])) {
+			$query .= ", post_status = 1, post_date = CURTIME() ";
+			}
+
+			$query .= "WHERE post_id = {$postid}";
+			if($stmt->prepare($query)) {
+				$stmt->execute();
+				$message = "<p class='public'>Inlägget uppdaterades!</p>";
+				
+			} else {
+				echo "query failed";
+			}	
+		} 
+				
+
+		if(isset($message)) {
+			echo $message;
+		}
+
+	?>
+
 		<!-- Edit Post Form -->
-		<section class="form" id="edit">
+		<section class="form">
 			<form action="" method="post" enctype="multipart/form-data">
 				<div class="form__input">
 					<label for="title">Titel</label>
@@ -70,6 +80,7 @@
 				<div class="form-group">
 					<label for="post_image">Bild</label>
 					<img src="../<?php echo $post_image; ?>" width="100">
+					<?php if(isset($imgErr)) { echo $imgErr; } ?>
 					<input type="file" name="image">
 				</div> <!-- .form-group -->
 				<div class="form__input">
