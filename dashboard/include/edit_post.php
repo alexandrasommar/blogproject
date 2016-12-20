@@ -45,24 +45,24 @@
 			
 			}
 				
-			if(isset($_POST['publish'])) {
-			$query .= ", post_status = 1, post_date = CURTIME() ";
-			}
-
-			$query .= "WHERE post_id = {$postid}";
-			if($stmt->prepare($query)) {
-				$stmt->execute();
-				$message = "<p class='public'>Inlägget uppdaterades!</p>";
-				
-			} else {
-				echo "query failed";
-			}	
-		} 
-				
-
-		if(isset($message)) {
-			echo $message;
+		if(isset($_POST['publish'])) {
+		$query .= ", post_status = 1, post_date = CURTIME() ";
 		}
+
+		$query .= "WHERE post_id = {$postid}";
+		if($stmt->prepare($query)) {
+			$stmt->execute();
+			$message = "<p class='public'>Inlägget uppdaterades!</p>";
+			
+		} else {
+			echo "query failed";
+		}	
+	} 
+				
+
+	if(isset($message)) {
+		echo $message;
+	}
 
 	?>
 
