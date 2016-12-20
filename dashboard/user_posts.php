@@ -16,9 +16,16 @@ if(isset($_GET['delete'])) {
 		<?php include "user_navigation.php"; ?>
 			<main>
 			<?php
+
 			if(isset($message)) {
 			echo $message;
 			}
+
+			if(isset($_SESSION['success'])) {
+			echo $_SESSION['success'];
+			unset($_SESSION['success']);
+			}
+			
 			if(isset($_GET['edit'])) {
 			    include "include/edit_post.php";
 			}

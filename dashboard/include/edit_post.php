@@ -31,10 +31,10 @@
 			$target_name = $target_folder . $image;
 			
 				if($_FILES['image']['size'] > 1024000) {
-					$imgErr = "Bilden är för stor, den får vara max 1 MB.";
+					$imgErr = "<p class='red'>Bilden är för stor, den får vara max 1 MB.</p>";
 				}
 				if($_FILES['image']['type'] !== 'image/jpeg' && $_FILES['image']['type'] !== 'image/png') {
-						$imgErr = "Endaast jpg- och png-filer är tillåtna.";
+						$imgErr = "<p class='red'>Endast jpg- och png-filer är tillåtna.</p>";
 						
 				} 
 
@@ -49,13 +49,17 @@
 		$query .= ", post_status = 1, post_date = CURTIME() ";
 		}
 
+		if(!isset($imgErr)) {
 		$query .= "WHERE post_id = {$postid}";
 		if($stmt->prepare($query)) {
 			$stmt->execute();
-			$message = "<p class='public'>Inlägget uppdaterades!</p>";
+			$_SESSION['success'] = "Inlägget uppdaterades";
+			header("Location: user_posts.php");
+			
 			
 		} else {
 			echo "query failed";
+		}
 		}	
 	} 
 				
