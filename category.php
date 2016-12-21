@@ -20,10 +20,10 @@
 				while(mysqli_stmt_fetch($stmt)) {
 
 		?>
-		<div class="category-headline">
+		<div class="category-headline" id="cat">
 			<h3><?php echo $cat_name; } }?></h3>
-			<a href="category.php?cat=<?php echo $category; ?>&sort=desc">Visa senaste</a>
-			<a href="category.php?cat=<?php echo $category; ?>&sort=asc">Visa äldsta</a>
+			<a href="category.php?cat=<?php echo $category; ?>&sort=desc#cat">Visa senaste</a>
+			<a href="category.php?cat=<?php echo $category; ?>&sort=asc#cat">Visa äldsta</a>
 		</div> <!-- .category-headline -->
 
 		<?php 
