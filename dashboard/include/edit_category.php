@@ -3,7 +3,7 @@ $catid = $_GET['cat'];
 
 if(isset($_POST['update_cat'])) {
 	if(!empty($_POST['name'])) {
-		$cat = $_POST['name'];
+		$cat = ucfirst($_POST['name']);
 		$query = "UPDATE categories SET cat_name = '{$cat}' WHERE cat_id = {$catid}";
 		if($stmt->prepare($query)) {
 			$stmt->execute();

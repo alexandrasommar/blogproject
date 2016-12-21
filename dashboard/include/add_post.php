@@ -31,8 +31,8 @@
 			&& !empty($_POST['post_category'])
 			&& !empty($_FILES['image']['name'])) {
 		
-			$title = $_POST['title'];
-			$content = $_POST['post_content'];
+			$title = ucfirst($_POST['title']);
+			$content = ucfirst($_POST['post_content']);
 			$category = $_POST['post_category'];
 
 			$image = $_FILES['image']['name'];

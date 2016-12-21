@@ -18,8 +18,8 @@
 	}
 
 	if(isset($_POST['update']) || isset($_POST['publish'])) {	
-		$title = $_POST['title'];
-		$content = $_POST['post_content'];
+		$title = ucfirst($_POST['title']);
+		$content = ucfirst($_POST['post_content']);
 		$category = $_POST['post_category'];
 
   		$query = "UPDATE posts SET post_title = '{$title}', post_content = '{$content}', post_category_id = '{$category}' ";
