@@ -1,69 +1,72 @@
-<?php
-$titleErr = $contentErr = $imgErr = $catErr = "";
-if (isset($_POST['publish']) || isset($_POST['save'])) {
+	<?php
+	$titleErr = $contentErr = $imgErr = $catErr = "";
+	if (isset($_POST['publish']) || isset($_POST['save'])) {
+			
+		if (empty($_POST['title'])) {
+			$titleErr = "<p class='red'>Du måste skriva en titel</p>";
+		}
+		if(empty($_FILES['image']['tmp_name'])) {
+			$imgErr = "<p class='red'>Du måste ladda upp en bild till inlägget</p>";
+		}
+
+		if (empty($_POST['post_content'])) {
+			$contentErr = "<p class='red'>Du måste skriva något i inlägget</p>";
+		}
+
+		if($_POST['post_category'] == "") {
+			$catErr = "<p class='red'>Du måste välja en kategori</p>";
+		}
+
+	 	if (!empty($_FILES['image']['tmp_name']) && $_FILES['image']['type'] !== 'image/jpeg' && $_FILES['image']['type'] !== 'image/png') { 
+			$imgErr = "<p class='red'>Endast jpg-och png-filer är tillåtna</p>";
+		}
+
+		if($_FILES['image']['size'] > 1024000) {
+			$imgErr = "<p class='red'>Bilden är för stor, den får vara max 1 MB.</p>";
+		}
+
+
+		if(!empty($_POST['title'])
+			&& !empty($_POST['post_content'])
+			&& !empty($_POST['post_category'])
+			&& !empty($_FILES['image']['name'])) {
 		
-	if (empty($_POST['title'])) {
-		$titleErr = "<p class='red'>Du måste skriva en titel</p>";
-	}
-	if(empty($_FILES['image']['tmp_name'])) {
-		$imgErr = "<p class='red'>Du måste ladda upp en bild till inlägget</p>";
-	}
+			$title = $_POST['title'];
+			$content = $_POST['post_content'];
+			$category = $_POST['post_category'];
 
-	if (empty($_POST['post_content'])) {
-		$contentErr = "<p class='red'>Du måste skriva något i inlägget</p>";
-	}
+			$image = $_FILES['image']['name'];
+			$target_folder = "uploads/";
+			$target_name = $target_folder . $image;
+			if(!move_uploaded_file($_FILES['image']['tmp_name'], "../uploads/$image")) {
+				echo "<p class='red'>Någonting gick fel med filuppladdningen. Vänligen försök igen.</p>";
+			} else {
+				
+			
 
- 	if (!empty($_FILES['image']['tmp_name']) && $_FILES['image']['type'] !== 'image/jpeg' && $_FILES['image']['type'] !== 'image/png') { 
-		$imgErr = "<p class='red'>Endast jpg-och png-filer är tillåtna</p>";
-	}
+			$query = "INSERT INTO posts(post_category_id, post_title, post_author, post_author_id, post_date, post_image, post_content, post_status) VALUES ('{$category}', '{$title}', '{$_SESSION['firstname']}', {$_SESSION['user_id']}, NOW(), '{$target_name}', '{$content}' ";
+			if(isset($_POST['save'])) {
+				$query .= ", 0)";
+				$_SESSION['success'] = "<p class='saved'>Inlägget är sparat.</p>";
+				header("Location: user_posts.php");
+			} else {
+				$query .= ", 1)";
+				$_SESSION['success'] = "<p class='public'>Inlägget är publicerat.</p>";
+				header("Location: user_posts.php");
+			}
 
-	if($_FILES['image']['size'] > 1024000) {
-		$imgErr = "<p class='red'>Bilden är för stor, den får vara max 1 MB.</p>";
-	}
+			if($stmt->prepare($query)) {
+				$stmt->execute();	
 
-
-	if(!empty($_POST['title'])
-		&& !empty($_POST['post_content'])
-		&& !empty($_POST['post_category'])
-		&& !empty($_FILES['image']['name'])) {
-	
-	$title = $_POST['title'];
-	$content = $_POST['post_content'];
-	$category = $_POST['post_category'];
-
-	$image = $_FILES['image']['name'];
-	$target_folder = "uploads/";
-	$target_name = $target_folder . $image;
-	if(!move_uploaded_file($_FILES['image']['tmp_name'], "../uploads/$image")) {
-		echo "<p class='red'>Filen är för stor, den får vara max 2 MB</p>";
-	} else {
-		
-	
-
-	$query = "INSERT INTO posts(post_category_id, post_title, post_author, post_author_id, post_date, post_image, post_content, post_status) VALUES ('{$category}', '{$title}', '{$_SESSION['firstname']}', {$_SESSION['user_id']}, NOW(), '{$target_name}', '{$content}' ";
-	if(isset($_POST['save'])) {
-		$query .= ", 0)";
-		$_SESSION['success'] = "<p class='saved'>Inlägget är sparat.</p>";
-		header("Location: user_posts.php");
-	} else {
-		$query .= ", 1)";
-		$_SESSION['success'] = "<p class='public'>Inlägget är publicerat.</p>";
-		header("Location: user_posts.php");
+			}else {
+				die("quey" . mysqli_error($conn));
+			}
+		  }
+		}
 	}
 
-	if($stmt->prepare($query)) {
-		$stmt->execute();	
 
-	} else {
-
-		die("quey" . mysqli_error($conn));
-	}
-	}
-	}
-}
-
-
-?>
+	?>
 	<section class="form">
 		<form action="" method="post" enctype="multipart/form-data">
 			<div class="form-message">
@@ -86,14 +89,15 @@ if (isset($_POST['publish']) || isset($_POST['save'])) {
 				<textarea class="form-control" name="post_content" id="" cols="30" rows="10"><?php if(isset($_POST['post_content'])) { echo $_POST['post_content']; } ?></textarea>
 			</div> <!-- .form__input -->
 			<div class="form-group">
-				<label for="image">Post Image</label>
+				<label for="image">Bild</label>
 				<?php echo $imgErr; ?>
 				<input type="file" name="image">
 			</div> <!-- .form-group -->
 			<div class="form__input">
 				<label for="post_category">Välj kategori</label>
+				<?php echo $catErr; ?>
 				<select name="post_category" id="">
-					<option value="none">Välj kategori</option>
+					<option value="">Välj kategori</option>
 					<?php
 					 $query = "SELECT * FROM categories";
 						    $select_categories = mysqli_query($conn,$query);   
