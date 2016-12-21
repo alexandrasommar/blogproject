@@ -16,6 +16,7 @@
 								
 								<div class="toggle-menu__list">
 									<ul>
+										<li><a href="../index.php"><i class="fa fa-home aside" aria-hidden="true"></i></i>Till bloggen</a></li>
 										<li class="accordion"><a href="#"><i class="fa fa-newspaper-o aside" aria-hidden="true"></i>Inlägg<i class="fa fa-caret-down" aria-hidden="true"></i></a></li>
 										<div class="panel">
 										<ul class="aside__nav--visible">
@@ -53,6 +54,7 @@
 				<aside>
 					<div class="aside__nav">
 						<ul class="aside__nav--height">
+							<li><a href="../index.php"><i class="fa fa-home aside" aria-hidden="true"></i></i>Till bloggen</a></li>
 							<li class="accordion"><a href="#"><i class="fa fa-newspaper-o aside" aria-hidden="true"></i>Inlägg<i class="fa fa-caret-down" aria-hidden="true"></i></a></li>
 							<div class="panel">
 								<ul class="aside__nav--visible">

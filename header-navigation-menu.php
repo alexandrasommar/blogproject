@@ -52,8 +52,6 @@
 									<?php if(isset($_SESSION['username'])) { ?>
 									<li><a href="dashboard/index.php">Dashboard</a></li>
 									<?php	} ?>
-									
-									<li><a href="#">Logga ut</a></li>
 								</ul>
 							</div>
 	                </div>
