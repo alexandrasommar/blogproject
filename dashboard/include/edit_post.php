@@ -53,7 +53,7 @@
 		$query .= "WHERE post_id = {$postid}";
 		if($stmt->prepare($query)) {
 			$stmt->execute();
-			$_SESSION['success'] = "Inlägget uppdaterades";
+			$_SESSION['success'] = "<p class='public'>Inlägget uppdaterades</p>";
 			header("Location: user_posts.php");
 			
 			

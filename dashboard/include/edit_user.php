@@ -7,7 +7,7 @@ if(isset($_POST['update'])) {
 		$website = mysqli_real_escape_string($conn, $_POST['website']);
 		$description = mysqli_real_escape_string($conn, $_POST['description']);
 		$user = mysqli_real_escape_string($conn, $_POST['username']);
-		$profilepic = $_FILES['profilepic']['name'];
+		
 
 		$query = "UPDATE users SET username = '{$user}', user_firstname = '{$first}', user_lastname = '{$last}', user_website = '{$website}', user_description = '{$description}' ";
 
@@ -17,22 +17,42 @@ if(isset($_POST['update'])) {
 		$query .= ", user_password = '{$pass}' ";
 		}
 
-		if(!empty($profilepic)) {
+		if(!empty($_FILES['profilepic']['name'])) {
+			$profilepic = $_FILES['profilepic']['name'];
+			$tmp_dir = $_FILES['profilepic']['tmp_name'];
 			$target_folder = "uploads/";
 			$target_name = $target_folder . $profilepic;
-			move_uploaded_file($_FILES['profilepic']['tmp_name'], "../uploads/$profilepic");
-			$query .= ", user_image = '{$target_name}' ";
-		}
-			$query .=  "WHERE user_id = {$userid}";
 
-		if($stmt->prepare($query)) {
-			$stmt->execute();
-			$message = "Användaren är uppdaterad.";
-		} else {
-			die("Query failed" . mysqli_error($conn));
+			if($_FILES['profilepic']['size'] > 1024000) {
+				$imgErr = "<p class='red'>Bilden är för stor, den får vara max 1 MB.</p>";
+
+			}
+			if($_FILES['profilepic']['type'] !== 'image/jpeg' && $_FILES['profilepic']['type'] !== 'image/png') {
+				$imgErr = "<p class='red'>Endast jpg- och png-filer är tillåtna.</p>";
+					
+			} 
+
+			if (!isset($imgErr)) {
+				move_uploaded_file($tmp_dir, "../uploads/$profilepic");
+						$query .= ", user_image = '{$target_name}' ";
+			}
 		}
+			
+			if(!isset($imgErr)) {
+				$query .=  "WHERE user_id = {$userid}";
+				if($stmt->prepare($query)) {
+				$stmt->execute();
+				$_SESSION['success'] = "<p class='public'>Användaren är uppdaterad.</p>";
+				header("Location: users.php");
+				} else {
+					die("Query failed" . mysqli_error($conn));
+			}
+
+
+			}
+			
  
-	}
+		}
 
 ?>
 
@@ -77,6 +97,7 @@ if($stmt->prepare($query)) {
 			</div>
 			<div class="form-group">
 				<label for="profilepic">Profilbild</label>
+				<?php if(isset($imgErr)) { echo $imgErr; } ?>
 				<img src="../<?php echo $image; ?>" width="200">
 				<input type="file" name="profilepic">
 			</div>

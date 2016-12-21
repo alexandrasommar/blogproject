@@ -16,14 +16,15 @@
 			echo "<div class='ad-category'>";
 			echo "<a href='registration.php'>Registrera ny användare</a>";
 			echo "</div>";
-			include "include/all_users.php";
+			
 
 
 		if(isset($_GET['edit'])) {
 			include "include/edit_user.php";
 		}
 
-
+		include "include/all_users.php";
+		
 		} else {
 			header("Location: index.php");
 
