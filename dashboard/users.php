@@ -13,10 +13,11 @@
 
 		// if the user is admin, display content. else redirect to index
 		if($_SESSION['role'] == 'admin') {
-			include "include/all_users.php";
 			echo "<div class='ad-category'>";
 			echo "<a href='registration.php'>Registrera ny användare</a>";
 			echo "</div>";
+			include "include/all_users.php";
+
 
 		if(isset($_GET['edit'])) {
 			include "include/edit_user.php";
