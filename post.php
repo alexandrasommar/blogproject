@@ -38,7 +38,6 @@
 		$query = "UPDATE posts SET post_likes = post_likes+1 WHERE post_id = {$post}";
 		if($stmt->prepare($query)) {
 			$stmt->execute();
-			echo "Tack för gillamarkeringen!";
 			header("Refresh: 0");
 		}
 	}
