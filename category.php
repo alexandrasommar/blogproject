@@ -11,7 +11,11 @@
 
 	<div class="catagory-container">
 		<?php
-		$category = $_GET['cat'];
+		if(isset($_GET['cat'])) {
+			$category = $_GET['cat'];
+		} else {
+			header("Location: index.php");
+		}
 		$query = "SELECT * FROM categories WHERE cat_id = {$category}";
 		if($stmt->prepare($query)) {
 
