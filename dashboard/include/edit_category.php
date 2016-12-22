@@ -1,44 +1,47 @@
-<?php
-$catid = $_GET['cat'];
+	<?php
+	$catid = $_GET['cat'];
 
-if(isset($_POST['update_cat'])) {
-	if(!empty($_POST['name'])) {
-		$cat = ucfirst($_POST['name']);
-		$query = "UPDATE categories SET cat_name = '{$cat}' WHERE cat_id = {$catid}";
-		if($stmt->prepare($query)) {
-			$stmt->execute();
-			$_SESSION['success'] = "Kategorin uppdaterades";
-			header("Location: categories.php");
-		} 
+	// if the user pressed update, check the input. if successfull, 
+	// update the category and send the user to categories.php
+	if(isset($_POST['update_cat'])) {
+		if(empty($_POST['name'])) {
+			$message = "<p class='red'>Du måste ge ett namn till kategorin</p>";
+		}
+
+		if(!empty($_POST['name'])) {
+			$cat = ucfirst($_POST['name']);
+			$query = "UPDATE categories SET cat_name = '{$cat}' WHERE cat_id = {$catid}";
+			if($stmt->prepare($query)) {
+				$stmt->execute();
+				$_SESSION['success'] = "<p class='public'>Kategorin uppdaterades</p>";
+				header("Location: categories.php");
+			} 
+		}
+	} 
+
+	if(isset($message)) {
+		echo $message;
 	}
-} ?>
-<?php 
-if(isset($message)) {
-	echo $message;
-}
 
-?>
+	$query = "SELECT * FROM categories WHERE cat_id = '{$catid}'";
+	if($stmt->prepare($query)) {
+		$stmt->execute();
+		$stmt->bind_result($cat_id, $cat_name);
+		while(mysqli_stmt_fetch($stmt)) { ?>
 
-<?php
-$query = "SELECT * FROM categories WHERE cat_id = '{$catid}'";
-if($stmt->prepare($query)) {
-	$stmt->execute();
-	$stmt->bind_result($cat_id, $cat_name);
-	while(mysqli_stmt_fetch($stmt)) { ?>
-		
-
-<section class="form">
-	<form action="" method="post">
-		<div class="form__input">
-			<label for="name">Redigera kategori</label>
-			<input type="text" class="form-control" name="name" value="<?php echo $cat_name; ?>">
-		</div>
-		<div class="form__input">
-			<input class="btn btn-primary" type="submit" name="update_cat" value="Uppdatera">
-		</div>
-	</form>
-</section>
-<?php
+		<!-- Edit Category Form -->
+		<section class="form">
+			<form action="" method="post">
+				<div class="form__input">
+					<label for="name">Redigera kategori</label>
+					<input type="text" class="form-control" name="name" value="<?php echo $cat_name; ?>">
+				</div> <!-- .form__input -->
+				<div class="form__input">
+					<input class="btn btn-primary" type="submit" name="update_cat" value="Uppdatera">
+				</div> <!-- .form__input -->
+			</form>
+		</section>
+	<?php
+		}
 	}
-}
-?>
+	?>
