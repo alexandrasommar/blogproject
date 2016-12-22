@@ -47,7 +47,7 @@
 							<div class="divTableCell"><?php echo $email; ?></div>
 							<div class="divTableCell"><?php echo $website; ?></div>
 							<div class="divTableCell"><?php echo "<img src='../$image' width='20'>"; ?></div>
-							<div class="divTableCell"><?php echo substr($description, 0, 60); ?></div>
+							<div class="divTableCell"><?php echo substr($description, 0, 10) . "..."; ?></div>
 							<div class="divTableCell"><?php echo "<a href='users.php?edit&user=$user_id'><i class='fa fa-pencil-square-o' aria-hidden='true'></i></a>"; ?></div>
 							<div class="divTableCell"><?php echo "<a href='users.php?delete=$user_id'><i class='fa fa-trash-o' aria-hidden='true'></i></a>"; ?></div>
 		</div>
