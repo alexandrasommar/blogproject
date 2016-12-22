@@ -22,6 +22,7 @@
 				$post_date = $row['post_date'];
 				$post_image = $row['post_image'];
 				$post_content = $row['post_content'];
+				$post_likes = $row['post_likes'];
 				$firstname = $row['user_firstname'];
 				$lastname = $row['user_lastname'];
 				$image = $row['user_image'];
@@ -33,6 +34,17 @@
 		?>
 	</div> <!-- .blog-post__image -->
 	<?php
+	if(isset($_POST['like'])) {
+		$query = "UPDATE posts SET post_likes = post_likes+1 WHERE post_id = {$post}";
+		if($stmt->prepare($query)) {
+			$stmt->execute();
+			echo "Tack för gillamarkeringen!";
+			header("Refresh: 0");
+		}
+	}
+
+
+
 	// if the visitor did not fill out the fields correctly, display error messages
 	$nameErr = $emailErr = $webErr = $contentErr = "";
 
@@ -87,11 +99,16 @@
 
 	<!-- Post -->
 		
-	<section class="blog-post">
+	<section class="blog-post" id="blog-post">
 		<article class="blog-post__article">
 			<div class="blog-post__date">
 				<time><?php echo substr($post_date, 0, 10); ?></time>
-				<span>1+ <i class="fa fa-heart blog-post__icon" aria-hidden="true"></i></span>
+				<span>
+				<?php echo $post_likes; ?>+
+				<form action="post.php?post=<?php echo $post; ?>#blog-post" method="post">
+					<input type="submit" name="like" value="&#xf004;" id="like">
+				</form>
+				</span>
 			</div> <!-- .blog-post__date -->
 			<h2><?php echo $post_title; ?></h2>
 			<p><?php echo $post_content; ?></p>

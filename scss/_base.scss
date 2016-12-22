@@ -320,6 +320,17 @@ input[type=submit] {
   	}
 }
 
+input#like {
+	background-color: transparent;
+	color: #E57373;
+	font-family: FontAwesome;
+	&:hover {
+		cursor: pointer;
+		cursor: hand;
+		font-size: 1.4em;
+	}
+}
+
 /* ----------------------------------------------- */
 /* slider.php */
 /* ----------------------------------------------- */

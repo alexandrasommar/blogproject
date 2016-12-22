@@ -42,7 +42,7 @@
 			if($stmt->prepare($query)) {
 
 				$stmt->execute();
-				$stmt->bind_result($post_id, $category_id, $post_title, $post_author, $post_author_id, $post_date, $post_image, $post_content, $post_status, $cat_id, $cat_name);
+				$stmt->bind_result($post_id, $category_id, $post_title, $post_author, $post_author_id, $post_date, $post_image, $post_content, $post_status, $post_likes, $cat_id, $cat_name);
 
 				$counter = 1;
 
