@@ -3,7 +3,7 @@
 	<!-- Header -->
 
 	<div class="blog-post__image">
-		<?php include "header-navigation-menu.php"; ?>
+		<?php include "include/header-navigation-menu.php"; ?>
 		<?php include "include/functions.php"; ?>
 		<?php
 		$post = $_GET["post"];
