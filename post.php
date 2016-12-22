@@ -6,7 +6,12 @@
 		<?php include "include/header-navigation-menu.php"; ?>
 		<?php include "include/functions.php"; ?>
 		<?php
-		$post = $_GET["post"];
+		if(isset($_GET["post"])) {
+			$post = $_GET["post"];
+		} else {
+			header("Location: index.php");
+		}
+		
 
 		$query = "SELECT posts.*, categories.cat_id, categories.cat_name, users.* FROM posts LEFT JOIN categories ON posts.post_category_id = categories.cat_id LEFT JOIN users ON posts.post_author_id = users.user_id WHERE posts.post_id = {$post}";
 
