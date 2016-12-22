@@ -3,7 +3,7 @@
 	<!-- Header -->
 
 	<div class="bg-img">
-		<?php include "header-navigation-menu.php"; ?>
+		<?php include "include/header-navigation-menu.php"; ?>
 		<?php include "header.php"; ?>
 	</div>
 		

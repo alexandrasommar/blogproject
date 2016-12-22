@@ -3,7 +3,7 @@
 	<!-- Header -->
 
 	<div class="blog-post__image">
-		<?php include "header-navigation-menu.php"; ?>
+		<?php include "include/header-navigation-menu.php"; ?>
 	</div> <!-- .blog-post__image -->
 	<div class="category__container">
 		<?php 

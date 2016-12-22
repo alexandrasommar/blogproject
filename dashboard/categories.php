@@ -2,18 +2,18 @@
 <?php include "../include/db.php"; ?>
 <?php include "../include/head.php"; ?>
 
-<?php
-if(isset($_GET['delete'])) {
-	$catdel = $_GET['delete'];
-	$query = "DELETE FROM categories WHERE cat_id = '{$catdel}'";
-	    if($stmt->prepare($query)) {
-	    	$stmt->execute();
-	    	$message = "Kategorin raderades";
-	    } else {
-	    	echo mysqli_error($conn);
-	    }
-}
-?>
+	<?php
+	if(isset($_GET['delete'])) {
+		$catdel = $_GET['delete'];
+		$query = "DELETE FROM categories WHERE cat_id = '{$catdel}'";
+		    if($stmt->prepare($query)) {
+		    	$stmt->execute();
+		    	$message = "Kategorin raderades";
+		    } else {
+		    	echo mysqli_error($conn);
+		    }
+		}
+	?>
 	<div class="container">
 		<?php include "user_navigation.php"; ?>
 		<main>

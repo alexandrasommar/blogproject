@@ -14,7 +14,7 @@ if(isset($_GET['delete'])) {
 ?>
 	<div class="user_post_container">
 		<?php include "user_navigation.php"; ?>
-			<main>
+		<main>
 			<?php
 
 			if(isset($message)) {
@@ -46,28 +46,26 @@ if(isset($_GET['delete'])) {
 						<div class="divTableCell">Status</div>
 						<div class="divTableCell">Redigera</div>
 						<div class="divTableCell">Radera</div>
-					</div>
-			
-				
-				<?php
-				$query = "SELECT posts.*, categories.cat_name FROM posts LEFT JOIN categories ON posts.post_category_id = categories.cat_id ";
+					</div> <!-- .divTableRow header -->
+					<?php
+					$query = "SELECT posts.*, categories.cat_name FROM posts LEFT JOIN categories ON posts.post_category_id = categories.cat_id ";
 
-				if($_SESSION['role'] != 'admin') {
-					$query .= "WHERE post_author_id = {$_SESSION['user_id']} ";
-				}
-
-				$query .= "ORDER BY post_date DESC";
-				if($result = mysqli_query($conn, $query)) {
-						$rows = mysqli_num_rows($result);
+					if($_SESSION['role'] != 'admin') {
+						$query .= "WHERE post_author_id = {$_SESSION['user_id']} ";
 					}
 
-				if($stmt->prepare($query) && $rows > 0) {
-				$stmt->execute();
-				$stmt->bind_result($post_id, $cat_id, $title, $author, $author_id, $date, $image, $content, $status, $cat_name);
+					$query .= "ORDER BY post_date DESC";
+					if($result = mysqli_query($conn, $query)) {
+							$rows = mysqli_num_rows($result);
+						}
 
-				while(mysqli_stmt_fetch($stmt)) { ?>
+					if($stmt->prepare($query) && $rows > 0) {
+					$stmt->execute();
+					$stmt->bind_result($post_id, $cat_id, $title, $author, $author_id, $date, $image, $content, $status, $cat_name);
 
-				<div class="divTableRow">
+					while(mysqli_stmt_fetch($stmt)) { ?>
+
+					<div class="divTableRow">
 						<div class="divTableCell hidden-tablet"><?php echo $date; ?></div>
 						<div class="divTableCell">
 						<?php if($status == 1) {
@@ -91,7 +89,7 @@ if(isset($_GET['delete'])) {
 						}?></div>
 						<div class="divTableCell"><?php echo "<a href='user_posts.php?edit=$post_id'><i class='fa fa-pencil-square-o' aria-hidden='true'></i></a>"; ?></div>
 						<div class="divTableCell"><?php echo "<a href='user_posts.php?delete=$post_id'><i class='fa fa-trash-o' aria-hidden='true'></i></a>"; ?></div>
-						</div>
+					</div> <!-- .divTableRow -->
 
 					<?php
 						
@@ -102,11 +100,10 @@ if(isset($_GET['delete'])) {
 					}
 
 						?>
-				</div>
-
-				</main>
-			</div>
-		</div>
+				</div> <!-- .divTableBody -->
+			</div> <!-- .divTable -->
+		</main>	
+	</div> <!-- .container -->
 
 		<!-- FontAwesom -->
 		<script src="https://use.fontawesome.com/78a857f410.js"></script>
