@@ -21,11 +21,11 @@
 			if(isset($_GET["page"])) {
 				$page = $_GET["page"];
 			} else {
-				$page = "";
+				$page = 1;
 			}
 
 			//calculates the number of pages to be displayed
-			if($page == "" || $page == 1) {
+			if($page == 1) {
 				$page_1 = 0;
 			} else {
 				$page_1 = ($page * $per_page) - $per_page;
@@ -95,7 +95,11 @@
 		<div class="pagination">
 			<?php
 			for ($i = 1; $i <= $count; $i++) {
-				echo "<a href='index.php?page={$i}'>{$i}</a>";
+				if($i == $page) {
+					echo "<a href='index.php?page={$i}' class='current'>{$i}</a>";
+				} else {
+					echo "<a href='index.php?page={$i}'>{$i}</a>";
+				}
 			}
 
 			?>
