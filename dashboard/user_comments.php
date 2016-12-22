@@ -2,31 +2,30 @@
 <?php include "../include/db.php"; ?>
 <?php include "../include/head.php"; ?>
 
-<?php
-if(isset($_GET['delete'])) {
-	$delete = $_GET['delete'];
-	$query = "DELETE FROM comments WHERE comment_id = {$delete}";
-	if($stmt->prepare($query)) {
-		$stmt->execute();
-		$message = "<p class='red'>Kommentaren är raderad</p>";
-	} else {
-		echo "query failed";
+	<?php
+	if(isset($_GET['delete'])) {
+		$delete = $_GET['delete'];
+		$query = "DELETE FROM comments WHERE comment_id = {$delete}";
+		if($stmt->prepare($query)) {
+			$stmt->execute();
+			$message = "<p class='red'>Kommentaren är raderad</p>";
+		} else {
+			echo "query failed";
+		}
 	}
-}
 
 
-?>
-
+	?>
 	<div class="container">
-			<?php include "user_navigation.php"; ?>
-				<main>
-					<?php 
-					if(isset($message)) {
-						echo $message;
-					}
+		<?php include "user_navigation.php"; ?>
+		<main>
+			<?php 
+			if(isset($message)) {
+				echo $message;
+			}
 
-					 ?>
-					 <div class="divTable">
+			?>
+			<div class="divTable">
 				<div class="divTableBody">
 					<div class="divTableRow divTableRow--header">
 						<div class="divTableCell hidden-tablet">Inlägg</div>
@@ -56,42 +55,39 @@ if(isset($_GET['delete'])) {
 					$stmt->bind_result($com_id, $com_post_id, $com_author, $com_date, $com_email, $content, $website, $post_title);
 
 					while(mysqli_stmt_fetch($stmt)) { ?>
-						<div class="divTableRow">
-							<div class="divTableCell hidden-tablet"><?php echo "<a href='../post.php?post=$com_post_id'>$post_title</a>"; ?></div>
-							<div class="divTableCell"><?php echo $com_date; ?></div>
-							<div class="divTableCell hidden-mobile"><?php echo $com_author; ?></div>
-							<div class="divTableCell hidden-tablet"><?php echo $com_email; ?></div>
-							<div class="divTableCell hidden-small-desktop"><?php echo $website; ?></div>
-							<div class="divTableCell"><?php echo $content; ?></div>
-							<div class="divTableCell"><?php echo "<a href='user_comments.php?delete=$com_id'><i class='fa fa-trash-o' aria-hidden='true'></i></a>"?></div>
-						</div>
-
-						<?php
-							
-							} 
-						}else {
-
-							echo "Tyvärr har du inga kommentarer ännu";
-							}
-
-
-
-
-
-							?>
-				
-						
+					<div class="divTableRow">
+						<div class="divTableCell hidden-tablet"><?php echo "<a href='../post.php?post=$com_post_id'>$post_title</a>"; ?></div>
+						<div class="divTableCell"><?php echo substr($com_date, 0, 10); ?></div>
+						<div class="divTableCell hidden-mobile"><?php echo $com_author; ?></div>
+						<div class="divTableCell hidden-tablet"><?php echo $com_email; ?></div>
+						<div class="divTableCell hidden-small-desktop"><?php echo $website; ?></div>
+						<div class="divTableCell"><?php echo $content; ?></div>
+						<div class="divTableCell"><?php echo "<a href='user_comments.php?delete=$com_id'><i class='fa fa-trash-o' aria-hidden='true'></i></a>"?></div>
 					</div>
 
+					<?php
+						
+						} 
+					}else {
 
-					
-				</main>
+						echo "Tyvärr har du inga kommentarer ännu";
+						}
+
+
+
+
+
+						?>
+				
+						
+				</div>
 			</div>
-		</div>
+		</main>
+	</div> <!-- .container -->
 
-		<!-- FontAwesom -->
-		<script src="https://use.fontawesome.com/78a857f410.js"></script>
-		<!-- JavaScript -->
-		<script src="script.js"></script>
+	<!-- FontAwesom -->
+	<script src="https://use.fontawesome.com/78a857f410.js"></script>
+	<!-- JavaScript -->
+	<script src="script.js"></script>
 </body>
 </html>
