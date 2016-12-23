@@ -34,7 +34,7 @@
 			<form action="" method="post">
 				<div class="form__input">
 					<label for="name">Redigera kategori</label>
-					<input type="text" class="form-control" name="name" value="<?php echo $cat_name; ?>">
+					<input type="text" class="form-control" name="name" id="name" value="<?php echo $cat_name; ?>">
 				</div> <!-- .form__input -->
 				<div class="form__input">
 					<input class="btn btn-primary" type="submit" name="update_cat" value="Uppdatera">

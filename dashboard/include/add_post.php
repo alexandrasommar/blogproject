@@ -80,23 +80,23 @@
 			<div class="form__input">
 				<?php echo $titleErr; ?>
 				<label for="title">Titel</label>
-				<input type="text" class="form-control" name="title" value="<?php if(isset($_POST['title'])) {
+				<input type="text" class="form-control" name="title" id="title" value="<?php if(isset($_POST['title'])) {
 					echo $_POST['title']; }?>">
 			</div> <!-- .form__input -->
 			<div class="form__input">
 				<?php echo $contentErr; ?>
 				<label for="post_content">Text</label>
-				<textarea class="form-control" name="post_content" id="" cols="30" rows="10"><?php if(isset($_POST['post_content'])) { echo $_POST['post_content']; } ?></textarea>
+				<textarea class="form-control" name="post_content" id="post_content" cols="30" rows="10"><?php if(isset($_POST['post_content'])) { echo $_POST['post_content']; } ?></textarea>
 			</div> <!-- .form__input -->
 			<div class="form-group">
 				<label for="image">Bild</label>
 				<?php echo $imgErr; ?>
-				<input type="file" name="image">
+				<input type="file" name="image" id="image">
 			</div> <!-- .form-group -->
 			<div class="form__input">
 				<label for="post_category">Välj kategori</label>
 				<?php echo $catErr; ?>
-				<select name="post_category" id="">
+				<select name="post_category" id="post_category">
 					<option value="">Välj kategori</option>
 					<?php
 					 $query = "SELECT * FROM categories";

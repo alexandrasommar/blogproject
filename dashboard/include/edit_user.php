@@ -73,37 +73,37 @@ if($stmt->prepare($query)) {
 		<form action="" method="post" enctype="multipart/form-data">
 			<div class="form__input">
 				<label for="firstname">Förnamn</label>
-				<input type="text" class="form-control" name="firstname" value="<?php echo $firstname; ?>">
+				<input type="text" class="form-control" name="firstname" id="firstname" value="<?php echo $firstname; ?>">
 			</div>
 			<div class="form__input">
 				<label for="lastname">Efternamn</label>
-				<input type="text" class="form-control" name="lastname" value="<?php echo $lastname; ?>">
+				<input type="text" class="form-control" name="lastname" id="lastname" value="<?php echo $lastname; ?>">
 			</div>
 			<div class="form__input">
 				<label for="email">Email</label>
-				<input type="text" class="form-control" name="email" value="<?php echo $email; ?>">
+				<input type="text" class="form-control" name="email" id="email" value="<?php echo $email; ?>">
 			</div>
 			<div class="form__input">
 				<label for="website">Hemsida</label>
-				<input type="text" class="form-control" name="website" value="<?php echo $website; ?>">
+				<input type="text" class="form-control" name="website" id="website" value="<?php echo $website; ?>">
 			</div>
 			<div class="form__input">
 				<label for="username">Användarnamn</label>
-				<input type="text" class="form-control" name="username" value="<?php echo $dbuser; ?>">
+				<input type="text" class="form-control" name="username" id="username" value="<?php echo $dbuser; ?>">
 			</div>
 			<div class="form__input">
 				<label for="password">Lösenord</label>
-				<input type="password" class="form-control" name="password">
+				<input type="password" class="form-control" name="password" id="password">
 			</div>
 			<div class="form-group">
 				<label for="profilepic">Profilbild</label>
 				<?php if(isset($imgErr)) { echo $imgErr; } ?>
 				<img src="../<?php echo $image; ?>" width="200">
-				<input type="file" name="profilepic">
+				<input type="file" name="profilepic" id="profilepic">
 			</div>
 			<div class="form__input">
 				<label for="description">Beskrivning</label>
-				<textarea class="form-control" name="description" id="" cols="30" rows="10"><?php echo $description; ?></textarea>
+				<textarea class="form-control" name="description" id="description" cols="30" rows="10"><?php echo $description; ?></textarea>
 			</div>
 			<div class="form__input">
 				<input class="btn" type="submit" name="update" value="Uppdatera">

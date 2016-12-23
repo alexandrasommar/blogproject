@@ -25,7 +25,7 @@ if(isset($message)) {
 	<form action="" method="post">
 		<div class="form__input">
 			<label for="name">Lägg till ny kategori</label>
-			<input type="text" class="form-control" name="name">
+			<input type="text" class="form-control" name="name" id="name">
 		</div>
 		<div class="form__input">
 			<input class="btn btn-primary" type="submit" name="create_cat" value="Lägg till">

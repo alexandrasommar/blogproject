@@ -111,42 +111,42 @@
 					<div class="form__input">
 						<label for="firstname">Förnamn</label>
 						<?php echo $firstErr; ?>
-						<input type="text" class="form-control" name="firstname" value="<?php if(isset($_POST['firstname'])) { echo $_POST['firstname']; } ?>">
+						<input type="text" class="form-control" name="firstname" id="firstname" value="<?php if(isset($_POST['firstname'])) { echo $_POST['firstname']; } ?>">
 					</div> <!-- .form__input -->
 					<div class="form__input">
 						<label for="lastname">Efternamn</label>
 						<?php echo $lastErr; ?>
-						<input type="text" class="form-control" name="lastname" value="<?php if(isset($_POST['lastname'])) { echo $_POST['lastname']; } ?>">
+						<input type="text" class="form-control" name="lastname" id="lastname" value="<?php if(isset($_POST['lastname'])) { echo $_POST['lastname']; } ?>">
 					</div> <!-- .form__input -->
 					<div class="form__input">
 						<label for="email">Email</label>
 						<?php echo $emailErr; ?>
-						<input type="text" class="form-control" name="email" value="<?php if(isset($_POST['email'])) { echo $_POST['email']; } ?>">
+						<input type="text" class="form-control" name="email" id="email" value="<?php if(isset($_POST['email'])) { echo $_POST['email']; } ?>">
 					</div> <!-- .form__input -->
 					<div class="form__input">
 						<label for="website">Hemsida</label>
 						<?php echo $webErr; ?>
-						<input type="text" class="form-control" name="website" value="<?php if(isset($_POST['website'])) { echo $_POST['website']; } ?>">
+						<input type="text" class="form-control" name="website" id="website" value="<?php if(isset($_POST['website'])) { echo $_POST['website']; } ?>">
 					</div> <!-- .form__input -->
 					<div class="form__input">
 						<label for="username">Användarnamn</label>
 						<?php echo $userErr; ?>
-						<input type="text" class="form-control" name="username" value="<?php if(isset($_POST['username'])) { echo $_POST['username']; } ?>">
+						<input type="text" class="form-control" name="username" id="username" value="<?php if(isset($_POST['username'])) { echo $_POST['username']; } ?>">
 					</div> <!-- .form__input -->
 					<div class="form__input">
 						<label for="password">Lösenord</label>
 						<?php echo $passErr; ?>
-						<input type="password" class="form-control" name="password" value="<?php if(isset($_POST['password'])) { echo $_POST['password']; }?>">
+						<input type="password" class="form-control" name="password" id="password" value="<?php if(isset($_POST['password'])) { echo $_POST['password']; }?>">
 					</div> <!-- .form__input -->
 					<div class="form-group">
 						<label for="profilepic">Profilbild</label>
 						<?php echo $imgErr; ?>
-						<input type="file" name="profilepic">
+						<input type="file" name="profilepic" id="profilepic">
 					</div> <!-- .form-group -->
 					<div class="form__input">
 						<label for="description">Beskrivning</label>
 						<?php echo $descErr; ?>
-						<textarea class="form-control" name="description" id="" cols="30" rows="10"><?php if(isset($_POST['description'])) { echo $_POST['description']; } ?></textarea>
+						<textarea class="form-control" name="description" id="description" cols="30" rows="10"><?php if(isset($_POST['description'])) { echo $_POST['description']; } ?></textarea>
 					</div> <!-- .form__input -->
 					<div class="form__input">
 						<input class="btn" type="submit" name="register" value="Registrera">
