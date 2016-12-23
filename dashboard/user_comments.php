@@ -24,7 +24,21 @@
 				echo $message;
 			}
 
-			?>
+			$query = "SELECT comments.*, posts.post_title FROM comments LEFT JOIN posts ON posts.post_id = comments.comment_post_id ";
+
+			if($_SESSION['role'] != 'admin') {
+				$query .= "WHERE posts.post_author_id = '{$_SESSION['user_id']}' ";
+			}
+
+			$query .= "ORDER BY comment_date DESC";
+
+			if($result = mysqli_query($conn, $query)) {
+				$rows = mysqli_num_rows($result);
+			}
+
+			if($rows == 0) {
+				echo "Tyvärr har du inga kommentarer ännu";
+			} else { ?>
 			<div class="divTable">
 				<div class="divTableBody">
 					<div class="divTableRow divTableRow--header">
@@ -37,24 +51,17 @@
 						<div class="divTableCell">Radera</div>
 					</div>
 					<?php
-					$query = "SELECT comments.*, posts.post_title FROM comments LEFT JOIN posts ON posts.post_id = comments.comment_post_id ";
 
-					if($_SESSION['role'] != 'admin') {
-						$query .= "WHERE posts.post_author_id = '{$_SESSION['user_id']}' ";
-					}
-
-					$query .= "ORDER BY comment_date DESC";
-
-					if($result = mysqli_query($conn, $query)) {
-						$rows = mysqli_num_rows($result);
-					}
-
-					if($stmt->prepare($query) && $rows > 0) {
-
-					$stmt->execute();
-					$stmt->bind_result($com_id, $com_post_id, $com_author, $com_date, $com_email, $content, $website, $post_title);
-
-					while(mysqli_stmt_fetch($stmt)) { ?>
+					while ($row = mysqli_fetch_assoc($result)) {
+						$com_id = $row['comment_id'];
+						$com_post_id = $row['comment_post_id'];
+						$com_author = $row['comment_author'];
+						$com_date = $row['comment_date'];
+						$com_email = $row['comment_email'];
+						$content = $row['comment_content'];
+						$website = $row['comment_website'];
+						$post_title = $row['post_title'];
+					?>
 					<div class="divTableRow">
 						<div class="divTableCell hidden-tablet"><?php echo "<a href='../post.php?post=$com_post_id'>$post_title</a>"; ?></div>
 						<div class="divTableCell"><?php echo substr($com_date, 0, 10); ?></div>
@@ -66,18 +73,9 @@
 					</div>
 
 					<?php
-						
-						} 
-					}else {
-
-						echo "Tyvärr har du inga kommentarer ännu";
 						}
-
-
-
-
-
-						?>
+					}
+					?>
 				
 						
 				</div>
