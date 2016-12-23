@@ -10,7 +10,8 @@
 		
 	<h2 id="archive">ARKIV</h2>
 	<form method="post" action="archive.php#archive">
-		<select name="choose_month">
+		<label for="choose_month">Välj månad</label>
+		<select name="choose_month" id="choose_month">
 			<option value="">Välj månad</option>
 			<?php selectMonth (); ?>
 		</select>
