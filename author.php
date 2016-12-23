@@ -4,6 +4,7 @@
 
 	<div class="blog-post__image">
 		<?php include "include/header-navigation-menu.php"; ?>
+		</header>
 	</div> <!-- .blog-post__image -->
 	<div class="category__container">
 		<?php 

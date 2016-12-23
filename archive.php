@@ -6,7 +6,7 @@
 	<div class="bg-img">
 		<?php include "include/header-navigation-menu.php"; ?>
 		<?php include "header.php"; ?>
-	</div>
+	
 		
 	<h2 id="archive">ARKIV</h2>
 	<form method="post" action="archive.php#archive">
