@@ -448,15 +448,25 @@ main {
 .dropdown {
   position: relative;
   display: inline-block; }
+  .dropdown li {
+    text-decoration: none;
+    display: inline;
+    padding: 0 15px; }
+    .dropdown li:hover .dropdown--content {
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      width: 180px;
+      text-indent: 15px;
+      background-color: #fff;
+      box-shadow: 0px 0px 0px -1px rgba(0, 0, 0, 0.75); }
   .dropdown--content {
-    display: none;
     position: absolute;
+    display: none;
+    list-style-type: none;
     background-color: #f9f9f9;
     max-width: 100%;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); }
-    .dropdown--content ul {
-      padding: 0;
-      margin: 0; }
     .dropdown--content li {
       width: 100%;
       padding: 0;

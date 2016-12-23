@@ -39,11 +39,8 @@
 	
 		<div class="nav__right dropdown">
 			<ul class="aside__nav--header">
-				<li><a href="#"><img src="../<?php echo $_SESSION['image'];?>" width="15" 
-			alt="Bild på <?php echo $_SESSION['firstname'] ; ?>"><?php echo $_SESSION['username']; ?><i class="fa fa-caret-down header" aria-hidden="true"></i></a></li>
-				<ul class="dropdown--content">
-					<li><a href="logout.php">Logga ut</a></li>
-				</ul> <!-- .drowpdown content -->
+				<li><img src="../<?php echo $_SESSION['image'];?>" width="15" 
+			alt="Bild på <?php echo $_SESSION['firstname'] ; ?>"><?php echo $_SESSION['username']; ?></li>
 			</ul> <!-- .aside__nav header -->
 		</div> <!-- .nav__right dropdown -->
 	</nav>
@@ -67,6 +64,7 @@
 				<li><a href="categories.php"><i class="fa fa-list aside" aria-hidden="true"></i>Kategorier</a></li>
 				<li><a href="users.php"><i class="fa fa-user-circle-o aside" aria-hidden="true"></i>Användare</a></li>
 				<?php } ?>
+				<li><a href="logout.php"><i class="fa fa-sign-out aside" aria-hidden="true"></i>Logga ut</a></li>
 			</ul>
 		</div> <!-- .aside__nav -->
 	</aside>
