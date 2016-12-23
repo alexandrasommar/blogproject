@@ -6,43 +6,32 @@
 		<?php include "include/header-navigation-menu.php"; ?>
 		</header>
 	</div> <!-- .blog-post__image -->
+
+	<!-- Author information box -->
 	<div class="category__container">
 		<?php 
-			$author = $_GET['author'];
-			$query = "SELECT * FROM users WHERE user_id = {$author}";
-			if($stmt->prepare($query)) {
+		$author = $_GET['author'];
+		
+		$query = "SELECT users.user_id, users.user_firstname, users.user_lastname, users.user_image, users.user_description FROM users WHERE user_id = {$author}";
+		if($stmt->prepare($query)) {
+			$stmt->execute();
+			$stmt->bind_result($post_author_id, $firstname, $lastname, $image, $description);
 
-				$stmt->execute();
-				$stmt->bind_result($user_id, $username, $firstname, $lastname, $password, $email, $website, $image, $description, $role );
-
-				while(mysqli_stmt_fetch($stmt)) {
-
-					?>
-					<!-- Author information box -->
-
-				<div class="author-information-box">
-					<div class="author-information-box__image">
-						<img src="<?php echo $image;?>" alt="Bild på <?php echo $firstname; ?>">
-					</div> <!-- .author-information-box__image -->
-					<div class="author-information-box__text">
-						<h3><?php echo "$firstname $lastname"; ?></h3>
-						<p><?php echo $description; ?></p>
-					</div> <!-- .author-information-box__text -->
-				</div> <!-- .author-information-box -->
-
-				<?php
-				}
+			while(mysqli_stmt_fetch($stmt)) {
+				include "include/author-information-box.php";
 			}
+		}
 		?>
+		
 		<!-- Posts -->
 		<section class="post">
 			<div class="post__container">
 				<?php
-				$query = "SELECT posts.*, categories.cat_id, categories.cat_name, users.* FROM posts LEFT JOIN categories ON posts.post_category_id = categories.cat_id LEFT JOIN users ON posts.post_author_id = users.user_id WHERE posts.post_author_id = {$author} AND post_status = 1 ORDER BY post_date DESC";
+				$query = "SELECT posts.*, categories.cat_id, categories.cat_name FROM posts LEFT JOIN categories ON posts.post_category_id = categories.cat_id WHERE posts.post_author_id = {$author} AND post_status = 1 ORDER BY post_date DESC";
 					
 					if($stmt->prepare($query)) {
 						$stmt->execute();
-						$stmt->bind_result($post_id, $category_id, $post_title, $post_author, $post_author_id, $post_date, $post_image, $post_content, $post_status, $post_likes, $cat_id, $cat_name, $user_id, $username, $firstname, $lastname, $password, $email, $website, $image, $description, $role );
+						$stmt->bind_result($post_id, $category_id, $post_title, $post_author, $post_author_id, $post_date, $post_image, $post_content, $post_status, $post_likes, $cat_id, $cat_name);
 
 						while(mysqli_stmt_fetch($stmt)) {
 							?>
@@ -51,25 +40,22 @@
 							<a href="post.php?post=<?php echo $post_id; ?>"><img class="post__img--styling" src="<?php echo $post_image; ?>" alt="<?php echo $post_title; ?>"></a>
 						</div> <!-- .post__img -->
 						<div class="post__text">
-							<h2><a href="post.php?post=<?php echo $post_id; ?>"><?php 
-						if (strlen($post_title) >= 31) {
-
-							echo substr($post_title, 0, 31) . "..."; 
-
-						} else {
-
-							echo $post_title;
-						}
-
-
-
-						?></a></h2>
+							<h2><a href="post.php?post=<?php echo $post_id; ?>">
+							<?php 
+							if (strlen($post_title) >= 31) {
+								echo substr($post_title, 0, 31) . "..."; 
+							} else {
+								echo $post_title;
+							}
+							?></a></h2>
 							<span>Av: <span class="author"><?php echo $firstname; ?></span>, <?php echo substr($post_date, 0, 10); ?></span>
 							<p><?php echo substr($post_content, 0, 150) . "..."; ?></p>
 						</div> <!-- .post__text -->
 					</article> <!-- .post__article -->
 				<?php 
 					}
+				} else {
+					die("query failed" . mysqli_error($conn));
 				}
 						
 				?>
