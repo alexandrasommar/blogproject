@@ -49,7 +49,7 @@
 						<div class="divTableCell hidden-small-desktop">Hemsida</div>
 						<div class="divTableCell">Text</div>
 						<div class="divTableCell">Radera</div>
-					</div>
+					</div> <!-- .divTableRow header -->
 					<?php
 
 					while ($row = mysqli_fetch_assoc($result)) {
@@ -70,19 +70,15 @@
 						<div class="divTableCell hidden-small-desktop"><?php echo $website; ?></div>
 						<div class="divTableCell"><?php echo $content; ?></div>
 						<div class="divTableCell"><?php echo "<a href='user_comments.php?delete=$com_id'><i class='fa fa-trash-o' aria-hidden='true'></i></a>"?></div>
-					</div>
-
+					</div> <!-- .divTableRow -->
 					<?php
 						}
 					}
-					?>
-				
-						
-				</div>
-			</div>
+					?>	
+				</div> <!-- .divTableBody -->
+			</div> <!-- .divTable -->
 		</main>
 	</div> <!-- .container -->
-
 	<!-- FontAwesom -->
 	<script src="https://use.fontawesome.com/78a857f410.js"></script>
 	<!-- JavaScript -->
