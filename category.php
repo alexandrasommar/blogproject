@@ -12,11 +12,22 @@
 
 	<div class="catagory-container">
 		<?php
-		if(isset($_GET['cat'])) {
-			$category = $_GET['cat'];
-		} else {
-			header("Location: index.php");
-		}
+		if(!isset($_GET['cat'])) {
+			echo "<h3>Välj kategori</h3>";
+			echo "<ul>"; 
+			$query = "SELECT * FROM categories";
+				    $select_categories = mysqli_query($conn,$query);   
+
+				    while ($row = mysqli_fetch_assoc($select_categories)) {        
+				    $cat_id = $row['cat_id'];
+				    $cat_name = $row['cat_name'];
+
+				    echo "<li><a href='category.php?cat=$cat_id'>$cat_name</a></li>";
+				}
+				echo "</ul>";
+		} else { 
+			
+		$category = $_GET['cat'];
 		$query = "SELECT * FROM categories WHERE cat_id = {$category}";
 		if($stmt->prepare($query)) {
 
@@ -78,7 +89,7 @@
 				<?php
 				}
 			}
-				
+			}	
 				?>
 	</div> <!-- .catagory-container -->
 
