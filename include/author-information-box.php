@@ -1,6 +1,6 @@
 <div class="author-information-box">
 	<div class="author-information-box__image">
-		<img src="<?php echo $image; ?>" alt="">
+		<img src="<?php echo $image; ?>" alt="Bild på <?php echo $firstname; ?>">
 	</div> <!-- .author-information-box__image -->
 	<div class="author-information-box__text">
 		<h3><author><a href="author.php?author=<?php echo $post_author_id; ?>"><?php echo "$firstname $lastname"; ?></author></a></h3>
