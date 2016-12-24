@@ -59,3 +59,26 @@
 	    height: auto;
 	}
 }
+
+/* ----------------------------------------------- */
+/* 					slider.php;					   */
+/* ----------------------------------------------- */
+
+.slider {
+	&__article {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	
+	&__text {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	&__icon-font {
+		display: flex;
+		justify-content: center;
+	}
+}
