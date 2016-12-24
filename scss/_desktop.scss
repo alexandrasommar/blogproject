@@ -71,3 +71,71 @@
 	justify-content: center;
 	width: 100%;
 }
+
+/* ----------------------------------------------- */
+/* 					Slider					   */
+/* ----------------------------------------------- */
+
+	.slider {
+		&__desktop {
+			display: none;
+		}
+
+		&__mobile {
+			display: block;
+		}
+
+		&__article {
+			width: 100%;
+		}
+
+		&--animation {
+			display: flex;
+			height: 100%; /* Height of images */
+  			position: relative;
+  			overflow: hidden;
+		}
+	}
+
+	.slider--animation .slider__article {
+		max-width: 100%;
+		height: 100%;
+		position: absolute;
+		left: 0;
+		right: 0;
+		opacity: 0;
+		-webkit-animation: slider--animation-fade 30s linear infinite;
+		-moz-animation: slider--animation-fade 30s linear infinite;
+		-ms-animation: slider--animation-fade 30s linear infinite;
+		animation: slider--animation-fade 30s linear infinite;
+	}
+
+	.slider--animation .slider__article:nth-child(2) {
+		  -webkit-animation-delay: 10s;
+		  -moz-animation-delay: 10s;
+		  -ms-animation-delay: 10s;
+		  animation-delay: 10s;
+	}
+	.slider--animation .slider__article:nth-child(3) {
+		  -webkit-animation-delay: 20s;
+		  -moz-animation-delay: 20s;
+		  -ms-animation-delay: 20s;
+		  animation-delay: 20s;
+	}
+
+	@-webkit-keyframes slider--animation-fade {
+    0%, 20%, 100% { opacity: 0; }
+    5%, 15% { opacity: 1;}
+}
+@-moz-keyframes slider--animation-fade {
+    0%, 20%, 100% { opacity: 0; }
+    5%, 15% { opacity: 1;}
+}
+@-ms-keyframes slider--animation-fade {
+    0%, 20%, 100% { opacity: 0; }
+    5%, 15% { opacity: 1;}
+}
+@keyframes slider--animation-fade {
+  0%, 20%, 100% { opacity: 0; }
+  5%, 15% { opacity: 1;}
+}

@@ -337,19 +337,7 @@ input#like {
 
 .slider {
 	text-align: center;
-
-	display: -ms-flexbox;
-	//-ms-box-orient: horizontal;
-	-ms-box-pack: center;
-
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flex;
 	display: flex;
-	
-	-webkit-justify-content: space-around;
-	-moz-justify-content: space-around;
-	-ms-justify-content: space-around;
 	justify-content: space-around;
 	align-items: center;
 	width: 100%;

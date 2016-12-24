@@ -38,15 +38,3 @@
 			font-family: $font-regular;
 		}
 	}
-
-	/* Slider */
-
-	.slider {
-		&-deskop {
-			visibility: hidden;
-		}
-
-		&-tablet {
-			visibility: visible;
-		}
-	}
