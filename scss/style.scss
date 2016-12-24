@@ -5,15 +5,15 @@
 
 @import "_base";
 
-@media screen and (max-width: 480px) {
-	@import "_mobile";
+@media screen and (max-width: 1200px) {
+	@import "_desktop";
 }
 
 @media screen and (max-width: 768px) {
 	@import "_tablet";
 }
 
-@media screen and (max-width: 1200px) {
-	@import "_desktop";
+@media screen and (max-width: 480px) {
+	@import "_mobile";
 }
 
