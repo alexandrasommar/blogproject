@@ -3,10 +3,10 @@
 	<footer class="footer">
 		<nav class="footer__nav">
 			<ul class="footer__nav--responsive-list">
-				<li><a href="#">About</a></li>
-				<li><a href="#">People</a></li>
-				<li><a href="#">Archive</a></li>
-				<li><a href="#">Volvo</a></li>
+				<li><a href="#">Bilen</a></li>
+				<li><a href="#">Kampanjen</a></li>
+				<li><a href="#">Kategorier</a></li>
+				<li><a href="#">Arkiv</a></li>
 			</ul>
 		</nav> <!-- .footer__nav -->
 		<nav class="footer__nav">
