@@ -1115,6 +1115,7 @@ input#like {
   .slider__mobile {
     display: block; }
   .slider__article {
+    display: flex;
     width: 100%; }
   .slider--animation {
     display: flex;
