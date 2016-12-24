@@ -88,8 +88,23 @@
 
 		&__article {
 			display: flex;
+			justify-content: center;
 			width: 75%;
 			height: auto;
+		}
+
+		&__text {
+			width: 60%;
+			padding-left: 20px;
+		}
+
+		&__icon-font {
+			display: flex;
+			align-items: center;
+
+			i {
+				font-size: 125px;
+			}
 		}
 
 		&--animation {
