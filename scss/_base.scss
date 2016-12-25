@@ -442,6 +442,9 @@ input#like {
 
 	&__article {
 		width: 50%;
+		.author-information-box {
+			width: 100%;
+		}
 
 		h2 {
 			font: $font-bold;
