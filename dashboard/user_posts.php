@@ -65,7 +65,7 @@ if(isset($_GET['delete'])) {
 
 					if($stmt->prepare($query) && $rows > 0) {
 					$stmt->execute();
-					$stmt->bind_result($post_id, $cat_id, $title, $author, $author_id, $date, $image, $alt, $content, $status, $likes, $cat_name);
+					$stmt->bind_result($post_id, $cat_id, $title, $author, $author_id, $date, $image, $content, $status, $likes, $cat_name);
 
 					while(mysqli_stmt_fetch($stmt)) { ?>
 
