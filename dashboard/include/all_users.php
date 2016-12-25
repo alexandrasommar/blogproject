@@ -31,34 +31,30 @@
 				<div class="divTableCell">Beskrivning</div>
 				<div class="divTableCell">Redigera</div>
 				<div class="divTableCell">Radera</div>
-			</div>	
-									
-	
+			</div> <!-- .divTableBody div TableRow header -->	
 			<?php
 			$query = "SELECT * FROM users";
-					if($stmt->prepare($query)) {
-						$stmt->execute();
-						$stmt->bind_result($user_id, $dbuser, $firstname, $lastname, $dbpass, $email, $website, $image, $description, $role);
-						while (mysqli_stmt_fetch($stmt)) { ?>
-						<div class="divTableRow">
-							<div class="divTableCell"><?php echo $firstname; ?></div>
-							<div class="divTableCell"><?php echo $lastname; ?></div>
-							<div class="divTableCell"><?php echo $dbuser; ?></div>
-							<div class="divTableCell"><?php echo $email; ?></div>
-							<div class="divTableCell"><?php echo $website; ?></div>
-							<div class="divTableCell"><?php echo "<img src='../$image' width='20'>"; ?></div>
-							<div class="divTableCell"><?php echo substr($description, 0, 10) . "..."; ?></div>
-							<div class="divTableCell"><?php echo "<a href='users.php?edit&user=$user_id'><i class='fa fa-pencil-square-o' aria-hidden='true'></i></a>"; ?></div>
-							<div class="divTableCell"><?php echo "<a href='users.php?delete=$user_id'><i class='fa fa-trash-o' aria-hidden='true'></i></a>"; ?></div>
-		</div>
-					<?php
+			if($stmt->prepare($query)) {
+				$stmt->execute();
+				$stmt->bind_result($user_id, $dbuser, $firstname, $lastname, $dbpass, $email, $website, $image, $description, $role);
+				while (mysqli_stmt_fetch($stmt)) { ?>
+				<div class="divTableRow">
+					<div class="divTableCell"><?php echo $firstname; ?></div>
+					<div class="divTableCell"><?php echo $lastname; ?></div>
+					<div class="divTableCell"><?php echo $dbuser; ?></div>
+					<div class="divTableCell"><?php echo $email; ?></div>
+					<div class="divTableCell"><?php echo $website; ?></div>
+					<div class="divTableCell"><?php echo "<img src='../$image' width='20' alt='Bild på $firstname'>"; ?></div>
+					<div class="divTableCell"><?php echo substr($description, 0, 10) . "..."; ?></div>
+					<div class="divTableCell"><?php echo "<a href='users.php?edit&user=$user_id' aria-label='Redigera'><i class='fa fa-pencil-square-o' aria-hidden='true'></i></a>"; ?></div>
+					<div class="divTableCell"><?php echo "<a href='users.php?delete=$user_id' aria-label='Radera'><i class='fa fa-trash-o' aria-hidden='true'></i></a>"; ?></div>
+				</div> <!-- .divTableRow -->
+				<?php
 
-						}
-					} else {
-						"query failed" . mysqli_error($conn);
 					}
-
-
-
-			?>
-	</div>
+				} else {
+					"query failed" . mysqli_error($conn);
+				}
+				?>
+		</div> <!-- .divTableBody -->
+	</div> <!-- .divTable -->

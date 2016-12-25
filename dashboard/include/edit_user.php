@@ -70,46 +70,46 @@ if($stmt->prepare($query)) {
 	while (mysqli_stmt_fetch($stmt)) { ?>
 	
 	<section class="form">
-		<form action="" method="post" enctype="multipart/form-data">
+		<form action="users.php?edit&user=<?php echo $userid; ?>" method="post" enctype="multipart/form-data">
 			<div class="form__input">
 				<label for="firstname">Förnamn</label>
 				<input type="text" class="form-control" name="firstname" id="firstname" value="<?php echo $firstname; ?>">
-			</div>
+			</div> <!-- .form__input -->
 			<div class="form__input">
 				<label for="lastname">Efternamn</label>
 				<input type="text" class="form-control" name="lastname" id="lastname" value="<?php echo $lastname; ?>">
-			</div>
+			</div> <!-- .form__input -->
 			<div class="form__input">
 				<label for="email">Email</label>
 				<input type="text" class="form-control" name="email" id="email" value="<?php echo $email; ?>">
-			</div>
+			</div> <!-- .form__input -->
 			<div class="form__input">
 				<label for="website">Hemsida</label>
 				<input type="text" class="form-control" name="website" id="website" value="<?php echo $website; ?>">
-			</div>
+			</div> <!-- .form__input -->
 			<div class="form__input">
 				<label for="username">Användarnamn</label>
 				<input type="text" class="form-control" name="username" id="username" value="<?php echo $dbuser; ?>">
-			</div>
+			</div> <!-- .form__input -->
 			<div class="form__input">
 				<label for="password">Lösenord</label>
 				<input type="password" class="form-control" name="password" id="password">
-			</div>
+			</div> <!-- .form__input -->
 			<div class="form-group">
 				<label for="profilepic">Profilbild</label>
 				<?php if(isset($imgErr)) { echo $imgErr; } ?>
 				<img src="../<?php echo $image; ?>" width="200">
 				<input type="file" name="profilepic" id="profilepic">
-			</div>
+			</div> <!-- .form group -->
 			<div class="form__input">
 				<label for="description">Beskrivning</label>
 				<textarea class="form-control" name="description" id="description" cols="30" rows="10"><?php echo $description; ?></textarea>
-			</div>
+			</div> <!-- .form__input -->
 			<div class="form__input">
 				<input class="btn" type="submit" name="update" value="Uppdatera">
-			</div>
+			</div> <!-- .form__input -->
 		</form>
-	</section>
+	</section> <!-- .form -->
 
 
 <?php
