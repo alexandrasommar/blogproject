@@ -10,6 +10,7 @@
 
 		if(!empty($_POST['name'])) {
 			$cat = ucfirst($_POST['name']);
+			$cat = mysqli_real_escape_string($conn, $cat);
 			$query = "UPDATE categories SET cat_name = '{$cat}' WHERE cat_id = {$catid}";
 			if($stmt->prepare($query)) {
 				$stmt->execute();

@@ -98,7 +98,7 @@ if($stmt->prepare($query)) {
 			<div class="form-group">
 				<label for="profilepic">Profilbild</label>
 				<?php if(isset($imgErr)) { echo $imgErr; } ?>
-				<img src="../<?php echo $image; ?>" width="200">
+				<img src="../<?php echo $image; ?>" width="200" alt="Bild på <?php echo $firstname; ?>">
 				<input type="file" name="profilepic" id="profilepic">
 			</div> <!-- .form group -->
 			<div class="form__input">

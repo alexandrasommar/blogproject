@@ -35,6 +35,9 @@
 			$content = ucfirst($_POST['post_content']);
 			$category = $_POST['post_category'];
 
+			$title = mysqli_real_escape_string($conn, $title);
+			$content = mysqli_real_escape_string($conn, $content);
+
 			$image = $_FILES['image']['name'];
 			$target_folder = "uploads/";
 			$target_name = $target_folder . $image;

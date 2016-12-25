@@ -2,6 +2,7 @@
 if(isset($_POST['create_cat'])) {
 	if(!empty($_POST['name'])) {
 		$catname = ucfirst($_POST['name']);
+		$catname = mysqli_real_escape_string($conn, $catname);
 		$query = "INSERT INTO categories VALUES(NULL, '{$catname}')";
 		if($stmt->prepare($query)) {
 			$stmt->execute();

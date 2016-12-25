@@ -22,6 +22,9 @@
 		$content = ucfirst($_POST['post_content']);
 		$category = $_POST['post_category'];
 
+		$title = mysqli_real_escape_string($conn, $title);
+		$content = mysqli_real_escape_string($conn, $content);
+
   		$query = "UPDATE posts SET post_title = '{$title}', post_content = '{$content}', post_category_id = '{$category}' ";
 
 		if(!empty($_FILES['image']['name'])) {
@@ -83,7 +86,7 @@
 			</div> <!-- .form__input -->
 			<div class="form-group">
 				<label for="post_image">Bild</label>
-				<img src="../<?php echo $post_image; ?>" width="100">
+				<img src="../<?php echo $post_image; ?>" width="100" alt="<?php echo $post_title; ?>">
 				<?php if(isset($imgErr)) { echo $imgErr; } ?>
 				<input type="file" name="image" id="image">
 			</div> <!-- .form-group -->
