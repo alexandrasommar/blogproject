@@ -4,6 +4,7 @@
 
 	<div class="blog-post__image">
 		<?php include "include/header-navigation-menu.php"; ?>
+		</header>
 		<?php include "include/functions.php"; ?>
 		<?php
 		if(isset($_GET["post"])) {
@@ -30,7 +31,7 @@
 				$post_author_id = $row['post_author_id'];
 			}
 		} 
-		echo "<img src='{$post_image}'>";
+		echo "<img src='{$post_image}' alt='{$post_title}'>";
 		?>
 	</div> <!-- .blog-post__image -->
 	<?php
@@ -102,12 +103,10 @@
 		<article class="blog-post__article">
 			<div class="blog-post__date">
 				<time><?php echo substr($post_date, 0, 10); ?></time>
-				<span>
-				<?php echo $post_likes; ?>+
+				<span><?php echo $post_likes; ?>+</span>
 				<form action="post.php?post=<?php echo $post; ?>#blog-post" method="post">
 					<input type="submit" name="like" value="&#xf004;" id="like">
 				</form>
-				</span>
 			</div> <!-- .blog-post__date -->
 			<h2><?php echo $post_title; ?></h2>
 			<p><?php echo $post_content; ?></p>
