@@ -31,7 +31,7 @@
 
 		<!-- Edit Category Form -->
 		<section class="form">
-			<form action="" method="post">
+			<form action="categories.php?source=edit&cat=<?php echo $catid; ?>" method="post">
 				<div class="form__input">
 					<label for="name">Redigera kategori</label>
 					<input type="text" class="form-control" name="name" id="name" value="<?php echo $cat_name; ?>">

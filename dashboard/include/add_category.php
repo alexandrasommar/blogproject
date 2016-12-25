@@ -22,7 +22,7 @@ if(isset($message)) {
 
 ?>
 <section class="form">
-	<form action="" method="post">
+	<form action="categories.php?source=add" method="post">
 		<div class="form__input">
 			<label for="name">Lägg till ny kategori</label>
 			<input type="text" class="form-control" name="name" id="name">

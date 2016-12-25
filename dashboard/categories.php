@@ -63,8 +63,8 @@
 						while(mysqli_stmt_fetch($stmt)) { ?>
 					<div class="divTableRow">
 						<div class="divTableCell"><?php echo $cat_name; ?></div>
-						<div class="divTableCell"><?php echo "<a href='categories.php?source=edit&cat=$cat_id'><i class='fa fa-pencil-square-o' aria-hidden='true'></i></a>"; ?></div>
-						<div class="divTableCell"><?php echo "<a href='categories.php?delete=$cat_id'><i class='fa fa-trash-o' aria-hidden='true'></i></a>"; ?></div>
+						<div class="divTableCell"><?php echo "<a href='categories.php?source=edit&cat=$cat_id' aria-label='Redigera'><i class='fa fa-pencil-square-o' aria-hidden='true'></i></a>"; ?></div>
+						<div class="divTableCell"><?php echo "<a href='categories.php?delete=$cat_id' aria-label='Radera'><i class='fa fa-trash-o' aria-hidden='true'></i></a>"; ?></div>
 					</div> <!-- .divTableRow -->
 					<?php
 						}
