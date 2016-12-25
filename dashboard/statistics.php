@@ -6,6 +6,9 @@
 		<?php include "user_navigation.php"; ?>
 		<main>
 			<?php
+			if(!isset($_SESSION['username'])) {
+				header("Location: ../index.php");
+			}
 			$query = "SELECT * FROM posts ";
 			if($_SESSION['role'] != 'admin') {
 				$query .= "WHERE post_author_id = '{$_SESSION['user_id']}'";

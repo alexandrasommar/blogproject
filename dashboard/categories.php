@@ -3,6 +3,13 @@
 <?php include "../include/head.php"; ?>
 
 	<?php
+	if(!isset($_SESSION['username'])) {
+		header("Location: ../index.php");
+	}
+	if($_SESSION['role'] !== 'admin') {
+		header("Location: index.php");
+	}
+
 	if(isset($_GET['delete'])) {
 		$catdel = $_GET['delete'];
 		$query = "DELETE FROM categories WHERE cat_id = '{$catdel}'";

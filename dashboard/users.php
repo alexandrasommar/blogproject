@@ -6,6 +6,10 @@
 		<?php include "user_navigation.php"; ?>
 		<main>
 		<?php
+		if(!isset($_SESSION['username'])) {
+			header("Location: ../index.php");
+		}
+
 		if(isset($_SESSION['success'])) {
 			echo $_SESSION['success'];
 			unset($_SESSION['success']);

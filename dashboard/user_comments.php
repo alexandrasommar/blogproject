@@ -2,20 +2,24 @@
 <?php include "../include/db.php"; ?>
 <?php include "../include/head.php"; ?>
 
-	<?php
-	if(isset($_GET['delete'])) {
-		$delete = $_GET['delete'];
-		$query = "DELETE FROM comments WHERE comment_id = {$delete}";
-		if($stmt->prepare($query)) {
-			$stmt->execute();
-			$message = "<p class='red'>Kommentaren är raderad</p>";
-		} else {
-			echo "query failed";
-		}
+<?php
+if(!isset($_SESSION['username'])) {
+	header("Location: ../index.php");
+}
+
+if(isset($_GET['delete'])) {
+	$delete = $_GET['delete'];
+	$query = "DELETE FROM comments WHERE comment_id = {$delete}";
+	if($stmt->prepare($query)) {
+		$stmt->execute();
+		$message = "<p class='red'>Kommentaren är raderad</p>";
+	} else {
+		echo "query failed";
 	}
+}
 
 
-	?>
+?>
 	<div class="container">
 		<?php include "user_navigation.php"; ?>
 		<main>

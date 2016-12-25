@@ -1,4 +1,7 @@
 	<?php
+	if(!isset($_SESSION['username'])) {
+		header("Location: ../index.php");
+	}
 	if(isset($_GET['delete'])) {
 		$userdel = $_GET['delete'];
 		$query = "DELETE FROM users WHERE user_id = {$userdel}";

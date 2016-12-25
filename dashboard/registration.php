@@ -6,6 +6,9 @@
 		<?php include "user_navigation.php"; ?>
 		<main>
 			<?php
+			if(!isset($_SESSION['username'])) {
+				header("Location: ../index.php");
+			}
 			if($_SESSION['role'] != 'admin') {
 				header("Location: index.php");
 			}

@@ -3,6 +3,10 @@
 <?php include "../include/head.php"; ?>
 
 <?php
+if(!isset($_SESSION['username'])) {
+	header("Location: ../index.php");
+}
+
 if(isset($_GET['delete'])) {
 	$postdel = $_GET['delete'];
 	$query = "DELETE FROM posts WHERE post_id = {$postdel}";
@@ -61,7 +65,7 @@ if(isset($_GET['delete'])) {
 
 					if($stmt->prepare($query) && $rows > 0) {
 					$stmt->execute();
-					$stmt->bind_result($post_id, $cat_id, $title, $author, $author_id, $date, $image, $content, $status, $likes, $cat_name);
+					$stmt->bind_result($post_id, $cat_id, $title, $author, $author_id, $date, $image, $alt, $content, $status, $likes, $cat_name);
 
 					while(mysqli_stmt_fetch($stmt)) { ?>
 
@@ -79,7 +83,7 @@ if(isset($_GET['delete'])) {
 						if($_SESSION['role'] == 'admin') { ?>
 						<div class="divTableCell hidden-mobile"><?php echo $author; ?></div>
 						<?php } ?>
-						<div class="divTableCell hidden-small-desktop hidden-tablet"><?php echo "<img src='../$image' width='20' alt='$title'>"; ?></div>
+						<div class="divTableCell hidden-small-desktop hidden-tablet"><?php echo "<img src='../$image' width='20' alt='$alt'>"; ?></div>
 						<div class="divTableCell hidden-tablet"><?php echo substr($content, 0, 60) . "..."; ?></div>
 						<div class="divTableCell"><?php
 						if($status == 1) {
