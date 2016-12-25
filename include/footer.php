@@ -5,8 +5,8 @@
 			<ul class="footer__nav--responsive-list">
 				<li><a href="#">Bilen</a></li>
 				<li><a href="#">Kampanjen</a></li>
-				<li><a href="#">Kategorier</a></li>
-				<li><a href="#">Arkiv</a></li>
+				<li><a href="category.php">Kategorier</a></li>
+				<li><a href="archive.php">Arkiv</a></li>
 			</ul>
 		</nav> <!-- .footer__nav -->
 		<nav class="footer__nav">
