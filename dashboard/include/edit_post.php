@@ -72,7 +72,7 @@
 
 	<!-- Edit Post Form -->
 	<section class="form">
-		<form action="" method="post" enctype="multipart/form-data">
+		<form action="user_posts.php?edit=<?php echo $postid; ?>" method="post" enctype="multipart/form-data">
 			<div class="form__input">
 				<label for="title">Titel</label>
 				<input type="text" class="form-control" name="title" id="title" value="<?php echo $post_title; ?>">

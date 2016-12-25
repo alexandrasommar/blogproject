@@ -68,7 +68,7 @@
 
 	?>
 	<section class="form">
-		<form action="" method="post" enctype="multipart/form-data">
+		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
 			<div class="form-message">
 				<?php 
 				if(isset($message)) {
