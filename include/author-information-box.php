@@ -1,4 +1,4 @@
-<div class="author-information-box">
+<div class="author-information-box author-information-box--small author-information-box--full-width">
 	<div class="author-information-box__image">
 		<img src="<?php echo $image; ?>" alt="Bild på <?php echo $firstname; ?>">
 	</div> <!-- .author-information-box__image -->
