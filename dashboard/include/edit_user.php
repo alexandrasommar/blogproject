@@ -22,6 +22,7 @@ if(isset($_POST['update'])) {
 			$tmp_dir = $_FILES['profilepic']['tmp_name'];
 			$target_folder = "uploads/";
 			$target_name = $target_folder . $profilepic;
+			$name = pathinfo($profilepic, PATHINFO_FILENAME);
 
 			if($_FILES['profilepic']['size'] > 1024000) {
 				$imgErr = "<p class='red'>Bilden är för stor, den får vara max 1 MB.</p>";
@@ -30,6 +31,9 @@ if(isset($_POST['update'])) {
 			if($_FILES['profilepic']['type'] !== 'image/jpeg' && $_FILES['profilepic']['type'] !== 'image/png') {
 				$imgErr = "<p class='red'>Endast jpg- och png-filer är tillåtna.</p>";
 					
+			}
+			if(!preg_match("/^[_a-zA-Z0-9-]+$/", $name)) {
+					$imgErr = "<p class='red'>Vald bild: $profilepic. Bildnamnet får inte innehålla å ä ö, mellanslag eller andra specialtecken. Vänligen ge bilden ett nytt namn och försök igen.</p>";
 			} 
 
 			if (!isset($imgErr)) {

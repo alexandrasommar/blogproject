@@ -55,7 +55,7 @@
 				&& !empty($_POST['website'])
 				&& !empty($_POST['username'])
 				&& !empty($_POST['password'])
-				&& !empty($_FILES['profilepic'])
+				&& !empty($_FILES['profilepic']['name'])
 				&& !empty($_POST['description'])) {
 
 				// checks if username already exists
@@ -70,8 +70,10 @@
 				} 
 
 				$username = mysqli_real_escape_string($conn, $_POST['username']);
-				$first = mysqli_real_escape_string($conn, $_POST['firstname']);
-				$last = mysqli_real_escape_string($conn, $_POST['lastname']);
+				$first = ucfirst($_POST['firstname']);
+				$first = mysqli_real_escape_string($conn, $first);
+				$last = ucfirst($_POST['lastname']);
+				$last = mysqli_real_escape_string($conn, $last);
 				$email = mysqli_real_escape_string($conn, $_POST['email']);
 				$website = mysqli_real_escape_string($conn, $_POST['website']);
 				$description = mysqli_real_escape_string($conn, $_POST['description']);
@@ -82,22 +84,28 @@
 				$profilepic = $_FILES['profilepic']['name'];	
 				$target_folder = "uploads/";
 				$target_name = $target_folder . $profilepic;
-				move_uploaded_file($_FILES['profilepic']['tmp_name'], "../uploads/$profilepic");
-				
+				$name = pathinfo($profilepic, PATHINFO_FILENAME);
 
-				$query = "INSERT INTO users VALUES('', '{$username}', '{$first}', '{$last}', '{$pass}', '{$email}', '{$website}' ";
-				if(!empty($profilepic)) {
-					$query .= ", '{$target_name}' ";
-				}
-					$query .= ", '{$description}', 'editor')";
-				if($stmt->prepare($query)) {
-					$stmt->execute();
-					$_SESSION['success'] = "Användaren är registrerad och kan nu logga in.";
-					header("Location: users.php");
-				} 
+				if(!preg_match("/^[_a-zA-Z0-9-]+$/", $name)) {
+					$imgErr = "<p class='red'>Vald bild: $profilepic. Bildnamnet får inte innehålla å ä ö, mellanslag eller andra specialtecken. Vänligen ge bilden ett nytt namn och försök igen.</p>";
+				} else {
+					move_uploaded_file($_FILES['profilepic']['tmp_name'], "../uploads/$profilepic");
+					
+
+					$query = "INSERT INTO users VALUES('', '{$username}', '{$first}', '{$last}', '{$pass}', '{$email}', '{$website}' ";
+					if(!empty($profilepic)) {
+						$query .= ", '{$target_name}' ";
+					}
+						$query .= ", '{$description}', 'editor')";
+					if($stmt->prepare($query)) {
+						$stmt->execute();
+						$_SESSION['success'] = "Användaren är registrerad och kan nu logga in.";
+						header("Location: users.php");
+					} 
 		 		
-			  }
+			  	}
 			}
+		}
 			?>
 
 			<!-- Registration form -->
