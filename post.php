@@ -103,8 +103,8 @@
 		<article class="blog-post__article">
 			<div class="blog-post__date">
 				<time><?php echo substr($post_date, 0, 10); ?></time>
-				<span><?php echo $post_likes; ?>+</span>
-				<form action="post.php?post=<?php echo $post; ?>#blog-post" method="post">
+				<form class="blog-post__heart" action="post.php?post=<?php echo $post; ?>#blog-post" method="post">
+					<span><?php echo $post_likes; ?>+</span>
 					<input type="submit" name="like" value="&#xf004;" id="like">
 				</form>
 			</div> <!-- .blog-post__date -->

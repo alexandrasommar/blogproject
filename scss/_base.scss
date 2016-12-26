@@ -454,10 +454,10 @@ input#like {
 		}
 
 		p {
-			text-align: center;
+			
 			justify-content: space-around;
 			align-items: center;
-			width: 80%;
+			width: 100%;
 	
 	
 		}
@@ -485,6 +485,9 @@ input#like {
 		color: #E57373;
 	}
 
+	&__heart {
+		width: auto;
+	}
 }
 
 .byline {
