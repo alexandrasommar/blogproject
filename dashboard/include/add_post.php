@@ -25,6 +25,8 @@
 			$imgErr = "<p class='red'>Bilden är för stor, den får vara max 1 MB.</p>";
 		}
 
+		
+
 
 		if(!empty($_POST['title'])
 			&& !empty($_POST['post_content'])
@@ -41,12 +43,14 @@
 			$image = $_FILES['image']['name'];
 			$target_folder = "uploads/";
 			$target_name = $target_folder . $image;
-			if(!move_uploaded_file($_FILES['image']['tmp_name'], "../uploads/$image")) {
+			$name = pathinfo($image, PATHINFO_FILENAME);
+
+			if(!preg_match("/^[_a-zA-Z0-9-]+$/", $name)) {
+				$imgErr = "<p class='red'>Vald bild: $image. Bildnamnet får inte innehålla å ä ö, mellanslag eller andra specialtecken. Vänligen ge bilden ett nytt namn och försök igen.</p>";
+			}
+			elseif(!move_uploaded_file($_FILES['image']['tmp_name'], "../uploads/$image")) {
 				echo "<p class='red'>Någonting gick fel med filuppladdningen. Vänligen försök igen.</p>";
 			} else {
-				
-			
-
 			$query = "INSERT INTO posts(post_category_id, post_title, post_author, post_author_id, post_date, post_image, post_content, post_status) VALUES ('{$category}', '{$title}', '{$_SESSION['firstname']}', {$_SESSION['user_id']}, NOW(), '{$target_name}', '{$content}' ";
 			if(isset($_POST['save'])) {
 				$query .= ", 0)";
@@ -83,8 +87,7 @@
 			<div class="form__input">
 				<?php echo $titleErr; ?>
 				<label for="title">Titel</label>
-				<input type="text" class="form-control" name="title" id="title" value="<?php if(isset($_POST['title'])) {
-					echo $_POST['title']; }?>">
+				<input type="text" class="form-control" name="title" id="title" value="<?php if(isset($_POST['title'])) { echo $_POST['title']; }?>">
 			</div> <!-- .form__input -->
 			<div class="form__input">
 				<?php echo $contentErr; ?>
