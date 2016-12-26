@@ -1,6 +1,7 @@
 <?php session_start(); ?>
 <?php include "../include/db.php"; ?>
 <?php include "../include/head.php"; ?>
+<?php if(isset($_SESSION['username'])) { ?>
 
 	<div class="container">
 		<?php include "user_navigation.php"; ?>
@@ -9,9 +10,9 @@
 			if(!isset($_SESSION['username'])) {
 				header("Location: ../index.php");
 			}
-			$query = "SELECT * FROM posts ";
+			$query = "SELECT * FROM posts WHERE post_status = 1 ";
 			if($_SESSION['role'] != 'admin') {
-				$query .= "WHERE post_author_id = '{$_SESSION['user_id']}'";
+				$query .= "AND post_author_id = '{$_SESSION['user_id']}'";
 			}
 			if($result = mysqli_query($conn, $query)) {
 				$post_cnt = mysqli_num_rows($result);
@@ -28,12 +29,12 @@
 				}
 			}
 			if($post_cnt == 0) {
-				echo "Tyvärr har du inga inlägg än, så ingen statistik kan visas. <a href='write_post.php'>Skriv inlägg här</a>";
+				echo "Tyvärr har du inga publicerade inlägg än, så ingen statistik kan visas. <a href='write_post.php'>Skriv inlägg här</a>";
 			} else { ?>
 			<div class="divTable">
 				<div class="divTableBody">
 					<div class="divTableRow divTableRow--header">
-						<div class="divTableCell">Antal inlägg</div>
+						<div class="divTableCell">Antal publicerade inlägg</div>
 						<div class="divTableCell">Antal kommentarer totalt</div>
 						<div class="divTableCell">Antal kommentarer i snitt per inlägg</div>
 					</div>	<!-- .divTableRow header -->
@@ -53,3 +54,7 @@
 	<script src="script.js"></script>
 </body>
 </html>
+<?php }else {
+		header("Location: ../index.php");
+
+	} ?>
