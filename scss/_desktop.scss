@@ -9,8 +9,7 @@
 	}
 
 	.header__nav {
-		display: flex;
-		flex-direction: row;
+		@include flexbox(flex-row);
 		justify-content: flex-end;
 		width: 100%;
 	}
@@ -26,9 +25,7 @@
     }
 
 .hidden {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      @include flexbox(flex-col-center);
       height: 0;
       opacity: 0;
       /*text-align: center;*/
@@ -66,9 +63,7 @@
 }
 
 .toggle-menu__flex-center {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+	@include flexbox(flex-col-center);
 	width: 100%;
 }
 
@@ -87,8 +82,7 @@
 		}
 
 		&__article {
-			display: flex;
-			justify-content: center;
+			@include flexbox(flex-row-center);
 			width: 75%;
 			height: auto;
 		}
@@ -108,9 +102,7 @@
 		}
 
 		&--animation {
-			display: flex;
-			justify-content: center;
-			align-items: center;
+			@include flexbox(flex-row-center-center);
 			height: 100%; /* Height of images */
   			position: relative;
   			overflow: hidden;
