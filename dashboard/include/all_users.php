@@ -2,21 +2,31 @@
 	if(!isset($_SESSION['username'])) {
 		header("Location: ../index.php");
 	}
+	// Delete user
 	if(isset($_GET['delete'])) {
-		$userdel = $_GET['delete'];
-		$query = "DELETE FROM users WHERE user_id = {$userdel}";
+		$_SESSION['delete'] = $_GET['delete'];
+	
+	?>
+	<p class='red'>Är du säker på att du vill radera användaren?</p>
+	<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+		<div class="form__input">
+			<input class="btn" type="submit" name="yes" value="Ja">
+			<input class="btn--blue" type="submit" name="no" value="Nej">
+		</div>
+	</form>
+	<?php
+	}
+	if(isset($_POST['yes'])) {
+		
+		$query = "DELETE FROM users WHERE user_id = {$_SESSION['delete']}";
+		
 		if($stmt->prepare($query)) {
 			$stmt->execute();
-			$message = "Användaren raderades";
-
-		} else {
-			echo mysqli_error($conn);
+			$message = "<p class='public'>Användaren raderades</p>";
+			unset($_SESSION['delete']);
 		}
 	}
 
-
-	?>
-	<?php
 	if(isset($message)) {
 		echo $message;
 	}

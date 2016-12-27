@@ -6,20 +6,32 @@
 if(!isset($_SESSION['username'])) {
 	header("Location: ../index.php");
 }
-
-if(isset($_GET['delete'])) {
-	$postdel = $_GET['delete'];
-	$query = "DELETE FROM posts WHERE post_id = {$postdel}";
-	if($stmt->prepare($query)) {
-		$stmt->execute();
-		$message = "Inlägget raderades";
-	}
-}
 ?>
 	<div class="user_post_container">
 		<?php include "user_navigation.php"; ?>
 		<main>
 			<?php
+			// Delete post
+			if(isset($_GET['delete'])) {
+				$_SESSION['delete'] = $_GET['delete'];
+				?>
+				<p class='red'>Är du säker på att du vill radera inlägget?</p>
+				<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+					<div class="form__input">
+						<input class="btn" type="submit" name="yes" value="Ja">
+						<input class="btn--blue" type="submit" name="no" value="Nej">
+					</div>
+				</form>
+				<?php
+				}
+				if(isset($_POST['yes'])) {
+				$query = "DELETE FROM posts WHERE post_id = {$_SESSION['delete']}";
+					if($stmt->prepare($query)) {
+						$stmt->execute();
+						$message = "Inlägget raderades";
+						unset($_SESSION['delete']);
+					}
+				}
 
 			if(isset($message)) {
 			echo $message;

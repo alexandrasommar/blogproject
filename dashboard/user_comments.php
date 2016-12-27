@@ -5,25 +5,35 @@
 <?php
 if(!isset($_SESSION['username'])) {
 	header("Location: ../index.php");
-}
-
-if(isset($_GET['delete'])) {
-	$delete = $_GET['delete'];
-	$query = "DELETE FROM comments WHERE comment_id = {$delete}";
-	if($stmt->prepare($query)) {
-		$stmt->execute();
-		$message = "<p class='red'>Kommentaren är raderad</p>";
-	} else {
-		echo "query failed";
-	}
-}
-
-
-?>
+} ?>
 	<div class="container">
 		<?php include "user_navigation.php"; ?>
 		<main>
-			<?php 
+			<?php
+			// Delete comment
+			if(isset($_GET['delete'])) {
+				$_SESSION['delete'] = $_GET['delete'];
+				?>
+				<p class='red'>Är du säker på att du vill radera kommentaren?</p>
+				<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+					<div class="form__input">
+						<input class="btn" type="submit" name="yes" value="Ja">
+						<input class="btn--blue" type="submit" name="no" value="Nej">
+					</div>
+				</form>
+			<?php
+			}
+			if(isset($_POST['yes'])) {
+			$query = "DELETE FROM comments WHERE comment_id = '{$_SESSION['delete']}'";
+				if($stmt->prepare($query)) {
+					$stmt->execute();
+					$message = "<p class='red'>Kommentaren är raderad</p>";
+					unset($_SESSION['delete']);
+				} else {
+					die("Query failed" . mysqli_error($conn));
+				}
+			}  
+			
 			if(isset($message)) {
 				echo $message;
 			}

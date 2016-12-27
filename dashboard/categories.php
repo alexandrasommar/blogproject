@@ -10,16 +10,6 @@
 		header("Location: index.php");
 	}
 
-	if(isset($_GET['delete'])) {
-		$catdel = $_GET['delete'];
-		$query = "DELETE FROM categories WHERE cat_id = '{$catdel}'";
-		    if($stmt->prepare($query)) {
-		    	$stmt->execute();
-		    	$message = "Kategorin raderades";
-		    } else {
-		    	echo mysqli_error($conn);
-		    }
-		}
 	?>
 	<div class="container">
 		<?php include "user_navigation.php"; ?>
@@ -30,6 +20,31 @@
 			<a href="categories.php?source=add">Lägg till ny kategori</a>
 		</div>
 		<?php
+		// Delete category
+		if(isset($_GET['delete'])) {
+			$_SESSION['delete'] = $_GET['delete'];
+		
+		?>
+		<p class='red'>Är du säker på att du vill radera kategorin?</p>
+		<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+			<div class="form__input">
+				<input class="btn" type="submit" name="yes" value="Ja">
+				<input class="btn--blue" type="submit" name="no" value="Nej">
+			</div>
+		</form>
+		<?php
+		}
+		if(isset($_POST['yes'])) {
+			$query = "DELETE FROM categories WHERE cat_id = {$_SESSION['delete']}";
+			    if($stmt->prepare($query)) {
+			    	$stmt->execute();
+			    	$message = "<p class='public'>Kategorin raderades</p>";
+			    	unset($_SESSION['delete']);
+			    } else {
+			    	echo mysqli_error($conn);
+			    }
+			}
+
 		if(isset($message)) {
 			echo $message;
 		}
