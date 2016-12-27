@@ -196,8 +196,7 @@ body {
 	&__article {
 		box-sizing: border-box;
 		color: $content-color;
-		display: flex;
-		flex-direction: column;
+		@include flexbox(flex-col);
 		padding: 10px 25px;
 		text-align: center;
 		width: 33%;
@@ -274,15 +273,12 @@ form {
 
 .form {
 	background-color: $color--white;
-  	display: flex;
-  	flex-direction: row;
-  	justify-content: center;
+  	@include flexbox(flex-row-center);
   	height: auto;
   	padding: 20px 0;
 
   	&__input {
-  		display: flex;
-	  	flex-direction: column;
+  		@include flexbox(flex-col);
 	  	font: $font-thin;
   	}
 }
@@ -384,8 +380,7 @@ input#like {
 	text-transform: uppercase;
 
 	&__nav {
-		display: flex;
-		justify-content: center;
+		@include flexbox(flex-row-center);
 		padding-top: 40px;
 
 		li {
@@ -406,8 +401,7 @@ input#like {
 	}
 
 	&__logo {
-		display: flex;
-		justify-content: center;
+		@include flexbox(flex-row-center);
 		align-items: flex-end;
 		margin: 50px 0;
 	}
