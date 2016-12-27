@@ -20,18 +20,16 @@ body {
 
 .header {
 	&-container {
-		display: flex;
-		justify-content: space-between;
+		@include flexbox(flex-row);
 		align-items: center;
+		justify-content: space-between;
 		width: 95%;
 	}
 	
 	&__nav {
 		background-color: $color--white;
 		box-shadow: 0px 1px 5px -1px rgba(0,0,0,0.75);
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
+		@include flexbox(flex-row-center);
 		margin: 0 auto;
 		opacity: 0.9;
 		padding: 10px 0;
@@ -67,15 +65,14 @@ body {
 			padding: 0 15px;
 
 			&:hover .header__menu--dropdown {
+				background-color:#fff;
+				box-shadow: 0px 0px 0px -1px rgba(0,0,0,0.75);
 				left: 250px;
 				top: 78px;
 				padding:10px;
-				display:flex;
-				flex-direction: column;
+				@include flexbox(flex-col);
 				width:180px;
 				text-indent:15px;
-				background-color:#fff;
-				box-shadow: 0px 0px 0px -1px rgba(0,0,0,0.75);
 			}
 		}
 
@@ -104,9 +101,7 @@ body {
 	}
 	/* Header text */
 	&__text {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
+		@include flexbox(flex-col-center);
 		align-items: flex-start;
 		height: 100vh;
 		margin-left: 100px;
@@ -154,8 +149,7 @@ body {
 /* 					Message 					   */
 /* ----------------------------------------------- */
 .message {
-	display: flex;
-	flex-direction: column;
+	@include flexbox(flex-col);
 	padding-top: 120px;
 	width: 40%;
 
@@ -176,10 +170,7 @@ body {
 	}
 
 	&__container {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
+		@include flexbox(flex-col-center-center);
 		text-align: center;
 	}
 }
@@ -189,8 +180,7 @@ body {
 /* ----------------------------------------------- */
 
 .post {
-	display: flex;
-	flex-direction: column;
+	@include flexbox(flex-col);
 	align-items: center;
 	justify-content: space-around;
 	margin-bottom: 120px;
