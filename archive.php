@@ -59,6 +59,8 @@
 			</article> <!-- .post__article -->
 			<?php
 				} 
+				$stmt->close();
+				$conn->close();
 			?> 
 		</div> <!-- .post__container -->
 	</section> <!-- .post -->
@@ -67,7 +69,8 @@
 			echo "Välj en månad i listan"; 
 			}
 	 	} 
-	}
+	} 
+	
 		?>
 
 	<!-- Footer -->

@@ -173,7 +173,9 @@
 			</div> <!-- .comments -->
 		<?php
 			}
-		}	
+		}
+		$stmt->close();
+		$conn->close();	
 			?>
 	</section> <!-- .blog-post -->
 

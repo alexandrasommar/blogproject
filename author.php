@@ -57,6 +57,8 @@
 				} else {
 					die("query failed" . mysqli_error($conn));
 				}
+				$stmt->close();
+				$conn->close(); 
 						
 				?>
 			</div> <!-- post__container -->

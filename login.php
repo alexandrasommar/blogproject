@@ -39,6 +39,8 @@
 			} 
 
 		} 
+		$stmt->close();
+		$conn->close();  
 
 		} else {
 			$message = "Du måste fylla i användarnamn och lösenord";

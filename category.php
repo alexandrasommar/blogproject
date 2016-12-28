@@ -87,7 +87,9 @@
 				</div> <!-- .post-category-text -->
 			</div> <!-- .post-category -->
 				<?php
-				}
+				} 
+				$stmt->close();
+				$conn->close();
 			}
 			}	
 				?>
