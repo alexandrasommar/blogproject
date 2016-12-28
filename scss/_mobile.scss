@@ -2,6 +2,7 @@
 	&__text {
 		width: 100%;
 		text-align: center;
+		margin-left: 0;
 		@include flexbox(flex-col-center-center);
 	}
 
@@ -13,6 +14,14 @@
 		font-size: 120px;
 	}
 }
+
+/* ----------------------------------------------- */
+/* 					Message 					   */
+/* ----------------------------------------------- */
+
+.message {
+	width: 85%;
+	}
 
 /* ----------------------------------------------- */
 /* 					footer.php;					   */
