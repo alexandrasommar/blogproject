@@ -42,7 +42,7 @@
 						<div class="divTableCell"><?php echo $post_cnt; ?></div>
 						<div class="divTableCell"><?php echo $comm_cnt; ?></div>
 						<div class="divTableCell"><?php echo $average; ?></div>
-						<?php } ?>
+						<?php } mysqli_close($conn); ?>
 					</div> <!-- .divTableRow -->
 				</div> <!-- .divTableBody -->
 			</div> <!-- .divTable -->

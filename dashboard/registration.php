@@ -103,7 +103,9 @@
 						header("Location: users.php");
 					} 
 		 		
-			  	}
+			  	} 
+			  	$stmt->close();
+				$conn->close();
 			}
 		}
 			?>

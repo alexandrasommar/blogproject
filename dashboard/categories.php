@@ -91,7 +91,8 @@
 					<?php
 						}
 					}
-
+					$stmt->close();
+					$conn->close();
 					?>	
 				</div>
 			</div> <!-- .divTable -->

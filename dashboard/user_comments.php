@@ -87,7 +87,7 @@ if(!isset($_SESSION['username'])) {
 					</div> <!-- .divTableRow -->
 					<?php
 						}
-					}
+					} mysqli_close($conn);
 					?>	
 				</div> <!-- .divTableBody -->
 			</div> <!-- .divTable -->

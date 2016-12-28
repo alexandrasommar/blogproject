@@ -113,7 +113,9 @@ if(!isset($_SESSION['username'])) {
 
 					} else {
 						echo "Tyvärr har du inte skrivit några inlägg ännu. <a href='write_post.php'>Gör det här</a>";
-					}
+					} 
+					$stmt->close();
+					$conn->close();
 
 						?>
 				</div> <!-- .divTableBody -->

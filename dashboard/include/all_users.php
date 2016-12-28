@@ -67,7 +67,9 @@
 					}
 				} else {
 					"query failed" . mysqli_error($conn);
-				}
+				} 
+				$stmt->close();
+				$conn->close();
 				?>
 		</div> <!-- .divTableBody -->
 	</div> <!-- .divTable -->
