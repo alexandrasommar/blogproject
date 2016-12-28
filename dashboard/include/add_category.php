@@ -3,13 +3,28 @@ if(isset($_POST['create_cat'])) {
 	if(!empty($_POST['name'])) {
 		$catname = ucfirst($_POST['name']);
 		$catname = mysqli_real_escape_string($conn, $catname);
+
+		// check if category name already exists
+		$query = "SELECT categories.cat_name FROM categories WHERE cat_name = '{$catname}'";
+		$result = mysqli_query($conn, $query);
+		$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+		$dbcat = $row['cat_name'];
+
+		if($catname = $dbcat) {
+			$message = "<p class='red'>Kategorin finns redan. Välj ett annat namn.</p>";
+		} 
+		
+		else {
+		$catname = ucfirst($_POST['name']);
+		$catname = mysqli_real_escape_string($conn, $catname);
 		$query = "INSERT INTO categories VALUES(NULL, '{$catname}')";
+		
 		if($stmt->prepare($query)) {
 			$stmt->execute();
 			$_SESSION['success'] = "Kategorin lades till.";
 			header("Location: categories.php");
-		}
-
+		} 
+	  }
 	} else {
 		$message = "Du måste fylla i namn på kategorin";
 	}

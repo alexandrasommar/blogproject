@@ -10,6 +10,10 @@
 			if(!isset($_SESSION['username'])) {
 				header("Location: ../index.php");
 			}
+
+			// Displays statistics based on user role. If the user is admin, all posts 
+			// and comments are displayed. Else, only statistics for that specific 
+			// user is displayed
 			$query = "SELECT * FROM posts WHERE post_status = 1 ";
 			if($_SESSION['role'] != 'admin') {
 				$query .= "AND post_author_id = '{$_SESSION['user_id']}'";
