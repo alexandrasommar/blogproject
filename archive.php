@@ -5,7 +5,7 @@
 
 	<div class="bg-img">
 		<?php include "include/header-navigation-menu.php"; ?>
-		<?php include "header.php"; ?>
+		<?php include "include/header.php"; ?>
 	
 		
 	<h2 id="archive">ARKIV</h2>
