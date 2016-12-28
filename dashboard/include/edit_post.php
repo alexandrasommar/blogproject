@@ -1,6 +1,9 @@
 	<?php
 	$postid = $_GET['edit'];
-	$query = "SELECT posts.*, categories.cat_name FROM posts LEFT JOIN categories ON posts.post_category_id = categories.cat_id WHERE post_id = {$postid}";
+	$query = "SELECT posts.*, categories.cat_name 
+			  FROM posts LEFT JOIN categories 
+			  ON posts.post_category_id = categories.cat_id 
+			  WHERE post_id = {$postid}";
 
 	if($result = mysqli_query($conn, $query)) {
 		while ($row = mysqli_fetch_assoc($result)) {

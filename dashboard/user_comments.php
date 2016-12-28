@@ -38,7 +38,8 @@ if(!isset($_SESSION['username'])) {
 				echo $message;
 			}
 
-			$query = "SELECT comments.*, posts.post_title FROM comments LEFT JOIN posts ON posts.post_id = comments.comment_post_id ";
+			$query = "SELECT comments.*, posts.post_title FROM comments 
+					  LEFT JOIN posts ON posts.post_id = comments.comment_post_id ";
 
 			if($_SESSION['role'] != 'admin') {
 				$query .= "WHERE posts.post_author_id = '{$_SESSION['user_id']}' ";

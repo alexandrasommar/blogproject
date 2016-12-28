@@ -37,7 +37,11 @@
 
 			$count = ceil($count / $per_page);
 
-			$query = "SELECT posts.*, categories.* FROM posts LEFT JOIN categories ON posts.post_category_id = categories.cat_id WHERE post_status = 1 ORDER BY post_date DESC LIMIT $page_1, $per_page";
+			$query = "SELECT posts.*, categories.* 
+					  FROM posts LEFT JOIN categories 
+					  ON posts.post_category_id = categories.cat_id 
+					  WHERE post_status = 1 ORDER BY post_date DESC 
+					  LIMIT $page_1, $per_page";
 
 			if($stmt->prepare($query)) {
 

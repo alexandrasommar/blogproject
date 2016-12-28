@@ -14,7 +14,11 @@
 		}
 		
 
-		$query = "SELECT posts.*, categories.cat_id, categories.cat_name, users.* FROM posts LEFT JOIN categories ON posts.post_category_id = categories.cat_id LEFT JOIN users ON posts.post_author_id = users.user_id WHERE posts.post_id = {$post}";
+		$query = "SELECT posts.*, categories.cat_id, categories.cat_name, users.* 
+				  FROM posts LEFT JOIN categories 
+				  ON posts.post_category_id = categories.cat_id 
+				  LEFT JOIN users ON posts.post_author_id = users.user_id 
+				  WHERE posts.post_id = {$post}";
 
 		if($result = mysqli_query($conn, $query)) {
 			while ($row = mysqli_fetch_assoc($result)) {

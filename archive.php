@@ -19,10 +19,19 @@
 	</form>
 
 	<?php
+	// If the visitor selected a month, posts are displayed
+	// based on that selection 
+
 	if(isset($_POST['submit'])) {
 	if(!empty($_POST['submit'])) {
 	$month = $_POST['choose_month'];
-	$query = "SELECT posts.*, categories.* FROM posts LEFT JOIN categories ON posts.post_category_id = categories.cat_id WHERE SUBSTRING(post_date,6,7) = {$month} AND posts.post_status = 1 ORDER BY posts.post_date DESC";
+	$query = "SELECT posts.*, categories.* 
+			  FROM posts LEFT JOIN categories 
+			  ON posts.post_category_id = categories.cat_id 
+			  WHERE SUBSTRING(post_date,6,7) = {$month} 
+			  AND posts.post_status = 1 
+			  ORDER BY posts.post_date DESC";
+
 	$stmt = $conn->stmt_init();
 	if($stmt->prepare($query)) {
 	$stmt->execute();

@@ -27,7 +27,11 @@
 		<section class="post">
 			<div class="post__container">
 				<?php
-				$query = "SELECT posts.*, categories.cat_id, categories.cat_name FROM posts LEFT JOIN categories ON posts.post_category_id = categories.cat_id WHERE posts.post_author_id = {$author} AND post_status = 1 ORDER BY post_date DESC";
+				$query = "SELECT posts.*, categories.cat_id, categories.cat_name 
+						  FROM posts LEFT JOIN categories 
+						  ON posts.post_category_id = categories.cat_id 
+						  WHERE posts.post_author_id = {$author} AND post_status = 1 
+						  ORDER BY post_date DESC";
 					
 					if($stmt->prepare($query)) {
 						$stmt->execute();
