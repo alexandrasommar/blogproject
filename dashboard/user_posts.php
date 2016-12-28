@@ -64,7 +64,9 @@ if(!isset($_SESSION['username'])) {
 						<div class="divTableCell">Radera</div>
 					</div> <!-- .divTableRow header -->
 					<?php
-					$query = "SELECT posts.*, categories.cat_name FROM posts LEFT JOIN categories ON posts.post_category_id = categories.cat_id ";
+					$query = "SELECT posts.*, categories.cat_name 
+							  FROM posts LEFT JOIN categories 
+							  ON posts.post_category_id = categories.cat_id ";
 
 					if($_SESSION['role'] != 'admin') {
 						$query .= "WHERE post_author_id = {$_SESSION['user_id']} ";

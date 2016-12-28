@@ -1,4 +1,5 @@
 	<?php
+	// if one of the fields are empty, or the image is too big or not an image display error message
 	$titleErr = $contentErr = $imgErr = $catErr = "";
 	if (isset($_POST['publish']) || isset($_POST['save'])) {
 			
@@ -25,8 +26,6 @@
 			$imgErr = "<p class='red'>Bilden är för stor, den får vara max 1 MB.</p>";
 		}
 
-		
-
 
 		if(!empty($_POST['title'])
 			&& !empty($_POST['post_content'])
@@ -45,6 +44,7 @@
 			$target_name = $target_folder . $image;
 			$name = pathinfo($image, PATHINFO_FILENAME);
 
+			// if the image containes other characters than the ones specified, display error message
 			if(!preg_match("/^[_a-zA-Z0-9-]+$/", $name)) {
 				$imgErr = "<p class='red'>Vald bild: $image. Bildnamnet får inte innehålla å ä ö, mellanslag eller andra specialtecken. Vänligen ge bilden ett nytt namn och försök igen.</p>";
 			}
@@ -66,7 +66,7 @@
 				$stmt->execute();	
 
 			}else {
-				die("quey" . mysqli_error($conn));
+				die("Query failed" . mysqli_error($conn));
 			}
 		  }
 		}
@@ -74,6 +74,8 @@
 
 
 	?>
+
+	<!-- Add post form -->
 	<section class="form">
 		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
 			<div class="form-message">

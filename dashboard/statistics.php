@@ -10,7 +10,7 @@
 			if(!isset($_SESSION['username'])) {
 				header("Location: ../index.php");
 			}
-			
+
 			// Displays statistics based on user role. If the user is admin, all posts 
 			// and comments are displayed. Else, only statistics for that specific 
 			// user is displayed
@@ -21,7 +21,10 @@
 			if($result = mysqli_query($conn, $query)) {
 				$post_cnt = mysqli_num_rows($result);
 			}
-			$query = "SELECT comments.*, posts.post_author_id FROM comments LEFT JOIN posts ON posts.post_id = comments.comment_post_id ";
+			$query = "SELECT comments.*, posts.post_author_id 
+					  FROM comments LEFT JOIN posts 
+					  ON posts.post_id = comments.comment_post_id ";
+					  
 			if($_SESSION['role'] != 'admin') {
 				 $query .= "WHERE post_author_id = '{$_SESSION['user_id']}'";
 				}
@@ -46,7 +49,7 @@
 						<div class="divTableCell"><?php echo $post_cnt; ?></div>
 						<div class="divTableCell"><?php echo $comm_cnt; ?></div>
 						<div class="divTableCell"><?php echo $average; ?></div>
-						<?php } ?>
+						<?php } mysqli_close($conn); ?>
 					</div> <!-- .divTableRow -->
 				</div> <!-- .divTableBody -->
 			</div> <!-- .divTable -->
@@ -61,4 +64,4 @@
 <?php }else {
 		header("Location: ../index.php");
 
-	} mysqli_close($conn); ?>
+	}  ?>
