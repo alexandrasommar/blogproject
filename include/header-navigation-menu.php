@@ -1,5 +1,5 @@
 <?php session_start(); ?>
-<?php include ("include/db.php"); ?>
+
 
 	<header class="header">
 		<nav class="header__nav">
