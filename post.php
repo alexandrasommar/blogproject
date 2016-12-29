@@ -1,41 +1,42 @@
 <?php include "include/head.php"; ?>
-<?php include "include/functions.php";
 
-if(isset($_GET["post"])) {
-	$post = $_GET["post"];
-} else {
-	header("Location: index.php");
-}
-
-
-$query = "SELECT posts.*, categories.cat_id, categories.cat_name, users.* 
-		  FROM posts LEFT JOIN categories 
-		  ON posts.post_category_id = categories.cat_id 
-		  LEFT JOIN users ON posts.post_author_id = users.user_id 
-		  WHERE posts.post_id = {$post}";
-
-if($result = mysqli_query($conn, $query)) {
-	while ($row = mysqli_fetch_assoc($result)) {
-		
-		$post_title = $row['post_title'];
-		$post_date = $row['post_date'];
-		$post_image = $row['post_image'];
-		$post_content = $row['post_content'];
-		$post_likes = $row['post_likes'];
-		$firstname = $row['user_firstname'];
-		$lastname = $row['user_lastname'];
-		$image = $row['user_image'];
-		$description = $row['user_description'];
-		$post_author_id = $row['post_author_id'];
-	}
-} 
-
-?>
 	<!-- Header -->
-	
-	<div class="blog-post__image" style="background-image: url(<?php echo $post_image;?>);">
+
+	<div class="blog-post__image">
 		<?php include "include/header-navigation-menu.php"; ?>
 		</header>
+		<?php include "include/functions.php"; ?>
+		<?php
+		if(isset($_GET["post"])) {
+			$post = $_GET["post"];
+		} else {
+			header("Location: index.php");
+		}
+		
+
+		$query = "SELECT posts.*, categories.cat_id, categories.cat_name, users.* 
+				  FROM posts LEFT JOIN categories 
+				  ON posts.post_category_id = categories.cat_id 
+				  LEFT JOIN users ON posts.post_author_id = users.user_id 
+				  WHERE posts.post_id = {$post}";
+
+		if($result = mysqli_query($conn, $query)) {
+			while ($row = mysqli_fetch_assoc($result)) {
+				
+				$post_title = $row['post_title'];
+				$post_date = $row['post_date'];
+				$post_image = $row['post_image'];
+				$post_content = $row['post_content'];
+				$post_likes = $row['post_likes'];
+				$firstname = $row['user_firstname'];
+				$lastname = $row['user_lastname'];
+				$image = $row['user_image'];
+				$description = $row['user_description'];
+				$post_author_id = $row['post_author_id'];
+			}
+		} 
+		echo "<img src='{$post_image}' alt='{$post_title}'>";
+		?>
 	</div> <!-- .blog-post__image -->
 	<?php
 	if(isset($_POST['like'])) {
