@@ -1,5 +1,5 @@
 <?php session_start(); ?>
-<?php include ("include/db.php"); ?>
+<?php require_once "include/db.php"; ?>
 
 	<header class="header">
 		<nav class="header__nav">
