@@ -39,7 +39,7 @@
 
 				<div class="header__menu toggle-menu">
 					<input type="checkbox" id="menu-toggle">
-					<label for="menu-toggle" class="label-toggle"></label>
+					<label for="menu-toggle" class="label-toggle"><span class="hidden">Meny</span></label>
 					<div class="hidden">
 	                	<div class="toggle-menu__list">
 							<ul class="toggle-menu__flex-center">
