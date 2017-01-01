@@ -19,13 +19,11 @@ main {
 	}
 
 	.content_container {
-	display: flex;
-	flex-direction: row;
+	@include flexbox(flex-row);
 	}
 
 	.aside__nav {
-	display: flex;
-	flex-direction: column;
+	@include flexbox(flex-col);
 	align-items: center;
 	width: 100%;
 }
@@ -35,8 +33,7 @@ main {
 }
 
 .toggle-menu {
-	display: flex;
-	flex-direction: row;
+	@include flexbox(flex-row);
 	justify-content: space-between;
 }
 
@@ -51,9 +48,7 @@ main {
     }
 
 .hidden {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      @include flexbox(flex-col-center);
       height: 0;
       opacity: 0;
       /*text-align: center;*/

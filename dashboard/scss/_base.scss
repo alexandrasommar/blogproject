@@ -6,8 +6,7 @@ body {
 }
 
 .content_container {
-	display: flex;
-	flex-direction: row;
+	@include flexbox(flex-row);
 }
 
 aside {
@@ -26,8 +25,7 @@ main {
 
 .nav {
 	border-bottom: 1px solid #101010;
-	display: flex;
-	flex-direction: row;
+	@include flexbox(flex-row);
 	justify-content: space-between;
 	align-items: center;
 	padding: 10px 0;
@@ -107,9 +105,7 @@ div.panel {
 }
 
 .panel ul {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+	@include flexbox(flex-col-center);
 	list-style: none;
 	margin: 0;
 	padding: 0;
@@ -128,8 +124,7 @@ div.panel.show {
 
 .aside {
 	&__nav {
-		display: flex;
-		flex-direction: column;
+		@include flexbox(flex-col);
 		justify-content: flex-start;
 		width: 100%;
 		padding: 40px 0 0 0;
@@ -173,7 +168,7 @@ div.panel.show {
 		li {
 		height: 60px;
 		width: 100%;
-		display: flex;
+		@include flexbox(flex-row);
 		align-items: center;
 		}
 		.aside {
@@ -200,15 +195,12 @@ div.panel.show {
 
  .form {
   	background-color: #fff;
-  	display: flex;
-  	flex-direction: row;
-  	justify-content: center;
+  	@include flexbox(flex-row-center);
   	padding-top: 40px;
   	font-family: 'Lato', sans-serif;
 	font-weight: 100;
 	&__input {
-	  	display: flex;
-	  	flex-direction: column;
+	  	@include flexbox(flex-col);
 	}
 	&-message {
 	  	color: #E57373;
