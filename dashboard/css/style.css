@@ -664,7 +664,17 @@ input[type=submit].btn--blue:hover {
     text-decoration: underline;
     color: #222; }
 
-@media screen and (max-width: 1199px) {
+@media screen and (max-width: 1200px) {
+  .hidden-small-desktop {
+    display: none; }
+  aside {
+    width: 25%; }
+  main {
+    width: 75%; }
+  .hidden-tablet {
+    display: none; } }
+
+@media screen and (max-width: 768px) {
   aside {
     display: none; }
   main {
@@ -723,13 +733,3 @@ input[type=submit].btn--blue:hover {
     opacity: 1;
     height: 100vh;
     visibility: visible; } }
-
-@media screen and (min-width: 1200px) {
-  .hidden-small-desktop {
-    display: none; }
-  aside {
-    width: 25%; }
-  main {
-    width: 75%; }
-  .hidden-tablet {
-    display: none; } }
