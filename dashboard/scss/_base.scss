@@ -1,6 +1,6 @@
 body {
-	background-color: #222;
-	color: #9d9d9d;
+	background-color: $color--dark;
+	color: $color-grey;
 	margin: 0;
 	font: $font-regular;
 }
@@ -16,7 +16,7 @@ aside {
 
 main {
 	background-color: #fff;
-	color: #222;
+	color: $color--dark;
 	width: 80%;
 	min-height: 90vh;
 }
@@ -37,7 +37,7 @@ main {
 		font-size: 24px;
 		a {
 			text-decoration: none;
-			color: #9d9d9d;
+			color: $color-grey;
 		}
 	}
 
@@ -86,7 +86,7 @@ main {
   	
   	&__logo a {
 		text-decoration: none;
-		color: #9d9d9d;
+		color: $color-grey;
 		padding-left: 10px;
   	}
 }
@@ -144,7 +144,7 @@ div.panel.show {
 		}
 		a {
 		text-decoration: none;
-		color: #9d9d9d;
+		color: $color-grey;
 		padding: 0 15px;
 		&:hover .dropdown-content {
 			display: block;
@@ -179,7 +179,7 @@ div.panel.show {
 		}
 		a {
 		text-decoration: none;
-		color: #9d9d9d;
+		color: $color-grey;
 		}
 		li:hover {
 		background-color: #000;
@@ -194,7 +194,7 @@ div.panel.show {
  }
 
  .form {
-  	background-color: #fff;
+  	background-color: $color--white;
   	@include flexbox(flex-row-center);
   	padding-top: 40px;
   	font-family: 'Lato', sans-serif;
@@ -312,7 +312,7 @@ input[type=text] {
 	font-weight: 300;
 	& a {
 		text-decoration: underline;
-		color: #222;
+		color: $color--dark;
 	}
 }
 
