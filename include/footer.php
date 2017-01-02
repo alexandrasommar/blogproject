@@ -4,7 +4,6 @@
 		<nav class="footer__nav">
 			<ul class="footer__nav--responsive-list">
 				<li><a href="#">Bilen</a></li>
-				<li><a href="#">Kampanjen</a></li>
 				<li><a href="category.php">Kategorier</a></li>
 				<li><a href="archive.php">Arkiv</a></li>
 			</ul>
