@@ -1346,30 +1346,6 @@ input#like:hover {
     -ms-animation-delay: 20s;
     animation-delay: 20s;
   }
-  @-webkit-keyframes slider--animation-fade {
-    0%, 20%, 100% {
-      opacity: 0;
-    }
-    5%, 15% {
-      opacity: 1;
-    }
-  }
-  @-moz-keyframes slider--animation-fade {
-    0%, 20%, 100% {
-      opacity: 0;
-    }
-    5%, 15% {
-      opacity: 1;
-    }
-  }
-  @-ms-keyframes slider--animation-fade {
-    0%, 20%, 100% {
-      opacity: 0;
-    }
-    5%, 15% {
-      opacity: 1;
-    }
-  }
   @keyframes slider--animation-fade {
     0%, 20%, 100% {
       opacity: 0;
