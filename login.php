@@ -51,11 +51,12 @@
 	?>
 
 	<section class="login">
+	<h2 class="hidden">Login</h2>
 		<div class="login__box">
 			<div class="login__image">
 				<img src="img/Volvo_Ocean_Race_Edition.jpg" alt="">
 				<div class="login__form">
-					<form method="post" action="" class="login__input">
+					<form method="post" action="login.php" class="login__input">
 							<span>Logga in</span>
 							<?php 
 							if(isset($message)) {
