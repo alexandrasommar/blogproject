@@ -1,6 +1,5 @@
 <?php 
 include "include/head.php";
-include "include/head.php";
 require_once "include/db.php";
 
 if(isset($_GET["post"])) {
