@@ -45,10 +45,10 @@
 			<?php while(mysqli_stmt_fetch($stmt)) { ?>
 			<article class="post__article">
 				<div class="post__img">
-					<a href="post.php?post=<?php echo $post_id; ?>"><img class="post__img--styling" src="<?php echo $post_image; ?>" alt="<?php echo $post_title; ?>"></a>
+					<a href="post.php?post=<?php echo $post_id; ?>" target="_blank"><img class="post__img--styling" src="<?php echo $post_image; ?>" alt="<?php echo $post_title; ?>"></a>
 				</div> <!-- .post__img -->
 				<div class="post__text">
-					<h2><a href="post.php?post=<?php echo $post_id; ?>"><?php 
+					<h2><a href="post.php?post=<?php echo $post_id; ?>" target="_blank"><?php 
 						if (strlen($post_title) >= 31) {
 
 							echo substr($post_title, 0, 31) . "..."; 
@@ -61,8 +61,8 @@
 
 
 						?></a></h2>
-					<span>Av: <span class="author"><a href="author.php?author=<?php echo $post_author_id; ?>"><?php echo $post_author; ?></a></span>, <?php echo substr($post_date, 0, 10); ?></span>
-					<p>Kategori: <?php echo "<a href='category.php?cat=$cat_id'>$cat_name</a>"; ?></p>
+					<span>Av: <span class="author"><a href="author.php?author=<?php echo $post_author_id; ?>" target="_blank"><?php echo $post_author; ?></a></span>, <?php echo substr($post_date, 0, 10); ?></span>
+					<p>Kategori: <?php echo "<a href='category.php?cat=$cat_id' target='_blank'>$cat_name</a>"; ?></p>
 					<p><?php echo substr($post_content, 0, 150) . "..."; ?></p>
 				</div> <!-- .post__text -->
 			</article> <!-- .post__article -->
