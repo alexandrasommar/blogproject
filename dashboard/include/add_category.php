@@ -38,6 +38,7 @@ if(isset($message)) {
 
 ?>
 <section class="form">
+<h2 class="invisible"></h2>
 	<form action="categories.php?source=add" method="post">
 		<div class="form__input">
 			<label for="name">Lägg till ny kategori</label>

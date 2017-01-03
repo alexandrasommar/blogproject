@@ -5,6 +5,12 @@ body {
 	font: $font-regular;
 }
 
+.invisible {
+
+	display: none;
+}
+
+
 .content_container {
 	@include flexbox(flex-row);
 }

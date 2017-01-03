@@ -1,5 +1,5 @@
 <section class="slider slider__desktop">
-
+<h2 class="invisible">fokus</h2>
 	<section class="slider__article">
 		<div class="slider__icon-font">
 			<i class="fa fa-5x fa-car" aria-hidden="true"></i>
@@ -34,7 +34,7 @@
 
 <!-- Slider for mobile and table -->
 <section class="slider slider__mobile">
-	
+	<h2 class="invisible">fokus</h2>
 	<div class="slider--animation">
 
 		<section class="slider__article">

@@ -77,6 +77,7 @@
 
 	<!-- Add post form -->
 	<section class="form">
+	<h2 class="invisible"></h2>
 		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
 			<div class="form-message">
 				<?php 
