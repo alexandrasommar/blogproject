@@ -608,7 +608,7 @@ input#like {
 /* ----------------------------------------------- */
 
 .author-information-box {
-	@include flexbox(flex-row);
+	@include flexbox(flex-row-center);
 	width: 75%;
 	border: solid 1px $color-border;
 	box-shadow: 1px 1px 5px #999;
@@ -626,8 +626,8 @@ input#like {
 
 	&__text {
 		width: 50%;
-		@include flexbox(flex-col-center-center);
-
+			
+			width: 100%;
 		p {
 
 			padding: 0 50px;
@@ -637,6 +637,7 @@ input#like {
 		}
 
 		h3 {
+			text-align: center;
 			font: $font-bold;
 			margin: 10px;
 		}
