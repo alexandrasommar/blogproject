@@ -59,6 +59,7 @@
 	<script src="https://use.fontawesome.com/78a857f410.js"></script>
 	<!-- JavaScript -->
 	<script src="script.js"></script>
+</div>
 </body>
 </html>
 <?php }else {
