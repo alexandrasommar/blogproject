@@ -51,7 +51,7 @@
 	?>
 
 	<section class="login">
-	<h2 class="hidden">Login</h2>
+	<h2 class="invisible">Login</h2>
 		<div class="login__box">
 			<div class="login__image">
 				<img src="img/Volvo_Ocean_Race_Edition.jpg" alt="">

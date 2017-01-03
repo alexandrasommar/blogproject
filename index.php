@@ -14,7 +14,7 @@
 	<!-- Posts -->
 
 	<section class="post">
-	<h2 class="hidden">blogginlägg</h2>
+	<h2 class="invisible">blogginlägg</h2>
 		<div class="post__container">
 			<?php
 			//limits number of posts to be displayed to 6
