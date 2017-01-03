@@ -67,6 +67,6 @@
 			</div> <!-- .slider__text -->
 		</section> <!-- .slider__article -->
 
-	</div> <!-- .slider--animation -->
+	</div> <!-- .slider animation -->
 	
 </section> <!-- .slider -->
