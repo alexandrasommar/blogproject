@@ -120,6 +120,7 @@
 				?>
 
 				<section class="form">
+				<h2 class="invisible"></h2>
 					<form action="registration.php" method="post" enctype="multipart/form-data">
 						<div class="form__input">
 							<label for="firstname">Förnamn</label>
