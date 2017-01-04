@@ -10,7 +10,7 @@
 		
 	<h2 id="archive">ARKIV</h2>
 	<form method="post" action="archive.php#archive">
-		<label for="choose_month">Välj månad</label>
+		<label for="choose_month" class="invisible">Välj månad</label>
 		<select name="choose_month" id="choose_month">
 			<option value="">Välj månad</option>
 			<?php selectMonth (); ?>
@@ -58,8 +58,6 @@
 							echo $post_title;
 						}
 
-
-
 						?></a></h2>
 					<span>Av: <span class="author"><a href="author.php?author=<?php echo $post_author_id; ?>" target="_blank"><?php echo $post_author; ?></a></span>, <?php echo substr($post_date, 0, 10); ?></span>
 					<p>Kategori: <?php echo "<a href='category.php?cat=$cat_id' target='_blank'>$cat_name</a>"; ?></p>
@@ -80,7 +78,7 @@
 	 	} 
 	} 
 	
-		?>
+	?>
 
 	<!-- Footer -->
 
