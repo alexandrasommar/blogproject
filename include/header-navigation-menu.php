@@ -9,7 +9,7 @@
 
 				<nav class="header__menu header__menu--left header__menu--block">
 						<ul>
-							<li><a href='#'>Bilen</a></li>
+							<li><a href='car.php#'>Bilen</a></li>
 							<li><a href="archive.php">Arkiv</a></li>
 							<li><a href='#'>Kategorier</a>
 								<ul class="header__menu--dropdown">
@@ -43,10 +43,9 @@
 					<div class="hidden">
 	                	<div class="toggle-menu__list">
 							<ul class="toggle-menu__flex-center">
-								<li><a href="#">Bilen</a></li>
+								<li><a href="car.php">Bilen</a></li>
 								<li><a href="category.php">Kategorier</a></li>
 								<li><a href="archive.php">Arkiv</a></li>
-								<li><a href="#">Kontakt</a></li>
 								<?php if(isset($_SESSION['username'])) { ?>
 								<li><a href="dashboard/index.php">Dashboard</a></li>
 								<?php	} ?>

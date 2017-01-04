@@ -70,7 +70,7 @@ body {
 			&:hover .header__menu--dropdown {
 				background-color: $color--white;
 				box-shadow: 0px 0px 0px -1px rgba(0,0,0,0.75);
-				left: 250px;
+				left: 200px;
 				top: 78px;
 				padding:10px;
 				@include flexbox(flex-col);
@@ -117,14 +117,6 @@ body {
 				font-size: 90px;
 				color: $color--white;
 				font-family: 'VolvoBroad';
-			}
-		}
-		&--text {
-			padding-bottom: 10px;
-
-			span {
-				color: $color--white;
-				font: $font-thin;
 			}
 		}
 	}
@@ -740,5 +732,36 @@ input#like {
 				transition: .2s ease;
 			}
 		}
+	}
+}
+
+/* ----------------------------------------------- */
+/* 					CAR.PHP 					   */
+/* ----------------------------------------------- */
+
+.car {
+	&__picture {
+		float: left;
+		margin-top: 100px;
+		width: 50%;
+
+		img {
+			width: 100%;
+		}
+	}
+	&__text {
+		@include flexbox(flex-row-center-center);
+		float: right;
+		margin-top: 100px;
+		width: 50%;
+
+		p {
+			width: 75%;
+
+		}
+	}
+	&__message {
+		clear: both;
+		margin-bottom: 100px;
 	}
 }
