@@ -5,8 +5,8 @@ body {
 	font: $font-regular;
 }
 .invisible {
-			display: none;
-		}
+	display: none;
+}
 
 /* ----------------------------------------------- */
 /* 					Header 						   */
@@ -627,8 +627,6 @@ input#like {
 			
 			width: 100%;
 		p {
-
-			padding: 0 50px;
 			margin: 0;
 			font: $font-thin;
 			text-align: center;
