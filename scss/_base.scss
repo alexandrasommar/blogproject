@@ -230,6 +230,12 @@ body {
 	&__img {
 		width: 100%;
 
+		&--background {
+			background-position: center center;
+			background-size: cover;
+			padding: 100px;
+		}
+
 		&--styling {
 			border: solid 1px $color-border;
 			padding: 5px;
