@@ -1,0 +1,22 @@
+main {
+	width: 100vw;
+	overflow-x: hidden;
+}
+
+.hidden a {
+	font-size: 18px;
+}
+
+.hidden ul {
+	-webkit-padding-start: 20px;
+}
+
+.toggle-menu__list li:last-of-type {
+	margin-bottom: 10%;
+}
+
+/* User post */
+
+ .divTable {
+	margin: 10px 0;
+}

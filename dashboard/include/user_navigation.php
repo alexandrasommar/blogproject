@@ -15,15 +15,10 @@
 						<div class="toggle-menu__list">
 							<ul>
 								<li><a href="../index.php"><i class="fa fa-home aside" aria-hidden="true"></i>Till bloggen</a></li>
-								<li class="accordion"><a href="#"><i class="fa fa-newspaper-o aside" aria-hidden="true"></i>Inlägg<i class="fa fa-caret-down" aria-hidden="true"></i></a></li>
-								<li class="panel">
-									<ul class="aside__nav--visible">
-										<li>Visa alla inlägg</li>
-										<li>Skriv nytt inlägg</li>
-									</ul>
-								</li>
+								<li><a href="user_posts.php"><i class="fa fa-newspaper-o aside" aria-hidden="true"></i>Visa alla inlägg</a></li>
+								<li><a href="write_post.php"><i class="fa fa-pencil aside" aria-hidden="true"></i>Skriv nytt inlägg</a></li>
 								<li><a href="user_comments.php"><i class="fa fa-comments aside" aria-hidden="true"></i>Kommentarer</a></li>
-								<li><a href="#"><i class="fa fa-bar-chart aside" aria-hidden="true"></i>Statistik</a></li>
+								<li><a href="statistics.php"><i class="fa fa-bar-chart aside" aria-hidden="true"></i>Statistik</a></li>
 								<?php
 								if($_SESSION['role'] == 'admin') { ?>
 									<li><a href="categories.php"><i class="fa fa-list aside" aria-hidden="true"></i>Kategorier</a></li>
@@ -50,8 +45,8 @@
 		<div class="aside__nav">
 			<ul class="aside__nav--height">
 				<li><a href="../index.php"><i class="fa fa-home aside" aria-hidden="true"></i>Till bloggen</a></li>
-				<li class=""><a href="user_posts.php"><i class="fa fa-newspaper-o aside" aria-hidden="true"></i>Visa alla inlägg<i aria-hidden="true"></i></a></li>
-				<li class=""><a href="write_post.php"><i class="fa fa-pencil aside" aria-hidden="true"></i>Skriv nytt inlägg<i aria-hidden="true"></i></a></li>
+				<li><a href="user_posts.php"><i class="fa fa-newspaper-o aside" aria-hidden="true"></i>Visa alla inlägg</a></li>
+				<li><a href="write_post.php"><i class="fa fa-pencil aside" aria-hidden="true"></i>Skriv nytt inlägg</li>
 				<li><a href="user_comments.php"><i class="fa fa-comments aside" aria-hidden="true"></i>Kommentarer</a></li>
 				<li><a href="statistics.php"><i class="fa fa-bar-chart aside" aria-hidden="true"></i>Statistik</a></li>
 				<?php
