@@ -28,6 +28,16 @@ function selectMonth () {
 	   mysqli_free_result($result);
 	}
 
+/*
+* The function counts how many comments there are per post.
+* The query checks the number of comments that belong to the post. 
+*
+* @param number $row_cnt is the number of rows that are in the result
+*
+* If there are comments, the function returns the number of comments.
+* Else a message to post comments is displayed. 
+*/
+
 function countComments () {
 	global $conn;
 	$query = "SELECT * FROM comments WHERE comment_post_id = '{$_GET['post']}'";
@@ -40,11 +50,7 @@ function countComments () {
 		} else {
 			echo "<p>Antal kommentarer ($row_cnt)</p>";
 		}
-		
-
-
-		}
-		
-   		mysqli_free_result($result);
+	}
+  mysqli_free_result($result);
 }
 ?>
