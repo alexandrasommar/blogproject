@@ -20,7 +20,5 @@
 			<img class="volvo-icon" src="img/volvo-logo.svg" alt="Volvo logo">
 		</div> <!-- .footer__logo -->
 	</footer> <!-- .footer -->
-	<!-- Fontawesome -->
-	<script src="https://use.fontawesome.com/78a857f410.js"></script>
 </body>
 </html>

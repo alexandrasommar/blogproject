@@ -7,7 +7,7 @@
 	<!-- CSS -->
 	<link rel="stylesheet" href="css/style.css">
 	<!-- Fontawesome -->
-	<link rel="stylesheet" href="./fonts/font-awesome/css/font-awesome.css">
+	<link rel="stylesheet" href="../fonts/font-awesome/css/font-awesome.css">
 	<!-- Google Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
 </head>
