@@ -54,7 +54,7 @@
 	<h2 class="invisible">Login</h2>
 		<div class="login__box">
 			<div class="login__image">
-				<img src="img/Volvo_Ocean_Race_Edition.jpg" alt="">
+				<img src="img/Volvo_Ocean_Race_Edition.jpg" alt="Volvo Ocean">
 				<div class="login__form">
 					<form method="post" action="login.php" class="login__input">
 							<span>Logga in</span>

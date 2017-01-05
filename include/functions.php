@@ -14,7 +14,7 @@
 
 function selectMonth () {
 	global $conn;
-	$query = "SELECT YEAR(post_date) AS YEAR, MONTH(post_date) AS MONTH, COUNT(*) AS TOTAL FROM posts WHERE post_status = 1 GROUP BY YEAR, MONTH DESC";
+	$query = "SELECT YEAR(post_date) AS YEAR, MONTH(post_date) AS MONTH, COUNT(*) AS TOTAL FROM posts WHERE post_status = 1 GROUP BY YEAR DESC, MONTH DESC";
 
 	if ($result = mysqli_query($conn, $query)) {
 	while ($row = mysqli_fetch_assoc($result)) {
