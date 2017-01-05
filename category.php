@@ -2,7 +2,7 @@
 
 	<!-- Header -->
 
-	<div class="blog-post__image">
+	<div class="header__container--category">
 		<?php include "include/header-navigation-menu.php"; ?>
 		</header>
 	</div>
@@ -77,8 +77,6 @@
 
 							echo $post_title;
 						}
-
-
 
 						?></a></h2>
 						<span class="byline-category">Av: <span class="author"><a href="author.php?author=<?php echo $post_author_id; ?>"><?php echo $post_author; ?></a></span>, <?php echo substr($post_date, 0, 10); ?></span>

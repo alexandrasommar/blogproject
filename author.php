@@ -2,7 +2,7 @@
 	
 	<!-- Header -->
 
-	<div class="blog-post__image">
+	<div class="category-bg-img">
 		<?php include "include/header-navigation-menu.php"; ?>
 		</header>
 	</div> <!-- .blog-post__image -->
@@ -40,8 +40,7 @@
 						while(mysqli_stmt_fetch($stmt)) {
 							?>
 					<article class="post__article">
-						<div class="post__img">
-							<a href="post.php?post=<?php echo $post_id; ?>"><img class="post__img--styling" src="<?php echo $post_image; ?>" alt="<?php echo $post_title; ?>"></a>
+						<div class="post__img--background post__image--styling" style="background-image: url(<?php echo $post_image;?>);">
 						</div> <!-- .post__img -->
 						<div class="post__text">
 							<h2><a href="post.php?post=<?php echo $post_id; ?>">
