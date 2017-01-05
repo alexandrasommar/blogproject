@@ -81,3 +81,16 @@
 		@include flexbox(flex-row-center);
 	}
 }
+
+/* ----------------------------------------------- */
+/* 					POST.PHP 					   */
+/* ----------------------------------------------- */
+
+.blog-post {
+	&__image {
+		background-attachment: scroll;
+		background-position: top;
+		background-size: contain;
+		height: 40%;
+	}
+}
