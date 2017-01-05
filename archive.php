@@ -37,7 +37,7 @@
 	$stmt->execute();
 	$stmt->bind_result($post_id, $category_id, $post_title, $post_author, $post_author_id, $post_date, $post_image, $post_content, $post_status, $post_likes, $cat_id, $cat_name);
 	$month = strftime('%B', mktime(0, 0, 0, $month, 10));
-	echo "<h2>" . $month . "</h2>"; ?>
+	echo "<h2>" . ucfirst($month) . "</h2>"; ?>
 	
 	<!-- Posts -->
 	<section class="post">

@@ -21,6 +21,7 @@ function selectMonth () {
 	        $year = $row['YEAR'];
 	        $monthNum = $row['MONTH'];
 	        $monthName = strftime('%B', mktime(0, 0, 0, $monthNum, 10, $year));
+	        $monthName = ucfirst($monthName);
 	        $numposts = $row['TOTAL'];
 	        echo "<option value='$monthNum'>$monthName ($numposts)</option>";
 	    }
