@@ -35,13 +35,13 @@
 	<div class="divTable">
 		<div class="divTableBody">
 			<div class="divTableRow divTableRow--header">
-				<div class="divTableCell">Förnamn</div>
-				<div class="divTableCell">Efternamn</div>
+				<div class="divTableCell hidden-small-desktop">Förnamn</div>
+				<div class="divTableCell hidden-small-desktop">Efternamn</div>
 				<div class="divTableCell">Användarnamn</div>
-				<div class="divTableCell">Email</div>
-				<div class="divTableCell">Hemsida</div>
-				<div class="divTableCell">Profilbild</div>
-				<div class="divTableCell">Beskrivning</div>
+				<div class="divTableCell hidden-small-desktop">Email</div>
+				<div class="divTableCell hidden-mobile">Hemsida</div>
+				<div class="divTableCell hidden-mobile">Profilbild</div>
+				<div class="divTableCell hidden-mobile">Beskrivning</div>
 				<div class="divTableCell">Redigera</div>
 				<div class="divTableCell">Radera</div>
 			</div> <!-- .divTableBody div TableRow header -->	
@@ -52,13 +52,13 @@
 				$stmt->bind_result($user_id, $dbuser, $firstname, $lastname, $dbpass, $email, $website, $image, $description, $role);
 				while (mysqli_stmt_fetch($stmt)) { ?>
 				<div class="divTableRow">
-					<div class="divTableCell"><?php echo $firstname; ?></div>
-					<div class="divTableCell"><?php echo $lastname; ?></div>
+					<div class="divTableCell hidden-small-desktop"><?php echo $firstname; ?></div>
+					<div class="divTableCell hidden-small-desktop"><?php echo $lastname; ?></div>
 					<div class="divTableCell"><?php echo $dbuser; ?></div>
-					<div class="divTableCell"><?php echo $email; ?></div>
-					<div class="divTableCell"><?php echo $website; ?></div>
-					<div class="divTableCell"><?php echo "<img src='../$image' width='20' alt='Bild på $firstname'>"; ?></div>
-					<div class="divTableCell"><?php echo substr($description, 0, 10) . "..."; ?></div>
+					<div class="divTableCell hidden-small-desktop"><?php echo $email; ?></div>
+					<div class="divTableCell hidden-mobile"><?php echo $website; ?></div>
+					<div class="divTableCell hidden-mobile"><?php echo "<img src='../$image' width='20' alt='Bild på $firstname'>"; ?></div>
+					<div class="divTableCell hidden-mobile"><?php echo substr($description, 0, 10) . "..."; ?></div>
 					<div class="divTableCell"><?php echo "<a href='users.php?edit&user=$user_id' aria-label='Redigera'><i class='fa fa-pencil-square-o' aria-hidden='true'></i></a>"; ?></div>
 					<div class="divTableCell"><?php echo "<a href='users.php?delete=$user_id' aria-label='Radera'><i class='fa fa-trash-o' aria-hidden='true'></i></a>"; ?></div>
 				</div> <!-- .divTableRow -->
