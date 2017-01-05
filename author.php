@@ -46,13 +46,18 @@
 							<h2><a href="post.php?post=<?php echo $post_id; ?>">
 							<?php 
 							if (strlen($post_title) >= 31) {
+
 								echo substr($post_title, 0, 31) . "..."; 
+
 							} else {
+
 								echo $post_title;
+
 							}
 							?></a></h2>
 							<span>Av: <span class="author"><?php echo $firstname; ?></span>, <?php echo substr($post_date, 0, 10); ?></span>
 							<p><?php echo substr($post_content, 0, 150) . "..."; ?></p>
+							<a href="post.php?post=<?php echo $post_id; ?>">Läs mer</a>
 						</div> <!-- .post__text -->
 					</article> <!-- .post__article -->
 				<?php 
