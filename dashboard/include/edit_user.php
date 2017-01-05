@@ -9,7 +9,7 @@ if(isset($_POST['update'])) {
 		$user = mysqli_real_escape_string($conn, $_POST['username']);
 		
 
-		$query = "UPDATE users SET username = '{$user}', user_firstname = '{$first}', user_lastname = '{$last}', user_website = '{$website}', user_description = '{$description}' ";
+		$query = "UPDATE users SET username = '{$user}', user_firstname = '{$first}', user_lastname = '{$last}', user_email = '{$email}', user_website = '{$website}', user_description = '{$description}' ";
 
 		if(!empty($_POST['password'])) {
 		$pass = mysqli_real_escape_string($conn, $_POST['password']);
