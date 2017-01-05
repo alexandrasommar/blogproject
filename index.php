@@ -65,7 +65,7 @@
 				?>
 
 			<article class="post__article">
-				<div class="post__img--background" style="background-image: url(<?php echo $post_image;?>);">
+				<div class="post__img--background post__image--styling" style="background-image: url(<?php echo $post_image;?>);">
 				</div> <!-- .post__img -->
 				<div class="post__text">
 					<h2><a href="post.php?post=<?php echo $post_id; ?>"><?php 
