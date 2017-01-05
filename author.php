@@ -2,7 +2,7 @@
 	
 	<!-- Header -->
 
-	<div class="category-bg-img">
+	<div class="author-bg-img">
 		<?php include "include/header-navigation-menu.php"; ?>
 		</header>
 	</div> <!-- .blog-post__image -->
