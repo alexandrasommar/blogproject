@@ -91,7 +91,7 @@ if($result = mysqli_query($conn, $query)) {
 		$content = mysqli_real_escape_string($conn, $content);
 
 
-		$query ="INSERT INTO comments(comment_post_id, comment_author, comment_date, comment_email, comment_content, comment_website) VALUES('{$post}', '{$name}', CURTIME(), '{$email}', '{$content}', '{$website}')";
+		$query ="INSERT INTO comments(comment_post_id, comment_author, comment_date, comment_email, comment_content, comment_website) VALUES('{$post}', '{$name}', NOW(), '{$email}', '{$content}', '{$website}')";
 
 			if($stmt->prepare($query)) {
 				$stmt->execute(); 
