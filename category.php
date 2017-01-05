@@ -63,9 +63,8 @@
 			<!-- Posts -->
 			
 			<div class="post-category">
-				<div class="post-category-img">
-					<div class="post__img"><a href="post.php?post=<?php echo $post_id; ?>"><img class="post__img--styling" src="<?php echo $post_image;?>" alt="<?php echo $post_title; ?>"></a></div>
-				</div> <!-- .post-category-img -->
+				<div class="post__img--background post__image--styling" style="background-image: url(<?php echo $post_image;?>);">
+				</div> <!-- .post__img background post__image styling -->
 				<div class="post-category-text">
 					<div class="post-text">
 						<h2><a href="post.php?post=<?php echo $post_id; ?>"><?php 
